@@ -10,7 +10,7 @@ const Hero = () => {
         <span className="text-[#1D9ED9]">&#125;</span>
       </span>
 
-      <h1 className="text-white text-3xl sm:text-5xl md:text-7xl xl:text-8xl 2xl:text-9xl  mt-[25.82] px-4 md:px-8 lg:px-12">
+      <h1 className="text-white text-3xl sm:text-5xl md:text-7xl xl:text-8xl 2xl:text-9xl  mt-[25.82] px-4 md:px-8 lg:px-12 items-center justify-center">
         Clarity Before&nbsp;
         <span className="inline-block">
           <span className="text-[#1D9ED9]">&#123;</span>
@@ -27,7 +27,7 @@ const Hero = () => {
         </span>
       </h1>
 
-      <p className="text-white text-sm sm:text-md lg:text-xl xl:text-2xl  text-center mt-[33.82]">
+      <p className="text-white text-xs sm:text-md lg:text-xl xl:text-2xl  text-center mt-[33.82]">
         Helping non-tech founders turn ideas into digital platforms — with
         <br />
         confidence and the right direction.
