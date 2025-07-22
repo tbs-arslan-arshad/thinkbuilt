@@ -66,8 +66,8 @@ export default function Home() {
             MarketSavy
           </h2>
           <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6">
-            Basit didn't just write code --- he *thought* like a co-founder.
-            Leadlyft wouldn't be where it is without his.
+            Basit didn&apos;t just write code --- he <em>thought</em> like a co-founder.
+            Leadlyft wouldn&apos;t be where it is without his.
           </p>
           <span className="text-white text-sm sm:text-base md:text-lg font-medium">
             Jacob R.,
@@ -94,7 +94,7 @@ export default function Home() {
                 <span>
                   Talk to Someone
                   <span className="text-[#1D9ED9]"> {"{"}</span>
-                  Who’s Built It
+                  Who&apos;s Built It
                   <span className="text-[#1D9ED9]">{"}"}</span>.
                 </span>
               </h1>

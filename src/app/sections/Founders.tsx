@@ -42,7 +42,7 @@ const Founders = () => {
           />
           <h1>Coding Therapist</h1>
           <span className="w-[314] h-[40] flex justify-center">
-            A "Coding Therapist" approach — human, honest guidance
+            A &quot;Coding Therapist&ldquo; approach — human, honest guidance
           </span>
         </div>
 

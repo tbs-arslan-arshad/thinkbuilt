@@ -14,7 +14,7 @@ const Trusted = () => {
             </h1>
             <div className=" mb-[20px] items-center justify-center">
               <p className="text-white text-sm md:text-md lg:text-xl  ">
-                From solo founders to global brands, we've helped turn
+                From solo founders to global brands, we&apos;ve helped turn
                 <br />
                 <span className="flex justify-center">
                   ideas into platforms that scale.
@@ -53,7 +53,7 @@ const Trusted = () => {
               <span className="text-[#1D9ED9]">&#125;</span>.
             </span>
             <p className="text-gray-200 mt-[20.75]    justify-center items-center text-sm md:text-md lg:text-lg">
-              Whether it's a SaaS, web app, or marketplace, we guide non-tech
+              Whether it&apos;s a SaaS, web app, or marketplace, we guide non-tech
               founders
               <br />
               <span className="flex justify-center items-center mb-[40px] 2xl:mb-[0px]"> from idea to execution.</span>
