@@ -22,12 +22,12 @@ const Hero = () => {
             alt="icons"
             width={400}
             height={9.412}
-            className="justify-self-end mr-8 mt-2  2xl:w-[400] xl:w-[290] md:w-[210] sm:w-[150] w-[120] block "
+            className="justify-self-end mr-8 mt-2  2xl:w-[400] xl:w-[290] md:w-[210] sm:w-[150] w-[100] block "
           />
         </span>
       </h1>
 
-      <p className="text-white sm:text-md lg:text-xl xl:text-2xl  text-center mt-[33.82]">
+      <p className="text-white text-sm sm:text-md lg:text-xl xl:text-2xl  text-center mt-[33.82]">
         Helping non-tech founders turn ideas into digital platforms — with
         <br />
         confidence and the right direction.
