@@ -1,103 +1,198 @@
 import Image from "next/image";
+import Hero from "./sections/Hero";
+import Navbar from "./components/Navbar";
+import Trusted from "./sections/Trusted";
+import Imagesection from "./sections/Imagesection";
+import { footerData } from "./constants/index";
+import Village from "./sections/Village";
+import Divsection from "./sections/Divsection";
+import Founders from "./sections/Founders";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <div
+        className=" z-50"
+        style={{
+          backgroundImage: " url('/section.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}>
+        <Navbar />
+        <Hero />
+      </div>
+      <Trusted />
+      <Imagesection />
+      <Village />
+      <Divsection />
+      <div
+        className=" z-50"
+        style={{
+          backgroundImage: " url('/Bg.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}>
+        <Founders />
+      </div>
+      
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Sixth Section */}
+      <section className="flex flex-col min-h-screen bg-[#0E0805] items-center justify-center px-4 sm:px-6 lg:px-8">
+      <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center max-w-4xl mx-auto mb-6 sm:mb-8 lg:mb-12">
+        What Founders Say After Working With <br />
+        <span className="flex items-center justify-center mt-2 sm:mt-3">
+          <span className="text-[#1D9ED9] mr-1">{'{'}</span>
+          ThinkBuilt
+          <span className="text-[#1D9ED9] ml-1">{'}'}</span>
+        </span>
+      </h1>
+
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-0 gap-2  w-full max-w-6xl">
+       <div className="relative w-full max-w-[300px] sm:max-w-[350px] md:max-w-[418px] aspect-[418/473]">
+  <Image
+    src="/Link.png"
+    alt="Link"
+    fill
+    className="object-contain"
+    sizes="(max-width: 640px) 300px, (max-width: 768px) 350px, 418px"
+    priority={false} // Set to true if this is above the fold
+    quality={85} // Adjust quality for optimization (default is 75)
+  />
+</div>
+        <div className="flex flex-col w-full max-w-[600px] bg-gray-700 p-6 sm:p-8 lg:p-10 rounded-lg h-[473]">
+          <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6 mt-4">
+            MarketSavy
+          </h2>
+          <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6">
+            Basit didn't just write code --- he *thought* like a co-founder.
+            Leadlyft wouldn't be where it is without his.
+          </p>
+          <span className="text-white text-sm sm:text-base md:text-lg font-medium">
+            Jacob R.,
+          </span>
+          <span className="text-white text-xs sm:text-sm md:text-base">
+            CEO of LeadLyft
+          </span>
+          <div className="flex mt-4 sm:mt-6 gap-3 sm:gap-4">
+            <div className="rounded-full w-8 h-8 sm:w-10 sm:h-10 bg-blue-500"></div>
+            <div className="rounded-full w-8 h-8 sm:w-10 sm:h-10 bg-blue-300"></div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </div>
+    </section>
+
+      {/* seventh section */}
+      <section className="bg-[#121010] px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="container mx-auto">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 min-h-[400px] lg:min-h-[600px]">
+            <div className="flex flex-col text-white w-full max-w-[700px] pt-6 sm:pt-8 lg:pt-12">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold w-full max-w-[525px] leading-tight">
+                Before You Build Anything,
+                <br />
+                <span>
+                  Talk to Someone
+                  <span className="text-[#1D9ED9]"> {"{"}</span>
+                  Who’s Built It
+                  <span className="text-[#1D9ED9]">{"}"}</span>.
+                </span>
+              </h1>
+              <p className="mt-4 text-sm sm:text-base lg:text-lg w-full max-w-[586px]">
+                In just one session, I’ll help you understand what to build, who
+                to hire, and how to start — without wasting your time.
+              </p>
+              <div className="flex mt-6 sm:mt-8 lg:mt-10 bg-[#1D9ED9] rounded-full border border-[#1D9ED9] py-4 sm:py-3 px-4 w-full max-w-[307px] items-center justify-center text-md  lg:text-lg font-medium hover:bg-[#1678a1] transition-colors">
+                Book Your 1-on-1 Clarity Session
+              </div>
+            </div>
+
+            <Image
+              src="/Image 3.png"
+              alt="Clarity Session"
+              width={418}
+              height={436}
+              className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[418px] py-4 sm:py-6 lg:py-0"
+            />
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-[#0E0805] text-white min-h-[400px] py-8">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div className="flex flex-col items-center justify-start mt-6 sm:mt-8 md:mt-10">
+              <Image
+                src="/Group.png"
+                alt="ThinkBuilt Solutions Logo"
+                width={199}
+                height={45}
+                className="w-[150px] sm:w-[180px] md:w-[199px]"
+              />
+              <p className="w-full max-w-[277px] mt-4 text-center text-sm sm:text-base">
+                We work with startups in SaaS, fintech, healthtech, AI, and
+                Web3.
+              </p>
+              <Image
+                src="/Social.png"
+                alt="Social"
+                width={150}
+                height={150}
+                className="w-[100px] sm:w-[120px] md:w-[150px] mt-6"
+              />
+            </div>
+
+            {footerData.map((section, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-start mt-6 sm:mt-8 md:mt-10">
+                <ul className="mt-4 flex flex-col items-center gap-2.5">
+                  <li className="text-xl sm:text-2xl mb-2.5 font-semibold">
+                    {section.title}
+                  </li>
+                  {section.items.map((item, itemIndex) => (
+                    <li key={itemIndex}>
+                      <a
+                        href={item.href}
+                        className="hover:underline text-sm sm:text-base">
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                {section.title === "Contact" && (
+                  <div className="mt-6 w-full max-w-[280px]">
+                    <h1 className="text-center text-sm sm:text-base font-semibold">
+                      News Letter
+                    </h1>
+                    <div className="flex gap-3 h-[27px] mt-4 justify-center">
+                      <input
+                        type="email"
+                        placeholder="Enter your email Address"
+                        className="rounded-sm text-white w-[160px] sm:w-[180px] md:w-[200px] bg-gray-800 px-2 text-sm"
+                      />
+                      <Image
+                        src="/Mail icon.png"
+                        alt="Subscribe"
+                        width={27}
+                        height={19}
+                        className="w-[20px] sm:w-[27px]"
+                      />
+                    </div>
+                    <div className="h-[1.193px] w-full max-w-[280px] border-t mt-4 mx-auto"></div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 sm:mt-10">
+            <p className="text-sm sm:text-base">
+              ©ThinkBuiltSolutions. All rights reserved.
+            </p>
+          </div>
+        </div>
       </footer>
-    </div>
+    </>
   );
 }
