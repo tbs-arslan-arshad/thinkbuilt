@@ -27,7 +27,7 @@ const Hero = () => {
         </span>
       </h1>
 
-      <p className="text-white text-xs sm:text-md lg:text-xl xl:text-2xl  text-center mt-[33.82]">
+      <p className="text-white text-xs sm:text-lg lg:text-xl xl:text-2xl  text-center mt-[33.82]">
         Helping non-tech founders turn ideas into digital platforms — with
         <br />
         confidence and the right direction.
