@@ -4,11 +4,11 @@ import { cardData } from "../constants";
 const Divsection = () => {
   return (
     <section className="flex flex-col  bg-[#0E0805] items-center justify-center ">
-      <h1 className="text-white text-4xl">
+      <h1 className="text-white text-2xl sm:text-4xl">
         What We Help You <span className="text-[#1D9ED9]">&#123;</span>Build
         <span className="text-[#1D9ED9]">&#125;</span>
       </h1>
-      <p className="mt-[20.62] text-white md:text-xl  flex flex-col justify-center">
+      <p className="mt-[20.62] text-white  text-xs  sm:text-xl  flex flex-col justify-center">
         From strategy to execution — get the technical clarity and engineering
         <br />
         <span className="items-center justify-center text-center">

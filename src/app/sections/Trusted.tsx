@@ -46,13 +46,13 @@ const Trusted = () => {
               You’ve Got the Vision.   
             </h1>
             <br />
-            <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-400">
+            <span className="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-gray-400">
               We Help You Bring It To Life —{" "}
               <span className="text-[#1D9ED9]">&#123;</span>
               <span className="text-white">The Right Way</span>
               <span className="text-[#1D9ED9]">&#125;</span>.
             </span>
-            <p className="text-gray-200 mt-[20.75]    justify-center items-center text-sm md:text-md lg:text-lg">
+            <p className="text-gray-200 mt-[20.75]   justify-center items-center text-xs md:text-md lg:text-lg">
               Whether it&apos;s a SaaS, web app, or marketplace, we guide non-tech
               founders
               <br />

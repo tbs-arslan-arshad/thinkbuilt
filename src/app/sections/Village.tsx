@@ -27,11 +27,11 @@ const Village = () => {
             to 7-figure platforms.
           </p>
 
-          <div className="my-[20px] grid grid-cols-2 items-center ">
+          <div className="my-[20px] grid grid-cols-2 items-center gap-1">
             {tagItems.map((item, index) => (
               <div
                 key={index}
-                className="text-white p-4 rounded-full bg-gray-900 mb-4 flex items-center justify-center  text-center w-fit  gap-1 ">
+                className="text-white p-4 rounded-full bg-gray-900 mb-4 flex items-center justify-center  text-center w-fit  gap-2 ">
                 {/* Using next/image for optimized loading */}
                 <Image
                   src={item.icon}
@@ -40,7 +40,7 @@ const Village = () => {
                   height={20}
                   className="w-5 h-5"
                 />
-                <span>{item.text}</span>
+                <span className="text-xs sm:text-md xl:text-lg">{item.text}</span>
               </div>
             ))}
           </div>

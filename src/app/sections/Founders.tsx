@@ -55,7 +55,7 @@ const Founders = () => {
             className=" "
           />
           <Image
-            src="/Svg.png"
+            src="/SVG.png"
             alt="svg"
             width={42}
             height={42}
@@ -76,7 +76,7 @@ const Founders = () => {
             className=" "
           />
           <Image
-            src="/Svg 1.png"
+            src="/SVG 1.png"
             alt="svg"
             width={42}
             height={42}
@@ -101,7 +101,7 @@ const Founders = () => {
           Continuous Innovation
         </div>
 
-        <div className="text-black text-md xl:text-lg 2xl:text-xl bg-[#CBDEFD] flex gap-1 items-center rounded-full py-2 px-2 mt-[10px] lg:mt-[0px]">
+        <div className="text-black text-md xl:text-lg 2xl:text-xl bg-[#CBDEFD] flex gap-1 items-center justify-center rounded-full py-2 px-2 mt-[10px] lg:mt-[0px]">
           <Image
             src="/SVG 3.png"
             alt="Vector"
@@ -112,7 +112,7 @@ const Founders = () => {
           Dedicated Support
         </div>
 
-        <div className="text-black text-md xl:text-lg 2xl:text-xl bg-[#FFD3FA] flex gap-1 items-center rounded-full py-2 px-2 mt-[10px] lg:mt-[0px]">
+        <div className="text-black text-md xl:text-lg 2xl:text-xl bg-[#FFD3FA] flex gap-1 items-center justify-center rounded-full py-2 px-2 mt-[10px] lg:mt-[0px]">
           <Image
             src="/SVG 5.png"
             alt="Vector"
@@ -123,7 +123,7 @@ const Founders = () => {
           Positive Client Experiences
         </div>
 
-        <div className="text-black text-md xl:text-lg 2xl:text-xl bg-[#AAE3FE] flex gap-1 items-center rounded-full py-2 px- mt-[10px] lg:mt-[0px] ">
+        <div className="text-black text-md xl:text-lg 2xl:text-xl bg-[#AAE3FE] flex gap-1 items-center justify-center rounded-full py-2 px- mt-[10px] lg:mt-[0px] ">
           <Image
             src="/SVG 4.png"
             alt="Vector"
