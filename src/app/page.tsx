@@ -14,7 +14,7 @@ export default function Home() {
       <div
         className=" z-50"
         style={{
-          backgroundImage: " url('/section.jpg')",
+          backgroundImage: " url('/Section.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
