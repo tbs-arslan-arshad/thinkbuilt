@@ -4,7 +4,7 @@ import { cardData } from "../constants";
 const Divsection = () => {
   return (
     <section className="flex flex-col  bg-[#0E0805] items-center justify-center ">
-      <h1 className="text-white text-2xl sm:text-4xl">
+      <h1 className="text-white text-2xl sm:text-4xl mt-[10px]">
         What We Help You <span className="text-[#1D9ED9]">&#123;</span>Build
         <span className="text-[#1D9ED9]">&#125;</span>
       </h1>

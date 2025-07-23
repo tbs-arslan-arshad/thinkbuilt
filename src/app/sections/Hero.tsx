@@ -32,7 +32,7 @@ const Hero = () => {
         <br />
         confidence and the right direction.
       </p>
-      <div className=" text-white rounded-full mt-[47px] bg-[#1D9ED9] text-xl lg:text-2xl font-Satoshi">
+      <div className=" text-white rounded-full mt-[47px] bg-[#1D9ED9] text-md sm:text-lg md:text-xl lg:text-2xl font-Satoshi">
         <Button
           type="button"
           title="Book Your Clarity Session"
