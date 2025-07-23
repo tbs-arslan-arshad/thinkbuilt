@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { tagItems } from "../constants";
+import Button from "../components/Button";
 
 const Village = () => {
   return (
@@ -40,14 +41,20 @@ const Village = () => {
                   height={20}
                   className="w-5 h-5"
                 />
-                <span className="text-xs sm:text-md xl:text-lg">{item.text}</span>
+                <span className="text-xs sm:text-md xl:text-lg">
+                  {item.text}
+                </span>
               </div>
             ))}
           </div>
-
-          <button className="mt-[10px] bg-[#1D9ED9] text-white px-4 text-sm sm:text-lg lg:text-xl border-x border-y py-2 rounded-full hover:bg-[#1D9ED9] transition-colors">
-            Read My Full Story
-          </button>
+          <div className="">
+            <Button
+              type="button"
+              title="Read My Full Story"
+              variant="xl:py-4 py-2 xl:px-8 px-4 mt-[10px] bg-[#1D9ED9] text-white px-4 text-sm sm:text-lg lg:text-xl border-x border-y py-2 rounded-full hover:bg-[#1D9ED9] transition-colors"
+            />
+          </div>
+          
         </div>
       </div>
     </section>
