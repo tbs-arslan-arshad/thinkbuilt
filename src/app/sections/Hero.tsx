@@ -1,6 +1,11 @@
+
 import Image from "next/image";
 import Button from "../components/Button";
+
+
 const Hero = () => {
+
+  
   return (
     <section
       className="flex flex-col items-center  min-h-screen relative "
@@ -34,11 +39,13 @@ const Hero = () => {
       </p>
       <div className=" text-white rounded-full mt-[47px] bg-[#1D9ED9] text-md sm:text-lg md:text-xl lg:text-2xl font-Satoshi">
         <Button
+          
           type="button"
           title="Book Your Clarity Session"
           variant="xl:py-4 py-2 xl:px-8 px-4"
         />
       </div>
+     
     </section>
   );
 };

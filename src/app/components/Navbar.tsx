@@ -25,7 +25,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="lg:flex text-black rounded-full  bg-white hidden">
+        <div className="lg:flex text-black rounded-full  bg-white hidden ">
           <Button type="button" title="Get Started" variant="py-2 px-4" />
         </div>
         <Image 
