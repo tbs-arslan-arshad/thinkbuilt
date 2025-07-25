@@ -118,7 +118,11 @@ export const FEATURES = [
   },
 ]
 
-
+export const socialIcons = [
+        { id: 1, src: '/Facebook Icon.svg', alt: 'Facebook Icon', href: 'https://facebook.com' },
+       { id: 2, src: '/Linkedin Icon.svg', alt: 'Linkedin Icon', href: 'https://linkedin.com' },     
+       { id: 3, src: '/Twitter Icon.svg', alt: 'Twitter Icon', href: 'https://twitter.com' },
+     ];
 
 export const footerData = [
   {
@@ -152,9 +156,3 @@ export const footerData = [
     ],
   },
 ];
-
-
-
-
-
-
