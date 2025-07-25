@@ -25,9 +25,17 @@ const Review = () => {
             />
           </div>
           <div className="flex flex-col w-full max-w-[600px] bg-gray-700 p-6 sm:p-8 lg:p-10 rounded-lg h-[473]">
-            <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6 mt-[40px]">
-              MarketSavy
+            <div className="flex items-center w-[252] justify-center mb-4 sm:mb-6 gap-2">
+            <Image
+              src="/Mark.png"
+              alt="Mark Logo"
+              width={80}
+              height={80}
+              />   
+            <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold  flex items-center justify-center">
+                         MarketSavy
             </h2>
+            </div>
             <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6">
               Basit didn&apos;t just write code --- he <em>thought</em> like a
               co-founder. Leadlyft wouldn&apos;t be where it is without his.
@@ -39,8 +47,21 @@ const Review = () => {
               CEO of LeadLyft
             </span>
             <div className="flex mt-4 sm:mt-6 gap-3 sm:gap-4">
-              <div className="rounded-full w-8 h-8 sm:w-10 sm:h-10 bg-blue-500"></div>
-              <div className="rounded-full w-8 h-8 sm:w-10 sm:h-10 bg-blue-300"></div>
+             <Image
+             src="/Group 2.png"
+             alt="Icons"
+             width={60}
+             height={60}
+             />
+             <div className="rounded-full w-60 h-60 sm:w-15 sm:h-15 bg-blue-300 flex items-center justify-center border-2 border-white">
+              <Image
+             src="/Vector 3.svg"
+             alt="Icons"
+             width={25}
+             height={25}
+             className="flex items-center justify-center"
+             /></div>
+             
             </div>
           </div>
         </div>
