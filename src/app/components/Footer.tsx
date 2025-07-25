@@ -20,7 +20,7 @@ const Footer = () => {
               </p>
               <Image
                 src="/Social.png"
-                alt="Social"
+                alt="Social" 
                 width={150}
                 height={150}
                 className="w-[100px] sm:w-[120px] md:w-[150px] mt-6"
@@ -50,11 +50,11 @@ const Footer = () => {
                     <h1 className="text-center text-sm sm:text-base font-semibold">
                       News Letter
                     </h1>
-                    <div className="flex gap-3 h-[27px] mt-4 justify-center">
+                    <div className="flex gap-3 h-[27px] mt-6 justify-center">
                       <input
                         type="email"
                         placeholder="Enter your email Address"
-                        className="rounded-sm text-white w-[160px] sm:w-[180px] md:w-[200px] bg-gray-800 px-2 text-sm"
+                        className="rounded-sm text-white w-[160px] sm:w-[180px] md:w-[200px]  px-2 text-md"
                       />
                       <Image
                         src="/Mail icon.png"

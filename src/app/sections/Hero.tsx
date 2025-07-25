@@ -10,7 +10,7 @@ const Hero = () => {
     <section
       className="flex flex-col items-center  min-h-screen relative "
       >
-      <span className="text-white text-xl md:text-2xl mt-[80] sm:mt-[100] 2xl:mt-[120px]">
+      <span className="text-white text-xl md:text-2xl mt-[160] sm:mt-[180] 2xl:mt-[160px]">
         <span className="text-[#1D9ED9]">&#123;</span> Think Built Solution{" "}
         <span className="text-[#1D9ED9]">&#125;</span>
       </span>
@@ -37,7 +37,7 @@ const Hero = () => {
         <br />
         confidence and the right direction.
       </p>
-      <div className=" text-white rounded-full mt-[47px] bg-[#1D9ED9] text-md sm:text-lg md:text-xl lg:text-2xl font-Satoshi">
+      <div className=" text-white rounded-full mt-[40px] bg-[#1D9ED9] text-md sm:text-lg md:text-xl lg:text-2xl font-Satoshi">
         <Button
           
           type="button"

@@ -5,7 +5,7 @@ import Button from "./Button";
 
 const Navbar = () => {
   return (
-    <nav className=" py-[10px] relative  ">
+    <nav className=" py-[10px] bg-black  fixed top-0 left-0 w-full z-50">
       <div className="flex justify-between relative items-center xl:px-[10%] px-[5%] mt-[10px]">
         <Link href="/">
           <Image src="/Group.png" alt="logo" width={195.63} height={44} />
