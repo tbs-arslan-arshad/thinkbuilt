@@ -5,8 +5,8 @@ import { socialIcons } from "../constants";
 const Footer = () => {
   return (
     <footer className="bg-[#0E0805] text-white min-h-[400px] py-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <div className="container mx-auto px-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 ">
           <div className="flex flex-col items-center justify-start mt-6 sm:mt-8 md:mt-10">
             <Image
               src="/Group.png"
@@ -56,7 +56,7 @@ const Footer = () => {
                 ))}
               </ul>
               {section.title === "Contact" && (
-                <div className="mt-6 w-full max-w-[280px]">
+                <div className="mt-6 w-full max-w-[260px]">
                   <h1 className="text-center text-sm sm:text-base font-semibold">
                     News Letter
                   </h1>

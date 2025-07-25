@@ -25,7 +25,7 @@ const Founders = () => {
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center justify-center mt-[20px]">
-        <div className="text-white flex flex-col items-center xl:w-[473] h-[150] xl:h-[285]">
+        <div className="text-white flex flex-col items-center w-[350] h-[150] xl:h-[285]">
           <Image
             src="/Border.png"
             alt="Border"
@@ -46,7 +46,7 @@ const Founders = () => {
           </span>
         </div>
 
-        <div className="text-white flex flex-col items-center xl:w-[473] h-[150] xl:h-[285]">
+        <div className="text-white flex flex-col items-center w-[350] h-[150] xl:h-[285]">
           <Image
             src="/Border.png"
             alt="Border"
@@ -67,7 +67,7 @@ const Founders = () => {
           </span>
         </div>
 
-        <div className="text-white flex flex-col items-center xl:w-[473] h-[150] xl:h-[285]">
+        <div className="text-white flex flex-col items-center w-[350] h-[150] xl:h-[285]">
           <Image
             src="/Border.png"
             alt="Border"
