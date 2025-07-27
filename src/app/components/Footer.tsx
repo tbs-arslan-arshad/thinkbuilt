@@ -7,13 +7,13 @@ const Footer = () => {
     <footer className="bg-[#0E0805] text-white min-h-[400px] py-8">
       <div className="container mx-auto px-2">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 ">
-          <div className="flex flex-col items-center justify-start mt-6 sm:mt-8 md:mt-10">
+          <div className="flex flex-col items-center justify-start mt-6 sm:mt-12 md:mt-14">
             <Image
               src="/Group.png"
               alt="ThinkBuilt Solutions Logo"
               width={199}
               height={45}
-              className="w-[150px] sm:w-[180px] md:w-[199px]"
+              className=""
             />
             <p className="w-full max-w-[277px] mt-4 text-center text-sm sm:text-base">
               We work with startups in SaaS, fintech, healthtech, AI, and Web3.

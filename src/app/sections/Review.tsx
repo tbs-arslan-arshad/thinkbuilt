@@ -53,7 +53,7 @@ const Review = () => {
              width={60}
              height={60}
              />
-             <div className="rounded-full w-60 h-60 sm:w-15 sm:h-15 bg-blue-300 flex items-center justify-center border-2 border-white">
+             <div className="rounded-full  w-15 h-15 bg-blue-300 flex items-center justify-center border-2 border-white">
               <Image
              src="/Vector 3.svg"
              alt="Icons"
