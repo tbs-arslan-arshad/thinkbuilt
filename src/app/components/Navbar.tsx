@@ -5,7 +5,7 @@ import Button from "./Button";
 
 const Navbar = () => {
   return (
-    <nav className=" py-[10px] bg-black  fixed top-0 left-0 w-full z-50">
+    <nav className=" py-[10px] bg-[#0E0805]  fixed top-0 left-0 w-full z-50">
       <div className="flex justify-between relative items-center xl:px-[10%] px-[5%] mt-[10px]">
         <Link href="/">
           <Image src="/Group.png" alt="logo" width={195.63} height={44} />
@@ -25,7 +25,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="lg:flex text-black rounded-full  bg-white hidden ">
+        <div className="lg:flex text-[#0E0805] rounded-full  bg-white hidden ">
           <Button type="button" title="Get Started" variant="py-2 px-4" />
         </div>
         <Image 
@@ -37,7 +37,7 @@ const Navbar = () => {
       />
         
       </div>
-      <div className=" border-t border-white  xl:ml-[10%] xl:mr-[10%] ml-[5%] mr-[5%] my-[20px]"></div>
+      <div className=" border-t border-white  xl:ml-[10%] xl:mr-[10%] ml-[5%] mr-[5%] mt-[20px]"></div>
     </nav>
   );
 };

@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <div
-        className=" z-50"
+        className=" "
         style={{
           backgroundImage: " url('/Section.jpg')",
           backgroundSize: "cover",

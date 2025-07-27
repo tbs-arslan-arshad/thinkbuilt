@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Trusted = () => {
   return (
-     <section className="flex flex-col items-center  bg-[#0E0805] pt-[150px]">
+     <section className="flex flex-col items-center  bg-[#0E0805] pt-[100px]">
             <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
               Trusted by Founders Building
               <br />

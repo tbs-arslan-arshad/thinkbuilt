@@ -32,7 +32,7 @@ const Review = () => {
               width={80}
               height={80}
               />   
-            <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold  flex items-center justify-center">
+            <h2 className="text-white text-4xl  font-semibold  flex items-center justify-center">
                          MarketSavy
             </h2>
             </div>
