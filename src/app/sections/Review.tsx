@@ -25,7 +25,7 @@ const Review = () => {
             />
           </div>
           <div className="flex flex-col w-full max-w-[600px] bg-gray-700 p-6 sm:p-8 lg:p-10 rounded-lg h-[473]">
-            <div className="flex items-center w-[252] justify-center mb-4 sm:mb-6 gap-2">
+            <div className="flex items-center w-[252] justify-center mb-4 sm:mb-6 gap-2 mt-[20px]">
             <Image
               src="/Mark.png"
               alt="Mark Logo"
@@ -36,17 +36,17 @@ const Review = () => {
                          MarketSavy
             </h2>
             </div>
-            <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6">
+            <p className="text-white text-sm sm:text-md md:text-lg lg:text-xl mb-4 sm:mb-6">
               Basit didn&apos;t just write code --- he <em>thought</em> like a
               co-founder. Leadlyft wouldn&apos;t be where it is without his.
             </p>
             <span className="text-white text-sm sm:text-base md:text-lg font-medium">
               Jacob R.,
             </span>
-            <span className="text-white text-xs sm:text-sm md:text-base">
+            <span className="text-white text-xs sm:text-sm md:text-base pb-[20]">
               CEO of LeadLyft
             </span>
-            <div className="flex mt-4 sm:mt-6 gap-3 sm:gap-4">
+            <div className="flex pt-4 sm:mt-6 gap-3 sm:gap-4">
              <Image
              src="/Group 2.png"
              alt="Icons"

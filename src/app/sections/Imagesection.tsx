@@ -4,7 +4,7 @@ import Image from "next/image";
 const Imagesection = () => {
   return (
     <section className="bg-[#0E0805] ">
-      <div className="flex flex-col items-center gap-4 py-[50px] ">
+      <div className="flex flex-col items-center gap-4 py-[50px]  justify-center">
         {/* First row - works perfectly */}
         <div className="grid xl:grid-cols-[820px_441px] gap-4 items-center justify-center">
           <Image
@@ -14,7 +14,7 @@ const Imagesection = () => {
             height={409}
             className="flex items-center justify-center"
           />
-          <div className="flex flex-col  bg-[#AAE3FE] p-4 rounded-3xl maw-w-[441] h-[409]">
+          <div className="flex flex-col bg-[#AAE3FE] p-4 rounded-3xl  h-[409]  ">
             <h1 className="text-8xl mt-[10]">10k+</h1>
             <span className="font-bold">SATISFIED CUSTOMERS</span>
             <p className="text-md mt-[220]">
@@ -25,7 +25,7 @@ const Imagesection = () => {
 
         {/* Second row - fixed responsive behavior */}
         <div className="flex flex-col xl:flex-row gap-4 items-center justify-center">
-          <div className="w-full xl:w-[600px] felx justify-center items-center ">
+          <div className="w-full xl:w-[600px] flex justify-center items-center ">
             <Image
               src={Images[2].src}
               alt={Images[2].alt}
