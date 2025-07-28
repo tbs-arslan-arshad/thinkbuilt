@@ -10,7 +10,7 @@ const Hero = () => {
     <section
       className="flex flex-col items-center  min-h-screen relative mt-[60]"
     >
-      <span className="text-white text-xl md:text-2xl mt-[110] ">
+      <span className="text-white text-xl md:text-2xl mt-[180] 2xl:mt-[220]">
         <span className="text-[#1D9ED9]">&#123;</span> Think Built Solution{" "}
         <span className="text-[#1D9ED9]">&#125;</span>
       </span>
@@ -27,7 +27,7 @@ const Hero = () => {
             alt="icons"
             width={400}
             height={9.412}
-            className="justify-self-end mr-8 mt-1 sm:mt-2  2xl:w-[400] xl:w-[220] md:w-[190] sm:w-[150] w-[95] block "
+            className="justify-self-end mr-8 mt-1 sm:mt-2  2xl:w-[300] xl:w-[220] md:w-[190] sm:w-[150] w-[95] block "
           />
         </span>
       </h1>
