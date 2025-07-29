@@ -4,7 +4,7 @@ import { featureItems } from "../constants";
 
 const Founders = () => {
   return (
-    <section className="  flex flex-col items-center justify-center">
+    <section className="  flex flex-col items-center justify-center min-h-screen">
       <div className="grid md:grid-cols-4 grid-cols-2 gap-2 pt-2">
         {statsData.map((stat) => (
           <div

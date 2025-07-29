@@ -56,7 +56,7 @@ const Trusted = () => {
               Whether it&apos;s a SaaS, web app, or marketplace, we guide non-tech
               founders
               <br />
-              <span className="flex justify-center items-center mb-[40px] 2xl:mb-[0px]"> from idea to execution.</span>
+              <span className="flex justify-center items-center mb-[40px] 2xl:mb-[30px]"> from idea to execution.</span>
             </p>      
           </section>
   )

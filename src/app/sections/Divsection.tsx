@@ -20,7 +20,7 @@ const Divsection = () => {
         {cardData.map((card) => (
           <div
             key={card.id}
-            className={`${card.bgColor} p-6 rounded-xl max:w-[613px] h-[213px]`}>
+            className={`${card.bgColor} p-6 rounded-xl max-w-[550px] xl:max:w-[613px] h-[213px]`}>
             <div className="flex bg-gray-600 justify-center rounded-xl w-[58px] py-[13px]">
               <Image src={card.icon} alt={card.alt} width={31} height={31} />
             </div>
