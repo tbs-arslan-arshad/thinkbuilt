@@ -25,8 +25,8 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="lg:flex text-[#0E0805] rounded-full  bg-white hidden ">
-          <Button type="button" title="Get Started" variant="py-2 px-4" />
+        <div className="lg:flex text-[#0E0805] rounded-full text-lg bg-white hidden">
+          <Button type="button" title="Get Started" variant="py-2 px-6" />
         </div>
         <Image 
         src="/hamburger.png"

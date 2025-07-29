@@ -38,6 +38,7 @@ export default function Home() {
         <Founders />
       </div>
       <Review />
+      
       <Clarity/>
       <Footer />
     </>

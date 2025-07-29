@@ -5,7 +5,7 @@ import Button from "../components/Button";
 const Village = () => {
   return (
     <section className="flex bg-[#0E0805]  justify-center ">
-      <div className="lg:flex  2xl:mx-[207.17] gap-[50px] lg:gap-[80px]  xl:gap-[130.31] px-2 ">
+      <div className="lg:flex  2xl:mx-[207.17] gap-[50px] lg:gap-[80px]  xl:gap-[130.31] px-2 py-[60]">
         <Image
           src="/Image Wrapper.png"
           alt="Basit"
@@ -46,11 +46,11 @@ const Village = () => {
               </div>
             ))}
           </div>
-          <div className="">
+          <div >
             <Button
               type="button"
               title="Read My Full Story"
-              variant="py-2 px-4 mt-[10px] bg-[#1D9ED9] text-white  text-sm sm:text-lg lg:text-xl border-x border-y rounded-full  transition-colors"
+              variant="py-2 px-4 mt-[10px] bg-[#1D9ED9] text-white  text-sm sm:text-lg lg:text-xl border-x border-y rounded-full transition-colors"
             />
           </div>
         </div>
