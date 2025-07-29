@@ -50,7 +50,7 @@ const Village = () => {
             <Button
               type="button"
               title="Read My Full Story"
-              variant="xl:py-4 py-2 xl:px-8 px-4 mt-[10px] bg-[#1D9ED9] text-white px-4 text-sm sm:text-lg lg:text-xl border-x border-y py-2 rounded-full hover:bg-[#1D9ED9] transition-colors"
+              variant="py-2 px-4 mt-[10px] bg-[#1D9ED9] text-white  text-sm sm:text-lg lg:text-xl border-x border-y rounded-full  transition-colors"
             />
           </div>
         </div>
