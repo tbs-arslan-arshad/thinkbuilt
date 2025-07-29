@@ -80,43 +80,9 @@ const Hero = () => {
         </p>
       </div>
 
-      <div className="text-white rounded-full mt-[30px] bg-[#1D9ED9] text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl font-Satoshi">
+      <div className="text-white rounded-full mt-[30px] bg-[#1D9ED9] text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl  font-Satoshi">
         <Button type="button" title="Book Your Clarity Session" variant="py-2 px-3" />
       </div>
-
-      <style jsx>{`
-        .typewriter-first {
-          display: inline-block;
-          white-space: nowrap;
-          overflow: hidden;
-          animation: typing-first 2.5s steps(40, end);
-        }
-
-        .typewriter-second {
-          display: inline-block;
-          white-space: nowrap;
-          overflow: hidden;
-          animation: typing-second 2.5s steps(30, end);
-        }
-
-        @keyframes typing-first {
-          from {
-            width: 0;
-          }
-          to {
-            width: 100%;
-          }
-        }
-
-        @keyframes typing-second {
-          from {
-            width: 0;
-          }
-          to {
-            width: 100%;
-          }
-        }
-      `}</style>
     </section>
   );
 };

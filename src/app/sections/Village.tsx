@@ -4,17 +4,17 @@ import Button from "../components/Button";
 
 const Village = () => {
   return (
-    <section className="flex bg-[#0E0805] items-center justify-center relative">
-      <div className="lg:flex  2xl:mx-[207.17] gap-[50px] lg:gap-[130.31] items-center justify-center px-2 ">
+    <section className="flex bg-[#0E0805] items-center justify-center relative w-full">
+      <div className="lg:flex  2xl:mx-[207.17] gap-[50px] lg:gap-[80px] gap- xl:gap-[130.31] items-center justify-center px-2 ">
         <Image
-          src="/Image Wrapper.png"
-          alt="Basit"
-          width={417}
-          height={589}
-          className=" "
-        />
+  src="/Image Wrapper.png"
+  alt="Basit"
+  width={417}
+  height={589}
+  className="w-full h-auto max-w-[200px] max-h-[300px] sm:max-w-[250px] sm:max-h-[350px] md:max-w-[300px] md:max-h-[425px] lg:max-w-[350px] lg:max-h-[500px] xl:max-w-[417px] xl:max-h-[589px]"
+/>
 
-        <div className="   h-[589px] mt-[120px] ">
+        <div className=" h-[420px] sm:h-[500px] lg:h-[589px] mt-[60px] lg:mt-[120px] ">
           <h1 className=" max-h-[109] text-white text-2xl sm:text-3xl lg:text-4xl font-normal leading-[150%]">
             From a Small Village to <br />
             <span className="text-[#1D9ED9]">&#123;</span>Global Platforms
@@ -28,25 +28,24 @@ const Village = () => {
             to 7-figure platforms.
           </p>
 
-          <div className="my-[20px] grid grid-cols-2 items-center gap-1">
-            {tagItems.map((item, index) => (
-              <div
-                key={index}
-                className="text-white p-4 rounded-full bg-gray-900 mb-4 flex items-center justify-center  text-center w-fit  gap-2 ">
-                {/* Using next/image for optimized loading */}
-                <Image
-                  src={item.icon}
-                  alt=""
-                  width={20}
-                  height={20}
-                  className="w-5 h-5"
-                />
-                <span className="text-xs sm:text-md xl:text-lg">
-                  {item.text}
-                </span>
-              </div>
-            ))}
-          </div>
+          <div className="my-[20px] flex flex-wrap items-center gap-1 sm:gap-3 w-[370] sm:w-[500]">
+  {tagItems.map((item, index) => (
+    <div
+      key={index}
+      className="text-white p-2 sm:p-4 rounded-full bg-gray-900  flex items-center justify-center text-center w-fit gap-2">
+      <Image
+        src={item.icon}
+        alt=""
+        width={20}
+        height={20}
+        className="w-5 h-5"
+      />
+      <span className="text-xs sm:text-md xl:text-lg">
+        {item.text}
+      </span>
+    </div>
+  ))}
+</div>
           <div className="">
             <Button
               type="button"

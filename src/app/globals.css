@@ -25,16 +25,23 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* styles/globals.css */
-.typewriter {
+/* Add these to your global CSS file */
+
+.typewriter-first {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  animation: typing 2.5s steps(30, end), blink-caret 0.75s step-end infinite;
+  animation: typing-first 2.5s steps(40, end);
 }
 
-/* Typing animation */
-@keyframes typing {
+.typewriter-second {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing-second 2.5s steps(30, end);
+}
+
+@keyframes typing-first {
   from {
     width: 0;
   }
@@ -43,12 +50,11 @@ body {
   }
 }
 
-/* Blinking cursor animation */
-@keyframes blink-caret {
-  from, to {
-    border-right: 2px solid #1D9ED9; /* Blue cursor color */
+@keyframes typing-second {
+  from {
+    width: 0;
   }
-  50% {
-    border-right: 2px solid transparent;
+  to {
+    width: 100%;
   }
 }

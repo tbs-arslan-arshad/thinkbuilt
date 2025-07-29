@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { statsData } from "../constants";
+import { featureItems } from "../constants";
 
 const Founders = () => {
   return (
@@ -8,9 +9,9 @@ const Founders = () => {
         {statsData.map((stat) => (
           <div
             key={stat.id}
-            className="flex flex-col items-center justify-center rounded-full bg-[rgba(255,255,255,0.10)]  w-[170px] h-[170px] text-white mx-2">
-            <h1 className="text-2xl xl:text-4xl">{stat.value}</h1>
-            <span className="text-md">{stat.label}</span>
+            className="flex flex-col items-center justify-center rounded-full bg-[rgba(255,255,255,0.10)] w-[130px] h-[130px] sm:w-[170px] sm:h-[170px] text-white mx-2">
+            <h1 className="text-lg sm:text-2xl xl:text-4xl">{stat.value}</h1>
+            <span className="text-xs sm:text-md">{stat.label}</span>
           </div>
         ))}
       </div>
@@ -89,51 +90,23 @@ const Founders = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center  gap-2 mb-[20px]">
-        <div className="text-black text-md xl:text-lg 2xl:text-xl bg-[#B4F8BC] flex gap-1 items-center justify-center rounded-full py-2 px-2 ">
-          <Image
-            src="/SVG 2.png"
-            alt="Vector"
-            width={25}
-            height={25}
-            className=""
-          />
-          Continuous Innovation
-        </div>
-
-        <div className="text-black text-md xl:text-lg 2xl:text-xl bg-[#CBDEFD] flex gap-1 items-center justify-center rounded-full py-2 px-2 mt-[10px] lg:mt-[0px]">
-          <Image
-            src="/SVG 3.png"
-            alt="Vector"
-            width={25}
-            height={25}
-            className=""
-          />
-          Dedicated Support
-        </div>
-
-        <div className="text-black text-md xl:text-lg 2xl:text-xl bg-[#FFD3FA] flex gap-1 items-center justify-center rounded-full py-2 px-2 mt-[10px] lg:mt-[0px]">
-          <Image
-            src="/SVG 5.png"
-            alt="Vector"
-            width={25}
-            height={25}
-            className=""
-          />
-          Positive Client Experiences
-        </div>
-
-        <div className="text-black text-md xl:text-lg 2xl:text-xl bg-[#AAE3FE] flex gap-1 items-center justify-center rounded-full py-2 px- mt-[10px] lg:mt-[0px] ">
-          <Image
-            src="/SVG 4.png"
-            alt="Vector"
-            width={25}
-            height={25}
-            className=""
-          />
-          Commitment to Excellence
-        </div>
-      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-2 mb-[20px]">
+  {featureItems.map((item) => (
+    <div 
+      key={item.id}
+      className={`text-black text-sm xl:text-lg 2xl:text-xl ${item.bgColor} flex gap-1 items-center justify-center rounded-full py-2 px-2 mt-[10px] lg:mt-[0px]`}
+    >
+      <Image
+        src={item.icon}
+        alt="Vector"
+        width={25}
+        height={25}
+        className="xl:w-[25px] xl:h-[25px] w-[20px] h-[20px]"
+      />
+      {item.text}
+    </div>
+  ))}
+</div>
     </section>
   );
 };

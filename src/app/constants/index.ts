@@ -156,3 +156,30 @@ export const footerData = [
     ],
   },
 ];
+
+export const featureItems = [
+  {
+    id: 1,
+    text: "Continuous Innovation",
+    bgColor: "bg-[#B4F8BC]",
+    icon: "/SVG 2.png"
+  },
+  {
+    id: 2,
+    text: "Dedicated Support",
+    bgColor: "bg-[#CBDEFD]",
+    icon: "/SVG 3.png"
+  },
+  {
+    id: 3,
+    text: "Positive Client Experiences",
+    bgColor: "bg-[#FFD3FA]",
+    icon: "/SVG 5.png"
+  },
+  {
+    id: 4,
+    text: "Commitment to Excellence",
+    bgColor: "bg-[#AAE3FE]",
+    icon: "/SVG 4.png"
+  }
+];
