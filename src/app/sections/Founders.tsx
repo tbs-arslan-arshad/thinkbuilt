@@ -10,8 +10,8 @@ const Founders = () => {
           <div
             key={stat.id}
             className="flex flex-col items-center justify-center rounded-full bg-[rgba(255,255,255,0.10)] w-[130px] h-[130px] sm:w-[170px] sm:h-[170px] text-white mx-2">
-            <h1 className="text-lg sm:text-2xl xl:text-4xl">{stat.value}</h1>
-            <span className="text-xs sm:text-md">{stat.label}</span>
+            <h1 className="text-lg sm:text-3xl xl:text-4xl">{stat.value}</h1>
+            <span className="text-xs sm:text-base ">{stat.label}</span>
           </div>
         ))}
       </div>
