@@ -53,7 +53,7 @@ const Trusted = () => {
               <span className="text-[#1D9ED9]">&#125;</span>.
             </span>
             <p className="text-gray-200 mt-[20.75]  justify-center items-center text-xs md:text-md lg:text-lg px-3 text-center mb-[40px] sm:mb-[0px]">
-  Whether it's a SaaS, web app, or marketplace, we guide non-tech founders
+  Whether it&apos;s a SaaS, web app, or marketplace, we guide non-tech founders
   <br className="hidden sm:inline" />
   <span className="sm:flex justify-center text-center  mb-[40px] 2xl:mb-[30px]">
     from idea to execution.
