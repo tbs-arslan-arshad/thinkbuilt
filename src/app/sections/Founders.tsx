@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { statsData } from "../constants";
 import { featureItems } from "../constants";
+import { featureCards } from "../constants";
 
 const Founders = () => {
   return (
@@ -16,7 +17,7 @@ const Founders = () => {
         ))}
       </div>
 
-      <h1 className="text-white text-2xl sm:text-4xl mt-[50px] lg:mt-[150px]  h-[100] flex flex-col items-center justify-center">
+      <h1 className="text-white text-xl sm:text-4xl mt-[50px] lg:mt-[150px]  h-[100] flex flex-col items-center justify-center">
         Why Non-Tech Founders Choose
         <br />
         <span className="flex items-center justify-center mt-[10px]">
@@ -25,70 +26,31 @@ const Founders = () => {
         </span>
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center justify-center mt-[20px]">
-        <div className="text-white flex flex-col items-center w-[350] h-[150] xl:h-[285]">
-          <Image
-            src="/Border.png"
-            alt="Border"
-            width={60}
-            height={60}
-            className=" "
-          />
-          <Image
-            src="/display 1.png"
-            alt="Display"
-            width={42}
-            height={42}
-            className="mt-[-50px] mb-[20px]"
-          />
-          <h1>Coding Therapist</h1>
-          <span className="w-[314] h-[40] flex justify-center">
-            A &quot;Coding Therapist&ldquo; approach — human, honest guidance
-          </span>
-        </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center justify-center mt-[20px]">
+  {featureCards.map((card) => (
+    <div key={card.id} className="text-white flex flex-col items-center sm:w-[350px] h-[150px] xl:h-[285px]">
+      <Image
+        src={card.borderImage}
+        alt="Border"
+        width={60}
+        height={60}
+      />
+      <Image
+        src={card.iconImage}
+        alt={card.iconAlt}
+        width={42}
+        height={42}
+        className="mt-[-50px] mb-[20px]"
+      />
+      <h1>{card.title}</h1>
+      <span className="w-[314px] h-[40px] flex justify-center text-center">
+        {card.description}
+      </span>
+    </div>
+  ))}
+</div>
 
-        <div className="text-white flex flex-col items-center w-[350] h-[150] xl:h-[285]">
-          <Image
-            src="/Border.png"
-            alt="Border"
-            width={60}
-            height={60}
-            className=" "
-          />
-          <Image
-            src="/SVG.png"
-            alt="svg"
-            width={42}
-            height={42}
-            className="mt-[-50px] mb-[20px]"
-          />
-          <h1>Trusted by founders</h1>
-          <span className="w-[314] h-[40] flex justify-center">
-            Trusted by founders behind global 7-figure platforms
-          </span>
-        </div>
 
-        <div className="text-white flex flex-col items-center w-[350] h-[150] xl:h-[285]">
-          <Image
-            src="/Border.png"
-            alt="Border"
-            width={60}
-            height={60}
-            className=" "
-          />
-          <Image
-            src="/SVG 1.png"
-            alt="svg"
-            width={42}
-            height={42}
-            className="mt-[-50px] mb-[20px]"
-          />
-          <h1>Product success,</h1>
-          <span className="w-[314] h-[40] flex justify-center">
-            Real product success, not theory
-          </span>
-        </div>
-      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-2 mb-[20px]">
   {featureItems.map((item) => (

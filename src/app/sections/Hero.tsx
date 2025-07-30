@@ -45,9 +45,9 @@ const Hero = () => {
         <span className="text-[#1D9ED9]">&#125;</span>
       </span>
 
-      <h1 className="text-white text-3xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl mt-[25.82] px-4 md:px-8 lg:px-12 items-center justify-center">
+      <h1 className="text-white text-3xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl mt-[25.82]  sm:px-4 md:px-8 lg:px-12 flex  justify-center">
         Clarity Before&nbsp;
-        <span className="inline-block">
+        <span className="sm:inline-block">
           <span className="text-[#1D9ED9]">&#123;</span>
           Code
           <span className="text-[#1D9ED9]">&#125;</span>.
@@ -57,7 +57,7 @@ const Hero = () => {
             alt="icons"
             width={400}
             height={9.412}
-            className="justify-self-end mr-8 mt-2 sm:mt-4 2xl:w-[300] xl:w-[220] md:w-[190] sm:w-[150] w-[95] block"
+            className="justify-self-end sm:mr-8 mt-2 sm:mt-4 2xl:w-[300] xl:w-[220] md:w-[190] sm:w-[150] w-[95] sm:block"
           />
         </span>
       </h1>

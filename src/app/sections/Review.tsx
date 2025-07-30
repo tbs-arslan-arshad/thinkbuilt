@@ -28,10 +28,10 @@ const Review = () => {
 
 
 
-<div className="relative max-w-[330px] sm:max-w-[480px] md:max-w-[600px]">
+<div className="relative max-w-[300px] sm:max-w-[480px] md:max-w-[600px]">
   {/* Decorative divs BEHIND the card (z-10) */}
-  <div className="w-[300px] sm:w-[338px] h-[280px] xl:h-[380px] rounded-4xl bg-gray-800 border border-white absolute top-12 -right-5 transform rotate-[12.49deg] scale-x-[-1] z-10"></div>
-  <div className="w-[300px] sm:w-[338px] h-[320] xl:h-[409px] rounded-4xl bg-gray-800 border border-white absolute top-5 -right-2 transform rotate-[7.29deg] scale-x-[-1] z-10"></div>
+  <div className="hidden sm:block w-[300px] sm:w-[338px] h-[280px] xl:h-[380px] rounded-4xl bg-gray-800 border border-white absolute top-12 -right-5 transform rotate-[12.49deg] scale-x-[-1] z-10"></div>
+  <div className="hidden sm:block w-[300px] sm:w-[338px] h-[320] xl:h-[409px] rounded-4xl bg-gray-800 border border-white absolute top-5 -right-2 transform rotate-[7.29deg] scale-x-[-1] z-10"></div>
   
 
   {/* Main card IN FRONT (z-20) */}

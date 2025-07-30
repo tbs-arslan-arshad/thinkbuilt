@@ -1,10 +1,11 @@
 import { Images } from "../constants/index";
 import Image from "next/image";
+import { FEATURES } from "../constants/index";
 
 const Imagesection = () => {
   return (
     <section className="bg-[#0E0805] ">
-      <div className="flex flex-col items-center gap-4 py-[50px]  justify-center">
+      <div className="flex flex-col items-center gap-4 py-[50px]  justify-center mx-4">
         {/* First row - works perfectly */}
         <div className="grid xl:grid-cols-[820px_441px] gap-4 items-center justify-center">
           <Image
@@ -14,13 +15,18 @@ const Imagesection = () => {
             height={409}
             className="flex items-center justify-center"
           />
-          <div className="flex flex-col bg-[#AAE3FE] p-4 rounded-3xl  h-[409]  ">
-            <h1 className="text-8xl mt-[10]">10k+</h1>
-            <span className="font-bold">SATISFIED CUSTOMERS</span>
-            <p className="text-md mt-[220]">
-              Trusted by Industry Leaders Worldwide.
-            </p>
-          </div>
+
+          <div className="flex flex-col bg-[#AAE3FE] p-4 rounded-3xl  sm:h-[409]">
+  {FEATURES.map((stat, index) => (
+    <div key={index} className="">
+      <h1 className="text-6xl sm:text-8xl mt-[10px]">{stat.title}</h1>
+      <span className="font-bold">{stat.heading}</span>
+      <p className="text-md mt-[120px] sm:mt-[220px]">
+        {stat.description}
+      </p>
+    </div>
+  ))}
+</div>
         </div>
 
         {/* Second row - fixed responsive behavior */}

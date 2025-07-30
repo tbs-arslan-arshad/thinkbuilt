@@ -183,3 +183,30 @@ export const featureItems = [
     icon: "/SVG 4.png"
   }
 ];
+
+export const featureCards = [
+  {
+    id: 1,
+    borderImage: "/Border.png",
+    iconImage: "/display 1.png",
+    iconAlt: "Display",
+    title: "Coding Therapist",
+    description: 'A "Coding Therapist" approach — human, honest guidance'
+  },
+  {
+    id: 2,
+    borderImage: "/Border.png",
+    iconImage: "/SVG.png",
+    iconAlt: "svg",
+    title: "Trusted by founders",
+    description: "Trusted by founders behind global 7-figure platforms"
+  },
+  {
+    id: 3,
+    borderImage: "/Border.png",
+    iconImage: "/SVG 1.png",
+    iconAlt: "svg",
+    title: "Product success,",
+    description: "Real product success, not theory"
+  }
+];
