@@ -38,13 +38,7 @@ const Village = () => {
             {tagItems.map((item, index) => (
               <div
                 key={index}
-                className="text-white p-2 sm:p-4 rounded-full bg-[#FFFFFF1A]  flex items-center justify-center text-center w-fit gap-2 transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]
-    hover:scale-[1.03]
-    hover:shadow-lg
-    hover:-translate-y-2
-    transform-gpu
-    will-change-transform
-    cursor-pointer">
+                className="text-white p-2 sm:p-4 rounded-full bg-[#FFFFFF1A]  flex items-center justify-center text-center w-fit gap-2 transition-all duration-500 hover-animation">
                 <Image
                   src={item.icon}
                   alt=""

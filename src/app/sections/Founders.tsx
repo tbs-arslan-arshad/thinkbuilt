@@ -10,13 +10,7 @@ const Founders = () => {
         {statsData.map((stat) => (
           <div
             key={stat.id}
-            className="flex flex-col items-center justify-center rounded-full bg-[rgba(255,255,255,0.10)] w-[130px] h-[130px] sm:w-[170px] sm:h-[170px] text-white mx-2 transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]
-    hover:scale-[1.03]
-    hover:shadow-lg
-    hover:-translate-y-2
-    transform-gpu
-    will-change-transform
-    cursor-pointer">
+            className="flex flex-col items-center justify-center rounded-full bg-[rgba(255,255,255,0.10)] w-[130px] h-[130px] sm:w-[170px] sm:h-[170px] text-white mx-2 transition-all duration-500 hover-animation">
             <h1 className="text-lg sm:text-3xl xl:text-4xl">{stat.value}</h1>
             <span className="text-xs sm:text-base ">{stat.label}</span>
           </div>
@@ -34,13 +28,7 @@ const Founders = () => {
 
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center justify-center mt-[20px]">
   {featureCards.map((card) => (
-    <div key={card.id} className="text-white flex flex-col items-center sm:w-[350px] h-[150px] xl:h-[285px] transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]
-    hover:scale-[1.03]
-    hover:shadow-lg
-    hover:-translate-y-2
-    transform-gpu
-    will-change-transform
-    cursor-pointer">
+    <div key={card.id} className="text-white flex flex-col items-center sm:w-[350px] h-[150px] xl:h-[285px] transition-all duration-500 hover-animation">
       <Image
         src={card.borderImage}
         alt="Border"
@@ -68,13 +56,7 @@ const Founders = () => {
   {featureItems.map((item) => (
     <div 
       key={item.id}
-      className={`text-black text-sm xl:text-lg 2xl:text-xl ${item.bgColor} flex gap-1 items-center justify-center rounded-full py-2 px-2 mt-[10px] lg:mt-[0px] transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]
-    hover:scale-[1.03]
-    hover:shadow-lg
-    hover:-translate-y-2
-    transform-gpu
-    will-change-transform
-    cursor-pointer`}
+      className={`text-black text-sm xl:text-lg 2xl:text-xl ${item.bgColor} flex gap-1 items-center justify-center rounded-full py-2 px-2 mt-[10px] lg:mt-[0px] transition-all duration-500 hover-animation`}
     >
       <Image
         src={item.icon}

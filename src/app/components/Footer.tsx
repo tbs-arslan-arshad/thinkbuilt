@@ -8,12 +8,13 @@ const Footer = () => {
       <div className="px-2">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 ">
           <div className="flex flex-col items-center justify-start mt-6 sm:mt-12 md:mt-14">
+            
             <Image
               src="/Group.png"
               alt="ThinkBuilt Solutions Logo"
               width={199}
               height={45}
-              className=""
+              className="hover-animation"
             />
             <p className="w-full max-w-[277px] mt-4 text-center text-sm sm:text-base">
               We work with startups in SaaS, fintech, healthtech, AI, and Web3.

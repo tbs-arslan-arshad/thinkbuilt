@@ -58,3 +58,12 @@ body {
     width: 100%;
   }
 }
+
+
+@layer components {
+  .hover-animation {
+    @apply transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]
+           hover:scale-[1.03] hover:shadow-lg hover:-translate-y-2
+           transform-gpu will-change-transform cursor-pointer;
+  }
+}

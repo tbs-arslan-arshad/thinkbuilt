@@ -21,7 +21,7 @@ const Divsection = () => {
   {cardData.map((card, index) => (
     <div 
       key={card.id}
-      className="transition-all duration-500 ease-out hover:delay-75"
+      className="hover-animation"
       style={{
         transitionDelay: `${index * 75}ms`  // Staggered delay
       }}
