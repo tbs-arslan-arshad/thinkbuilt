@@ -1,5 +1,6 @@
-import Image from "next/image";
+
 import { cardData } from "../constants";
+import {Card} from "../components/Card";
 
 const Divsection = () => {
   return (
@@ -17,18 +18,18 @@ const Divsection = () => {
       </p>
 
       <div className="grid lg:grid-cols-2 gap-6 my-[40px] mx-4">
-        {cardData.map((card) => (
-          <div
-            key={card.id}
-            className={`${card.bgColor} p-4 sm:p-6 rounded-xl max-w-[550px] xl:max:w-[613px] h-[213px]`}>
-            <div className="flex bg-gray-600 justify-center rounded-xl sm:w-[58px] w-[50] py-[13px]">
-              <Image src={card.icon} alt={card.alt} width={31} height={31} className="sm:w-[31px] sm:h-[31px] w-[25px] h-[25px]" />
-            </div>
-            <h2 className="text-black text-xl sm:text-2xl my-4">{card.title}</h2>
-            <p className="text-black text-sm sm:text-lg ">{card.description}</p>
-          </div>
-        ))}
-      </div>
+  {cardData.map((card, index) => (
+    <div 
+      key={card.id}
+      className="transition-all duration-500 ease-out hover:delay-75"
+      style={{
+        transitionDelay: `${index * 75}ms`  // Staggered delay
+      }}
+    >
+      <Card {...card} />
+    </div>
+  ))}
+</div>
     </section>
   );
 };

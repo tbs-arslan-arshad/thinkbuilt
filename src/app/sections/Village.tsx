@@ -38,7 +38,13 @@ const Village = () => {
             {tagItems.map((item, index) => (
               <div
                 key={index}
-                className="text-white p-2 sm:p-4 rounded-full bg-[#FFFFFF1A]  flex items-center justify-center text-center w-fit gap-2">
+                className="text-white p-2 sm:p-4 rounded-full bg-[#FFFFFF1A]  flex items-center justify-center text-center w-fit gap-2 transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]
+    hover:scale-[1.03]
+    hover:shadow-lg
+    hover:-translate-y-2
+    transform-gpu
+    will-change-transform
+    cursor-pointer">
                 <Image
                   src={item.icon}
                   alt=""
@@ -56,7 +62,7 @@ const Village = () => {
             <Button
               type="button"
               title="Read My Full Story"
-              variant="py-2 px-4 mt-[10px] bg-[#1D9ED9] text-white  text-sm sm:text-lg lg:text-xl border-x border-y rounded-full transition-colors"
+              variant="py-2 px-4 mt-[10px] bg-[#1D9ED9] text-white  text-sm sm:text-lg lg:text-xl border-x border-y rounded-full transition-colors "
             />
           </div>
         </div>

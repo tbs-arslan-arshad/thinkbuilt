@@ -28,7 +28,13 @@ const Trusted = () => {
         {PEOPLE_URL.map((item, index) => (
           <div
             key={index}
-            className="bg-gray-900 rounded-xl p-4 sm:p-5 lg:p-6 flex items-center justify-center"
+            className="bg-gray-900 rounded-xl p-4 sm:p-5 lg:p-6 flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]
+    hover:scale-[1.03]
+    hover:shadow-lg
+    hover:-translate-y-2
+    transform-gpu
+    will-change-transform
+    cursor-pointer"
           >
             <Image
               src={item}

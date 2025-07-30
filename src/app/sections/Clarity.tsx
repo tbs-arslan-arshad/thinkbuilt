@@ -32,13 +32,20 @@ const Clarity = () => {
            
           </div>
 
-          <Image
-            src="/Image 3.png"
-            alt="Clarity Session"
-            width={418}
-            height={436}
-            className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[418px] py-4 sm:py-6 lg:py-0"
-          />
+         <Image
+  src="/Image 3.png"
+  alt="Clarity Session"
+  width={418}
+  height={436}
+  className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[418px] py-4 sm:py-6 lg:py-0
+    transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]
+    hover:scale-[1.03]
+    hover:shadow-lg
+    hover:-translate-y-2
+    transform-gpu
+    will-change-transform
+    cursor-pointer"
+/>
         </div>
       </div>
     </section>
