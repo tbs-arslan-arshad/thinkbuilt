@@ -7,7 +7,7 @@ const Village = () => {
   return (
     <section className="flex bg-[#0E0805]  justify-center ">
       <div className="lg:flex  2xl:mx-[207.17] gap-[50px] lg:gap-[80px]  xl:gap-[130.31] sm:px-2 py-[60] ">
-        <div className="flex justify-center mt-[80px] hover-animation">
+        <div className="flex justify-center mt-[80px] ">
           {profiles.map((profile) => (
             <div key={profile.id} className={profile.container.className}>
               {/* Main Image */}
