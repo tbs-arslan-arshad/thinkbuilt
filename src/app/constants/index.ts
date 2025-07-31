@@ -1,3 +1,5 @@
+
+
 // NAVIGATION
 export const NAV_LINKS = [
   { href: '/Home', key: 'Home', label: 'Home' },
@@ -209,4 +211,35 @@ export const featureCards = [
     title: "Product success,",
     description: "Real product success, not theory"
   }
+];
+export const profiles = [
+  {
+    id: 1,
+    mainImage: {
+      src: "/Basit Ali.png",
+      alt: "Basit",
+      width: 417,
+      height: 589,
+      className: "w-full h-full object-cover rounded-t-full overflow-visible -mt-[50px] sm:-mt-[80px]"
+    },
+    overlayImage: {
+      src: "/Overlay.png",
+      alt: "Image Wrapper",
+      width: 360,
+      height: 420,
+      className: "w-full h-full object-cover overflow-hidden -mt-[200px] sm:-mt-[250px]"
+    },
+    name: {
+      text: "Basit Ali",
+      highlight: {
+        text: "Basit",
+        color: "#1D9ED9"
+      },
+      className: "text-white text-5xl sm:text-7xl font-bold font-Unbounded text-center -mt-[150px] "
+    },
+    container: {
+      className: "bg-blue-300 w-[280px] h-[350px] sm:w-[360px] sm:h-[420px] rounded-t-full"
+    }
+  },
+  // Add more profiles as needed
 ];
