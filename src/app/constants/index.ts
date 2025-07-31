@@ -230,16 +230,112 @@ export const profiles = [
       className: "w-full h-full object-cover overflow-hidden -mt-[200px] sm:-mt-[250px]"
     },
     name: {
-      text: "Basit Ali",
-      highlight: {
-        text: "Basit",
-        color: "#1D9ED9"
-      },
-      className: "text-white text-5xl sm:text-7xl font-bold font-Unbounded text-center -mt-[150px] "
-    },
+  text: "Basit Ali",
+  highlight: {
+    text: "Basit",
+    color: "#1D9ED9"
+  },
+  className: "text-white text-5xl sm:text-7xl font-bold text-center -mt-[150px] font-[Unbounded]"
+},
     container: {
       className: "bg-blue-300 w-[280px] h-[350px] sm:w-[360px] sm:h-[420px] rounded-t-full"
     }
   },
   // Add more profiles as needed
+];
+
+export const tags = [
+  { 
+    id: 1,
+    text: "Customer Support",
+    bgColor: "bg-[#CBDEFD]",
+    rotation: "-rotate-28",
+    position: "top-10 left-29",
+    icon: "/SVG 8.png",
+    zIndex: "z-10"
+  },
+  { 
+     id: 2,
+     text: "Passion",
+     bgColor: "bg-[#B4F8BC]",
+     rotation: "rotate-24",
+     position: "top-14 -right-5",
+     icon: "/SVG 8.png"
+   },
+  { 
+    id: 3,
+    text: "Positive Experience",
+    bgColor: "bg-[#FFD3FA]",
+    rotation: "-rotate-15",
+    position: "top-24 right-8",
+    icon: "/SVG 8.png",
+    zIndex: "z-5"
+  },
+  { 
+    id: 4,
+    text: "Customer Focus",
+    bgColor: "bg-[#B4F8BC]",
+    rotation: "rotate-11",
+    position: "top-40 right-21",
+    icon: "/SVG 8.png"
+    
+  },
+  { 
+    id: 5,
+    text: "Trustworthiness",
+    bgColor: "bg-[#AAE3FE]",
+    rotation: "rotate-3",
+    position: "top-28 -right-25",
+    icon: "/SVG 8.png"
+  },
+  { 
+    id: 6,
+    text: "Long-term Relationship",
+    bgColor: "bg-[#CBDEFD]",
+    rotation: "rotate-11",
+    position: "top-37 -right-29",
+    icon: "/SVG 8.png",
+    zIndex: "z-5"
+  },
+  { 
+    id: 7,
+    text: "Innovation",
+    bgColor: "bg-[#FFD3FA]",
+    rotation: "-rotate-14",
+    position: "top-49 right-9",
+    icon: "/SVG 8.png",
+    zIndex: "z-5"
+  },
+  { 
+    id: 8,
+    text: "Collaboration",
+    bgColor: "bg-[#AAE3FE]",
+    rotation: "-rotate-17",
+    position: "bottom-24 -right-20",
+    icon: "/SVG 8.png"
+  },
+  { 
+    id: 9,
+    text: "Personalization",
+    bgColor: "bg-[#B4F8BC]",
+    rotation: "rotate-2",
+    position: "bottom-15 left-27",
+    icon: "/SVG 8.png"
+  },
+  { 
+    id: 10,
+    text: "Reliability",
+    bgColor: "bg-[#CBDEFD]",
+    rotation: "-rotate-4",
+    position: "bottom-11 -right-14",
+    icon: "/SVG 8.png"
+  },
+  { 
+    id: 11,
+    text: "Quality",
+    bgColor: "bg-[#FFD3FA]",
+    rotation: "",
+    position: "bottom-0 right-14",
+    icon: "/SVG 8.png"
+  }
 ];

@@ -1,3 +1,4 @@
+
 import Hero from "./sections/Hero";
 import Navbar from "./components/Navbar";
 import Trusted from "./sections/Trusted";
@@ -8,6 +9,9 @@ import Founders from "./sections/Founders";
 import Footer from "./components/Footer";
 import Review from "./sections/Review";
 import Clarity from "./sections/Clarity";
+
+
+
 
 export default function Home() {
   return (
@@ -25,7 +29,7 @@ export default function Home() {
       </div>
       <Trusted />
       <Imagesection />
-      <Village />
+      <Village  />
       <Divsection />
       <div
         className=" z-50 "

@@ -1,6 +1,7 @@
 import { Images } from "../constants/index";
 import Image from "next/image";
 import { FEATURES } from "../constants/index";
+import { tags } from "../constants/index";
 
 const Imagesection = () => {
   return (
@@ -17,28 +18,54 @@ const Imagesection = () => {
           />
 
           <div className="flex flex-col bg-[#AAE3FE] p-4 rounded-3xl  sm:h-[409] transition-all duration-500 hover-animation">
-  {FEATURES.map((stat, index) => (
-    <div key={index} className="">
-      <h1 className="text-6xl sm:text-8xl mt-[10px]">{stat.title}</h1>
-      <span className="font-bold">{stat.heading}</span>
-      <p className="text-md mt-[120px] sm:mt-[220px]">
-        {stat.description}
-      </p>
-    </div>
-  ))}
-</div>
+            {FEATURES.map((stat, index) => (
+              <div key={index} className="">
+                <h1 className="text-6xl sm:text-8xl mt-[10px]">{stat.title}</h1>
+                <span className="font-bold">{stat.heading}</span>
+                <p className="text-md mt-[120px] sm:mt-[220px]">
+                  {stat.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Second row - fixed responsive behavior */}
         <div className="flex flex-col xl:flex-row gap-4 items-center justify-center">
-          <div className="w-full xl:w-[600px] flex justify-center items-center transition-all duration-500 hover-animation">
-            <Image
-              src={Images[2].src}
-              alt={Images[2].alt}
-              width={600}
-              height={409}
-            />
+          <div className="w-full xl:w-[600px] h-[409px] relative flex justify-center items-center transition-all duration-500 hover-animation">
+            {/* Background Image - fills container */}
+            <div className="absolute inset-0 w-full h-full">
+              <Image
+                src="/Background 8.png"
+                alt="Background Image"
+                width={662}
+                height={409}
+                className="w-full h-full object-cover"
+                priority
+              />
+            </div>
+
+            {/* Tag Circle - centered over image */}
+            <div className="relative z-10 w-[350px] h-[350px] rounded-full border-2 border-white overflow-hidden">
+              {tags.map((tag) => (
+                <div
+                  key={tag.id}
+                  className={`flex gap-1 items-center ${tag.bgColor} rounded-full py-2 px-5 ${tag.rotation} ${tag.zIndex} absolute ${tag.position} transform -translate-x-1/2 hover:scale-105 transition-all`}>
+                  <Image
+                    src={tag.icon}
+                    alt={tag.text}
+                    width={24}
+                    height={24}
+                    className="w-6 h-6"
+                  />
+                  <span className="text-black text-base font-medium whitespace-nowrap">
+                    {tag.text}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
+
           <div className=" xl:w-[662px] transition-all duration-500 hover-animation">
             <Image
               src={Images[3].src}
