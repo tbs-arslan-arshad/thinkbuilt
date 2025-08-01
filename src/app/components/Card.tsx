@@ -13,7 +13,7 @@ export const Card = ({ bgColor, icon, alt, title, description }: CardProps) => {
     <div 
   className={`
     ${bgColor} 
-    p-4 sm:p-6 rounded-xl max-w-[550px] xl:max-w-[613px] h-[213px]
+    p-4 sm:p-6 rounded-xl max-w-[550px] xl:max-w-[613px] h-[230px]
     transition-all duration-500
   `}
 >
