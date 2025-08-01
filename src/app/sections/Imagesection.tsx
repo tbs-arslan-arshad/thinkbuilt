@@ -6,9 +6,14 @@ import { tags } from "../constants/index";
 const Imagesection = () => {
   return (
     <section className="bg-[#0E0805] ">
+
+
+
       <div className="flex flex-col items-center gap-4 py-[50px]  justify-center mx-4">
         {/* First row - works perfectly */}
         <div className="grid 2xl:grid-cols-[820px_441px] xl:grid-cols-[800px_441px] gap-4 items-center justify-center ">
+         
+         
           <Image
             src={Images[0].src}
             alt={Images[0].alt}
@@ -28,6 +33,8 @@ const Imagesection = () => {
               </div>
             ))}
           </div>
+
+
         </div>
 
         {/* Second row - fixed responsive behavior */}
@@ -92,8 +99,14 @@ const Imagesection = () => {
               height={409}
             />
           </div>
+
+
         </div>
+
+
       </div>
+
+
     </section>
   );
 };

@@ -29,7 +29,7 @@ const Village = () => {
               />
 
               {/* Name with Highlighted Part */}
-              <h1 className={`${profile.name.className} font-Unbounded`}>
+              <h1 className={`${profile.name.className} font-[Unbounded]`}>
                 <span style={{ color: profile.name.highlight.color }}>
                   {profile.name.highlight.text}
                 </span>{" "}
