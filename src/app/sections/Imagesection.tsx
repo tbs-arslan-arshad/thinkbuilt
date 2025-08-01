@@ -38,7 +38,7 @@ const Imagesection = () => {
               <Image
                 src="/Background 8.png"
                 alt="Background Image"
-                width={662}
+                width={660}
                 height={409}
                 className="w-full h-full object-cover"
                 priority
@@ -66,7 +66,7 @@ const Imagesection = () => {
             </div>
           </div>
 
-          <div className=" xl:w-[662px] transition-all duration-500 hover-animation">
+          <div className=" xl:w-[662px] h-[409px] transition-all duration-500 hover-animation">
             <Image
               src={Images[3].src}
               alt={Images[3].alt}
