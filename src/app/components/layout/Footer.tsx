@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { footerData } from "../constants";
-import { socialIcons } from "../constants";
+import { footerData } from "../../constants";
+import { socialIcons } from "../../constants";
 
 const Footer = () => {
   return (
@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="flex flex-col items-center justify-start mt-6 sm:mt-12 md:mt-14">
             
             <Image
-              src="/Group.png"
+              src="/images/Group.png"
               alt="ThinkBuilt Solutions Logo"
               width={199}
               height={45}
@@ -68,7 +68,7 @@ const Footer = () => {
                       className="rounded-sm text-white w-[200px] px-2 text-md"
                     />
                     <Image
-                      src="/Mail icon.png"
+                      src="/images/Mail icon.png"
                       alt="Subscribe"
                       width={27}
                       height={19}

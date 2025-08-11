@@ -1,6 +1,6 @@
 
-import { cardData } from "../constants";
-import {Card} from "../components/Card";
+import { cardData } from "../../../constants";
+import {Card} from "../../../components/ui/Card";
 
 const Divsection = () => {
   return (

@@ -1,7 +1,7 @@
-import { Images } from "../constants/index";
+import { Images } from "../../../constants/index";
 import Image from "next/image";
-import { FEATURES } from "../constants/index";
-import { tags } from "../constants/index";
+import { FEATURES } from "../../../constants/index";
+import { tags } from "../../../constants/index";
 
 const Imagesection = () => {
   return (
@@ -14,7 +14,7 @@ const Imagesection = () => {
             alt={Images[0].alt}
             width={820}
             height={409}
-            className="flex items-center justify-center transition-all duration-500 hover-animation  "
+            className="flex items-center justify-center transition-all duration-500 hover-animation"
           />
 
           <div className="flex flex-col bg-[#AAE3FE] p-4 rounded-3xl  2xl:h-[409] transition-all duration-500 hover-animation">
@@ -51,7 +51,7 @@ const Imagesection = () => {
             {/* Background Image - fills container */}
             <div className="absolute inset-0 w-full h-full hidden sm:block">
               <Image
-                src="/Background 8.png"
+                src="/images/Background 8.png"
                 alt="Background Image"
                 width={660}
                 height={409}

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "../components/Button";
+import Button from "../../../components/ui/Button";
 
 const Clarity = () => {
   return (
@@ -33,7 +33,7 @@ const Clarity = () => {
           </div>
 
          <Image
-  src="/Image 3.png"
+  src="/images/Image 3.png"
   alt="Clarity Session"
   width={418}
   height={436}

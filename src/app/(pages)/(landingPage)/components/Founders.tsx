@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { statsData } from "../constants";
-import { featureItems } from "../constants";
-import { featureCards } from "../constants";
+import { statsData } from "../../../constants";
+import { featureItems } from "../../../constants";
+import { featureCards } from "../../../constants";
 
 const Founders = () => {
   return (

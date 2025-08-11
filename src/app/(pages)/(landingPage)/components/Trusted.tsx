@@ -1,4 +1,4 @@
-import {PEOPLE_URL} from "../constants/index"
+import {PEOPLE_URL} from "../../../constants/index"
 import Image from "next/image";
 
 const Trusted = () => {

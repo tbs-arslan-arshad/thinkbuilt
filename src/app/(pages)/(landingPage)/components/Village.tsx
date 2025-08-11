@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { tagItems } from "../constants";
-import Button from "../components/Button";
-import { profiles } from "../constants";
+import { tagItems } from "../../../constants";
+import Button from "../../../components/ui/Button";
+import { profiles } from "../../../constants";
 
 const Village = () => {
   return (

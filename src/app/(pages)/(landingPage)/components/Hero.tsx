@@ -1,7 +1,7 @@
 // components/Hero.js
 "use client";
 import Image from "next/image";
-import Button from "../components/Button";
+import Button from "../../../components/ui/Button";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
@@ -53,7 +53,7 @@ const Hero = () => {
           <span className="text-[#1D9ED9]">&#125;</span>.
           <br />
           <Image
-            src="/Vector 2.png"
+            src="/images/Vector 2.png"
             alt="icons"
             width={400}
             height={9.412}
@@ -81,7 +81,11 @@ const Hero = () => {
       </div>
 
       <div className="text-white rounded-full mt-[30px] bg-[#1D9ED9] text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl  font-Satoshi">
-        <Button type="button" title="Book Your Clarity Session" variant="py-2 px-3" />
+        <Button
+          type="button"
+          title="Book Your Clarity Session"
+          variant="py-2 px-3"
+        />
       </div>
     </section>
   );
