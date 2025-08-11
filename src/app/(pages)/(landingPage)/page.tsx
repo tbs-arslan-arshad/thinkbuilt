@@ -6,19 +6,20 @@ import Divsection from "./components/Divsection";
 import Founders from "./components/Founders";
 import Review from "./components/Review";
 import Clarity from "./components/Clarity";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <div
-        className=" "
-        style={{
-          backgroundImage: " url('/images/Section.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      <div className="relative min-h-screen">
+        <Image
+          src="/images/Section.jpg"
+          alt="hero-background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
         <Hero />
       </div>
       <Trusted />
