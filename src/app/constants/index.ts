@@ -264,7 +264,7 @@ export const profiles = [
       width: 360,
       height: 420,
       className:
-        "w-full h-full object-cover overflow-hidden -mt-[200px] sm:-mt-[250px]",
+        "w-full h-full object-cover overflow-hidden -mt-[200px] sm:-mt-[185px]",
     },
     name: {
       text: "Basit Ali",
@@ -273,7 +273,7 @@ export const profiles = [
         color: "#1D9ED9",
       },
       className:
-        "text-white text-5xl sm:text-7xl font-bold text-center -mt-[150px] font-[Unbounded]",
+        "text-white text-5xl sm:text-7xl font-bold text-center -mt-[75px] font-[Unbounded]",
     },
     container: {
       className:
