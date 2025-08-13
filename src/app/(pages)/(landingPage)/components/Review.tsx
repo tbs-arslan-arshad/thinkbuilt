@@ -8,28 +8,28 @@ const reviews = [
     id: 1,
     founderName: "Jacob R.",
     companyName: "LeadLyft",
-    companyLogo: "/images/Mark.png",
+    companyLogo: "/images/mark_.png",
     quote:
       "Basit didn't just write code --- he thought like a co-founder. Leadlyft wouldn't be where it is without his.",
-    image: "/images/Link.png",
+    image: "/images/review_3.png",
   },
   {
     id: 2,
     founderName: "Jane D.",
     companyName: "MarketSavy",
-    companyLogo: "/images/Mark.png",
+    companyLogo: "/images/mark_.png",
     quote:
       "Working with ThinkBuilt was a game-changer for our project. The attention to detail and proactive communication were outstanding.",
-    image: "/images/Link.png",
+    image: "/images/review_2.jpg",
   },
   {
     id: 3,
     founderName: "Alex K.",
     companyName: "InnovateCo",
-    companyLogo: "/images/Mark.png",
+    companyLogo: "/images/mark_.png",
     quote:
       "The team at ThinkBuilt delivered a solution that exceeded our expectations. Their expertise and commitment are second to none.",
-    image: "/images/Link.png",
+    image: "/images/review_1.jpg",
   },
 ];
 
@@ -58,7 +58,7 @@ const Review = () => {
         animate={
           reviewsRefInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -80 }
         }
-        transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
       >
         <h1 className="text-white text-md sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center max-w-4xl mx-auto mb-6 sm:mb-8 lg:mb-12 mt-[20px]">
           What Founders Say After Working With <br />
@@ -72,20 +72,27 @@ const Review = () => {
 
       <div className="relative flex flex-row justify-center items-center w-full h-[473px] border-2 border-gray-500 rounded-[25.71px]">
         {/* Review Image Section - First Column */}
-        <div className="flex items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, x: -80 }}
+          animate={
+            reviewsRefInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }
+          }
+          transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
+          className="flex items-center justify-center"
+        >
           <Image
             src={reviews[currentReviewIndex].image}
             alt={reviews[currentReviewIndex].companyName}
-            className="h-[473px] w-[418px] object-cover rounded-xl"
+            className="h-[468px] w-[418px] object-cover rounded-r-xl rounded-l-[23px] border-r border-gray-300"
             width={418}
-            height={473}
+            height={468}
             // priority={false}
             // quality={85}
           />
-        </div>
+        </motion.div>
 
         {/* Review Cards Section - Second Column */}
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full [clip-path:inset(0_-9999px_0_0)]">
           {reviews.map((review, index) => {
             const isActive = index === currentReviewIndex;
             const isBehindOne =
@@ -108,19 +115,13 @@ const Review = () => {
             return (
               <motion.div
                 key={review.id}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, x: 80 }}
                 animate={{
-                  opacity: isActive ? 1 : 0.6,
-                  scale: isActive ? 1 : 0.9,
-                  rotate: isActive
-                    ? 0
-                    : isBehindOne
-                    ? 7.29
-                    : isBehindTwo
-                    ? 12.49
-                    : 17.5,
-                  y: isActive ? 0 : isBehindOne ? 12 : isBehindTwo ? 24 : 36,
-                  x: isActive ? 0 : isBehindOne ? 4 : isBehindTwo ? 8 : 12,
+                  opacity: isActive ? 1 : 1.2,
+                  scale: isActive ? 1 : 1,
+                  rotate: isActive ? 0 : isBehindOne ? 5 : isBehindTwo ? 8 : 0,
+                  // y: isActive ? 0 : isBehindOne ? 8 : isBehindTwo ? 20 : 36,
+                  x: isActive ? 0 : isBehindOne ? 8 : isBehindTwo ? 8 : 80,
                   zIndex: zIndex,
                 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
@@ -130,8 +131,16 @@ const Review = () => {
                   backgroundSize: "cover", // Adjust as needed
                   backgroundPosition: "center", // Adjust as needed
                 }}
-                className={`absolute top-0 left-0 w-full h-full bg-[#1F1D1D] p-6 sm:p-8 xl:p-10 rounded-xl border border-white transform-gpu transition-all duration-500 origin-bottom-center ${
-                  !isActive && "hidden sm:block"
+                className={`absolute top-0 left-0 w-full h-full bg-[#1F1D1D] p-6 sm:p-8 xl:p-10 rounded-r-[25.21px] transform-gpu transition-all duration-500 origin-bottom-center border-r border-gray-400 ${
+                  !isActive && "hidden sm:block "
+                } ${
+                  isBehindOne
+                    ? "-top-[20px]! left-[-26px] border border-gray-400"
+                    : ""
+                } ${
+                  isBehindTwo
+                    ? "-top-[24px]! left-[-30px] border border-gray-400"
+                    : ""
                 }`}
               >
                 <div

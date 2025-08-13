@@ -1,12 +1,25 @@
+"use client";
 import Image from "next/image";
 import Button from "../../../components/ui/Button";
+import { useRef } from "react";
+import { useInView, motion } from "motion/react";
 
 const Clarity = () => {
+  const clarityRef = useRef(null);
+
+  const clarityRefInView = useInView(clarityRef, { once: true, amount: 0.4 });
+
   return (
-    <section className="bg-[#121010] px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-      <div className="container mx-auto ">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 min-h-[400px] lg:min-h-[600px]">
-          <div className="flex flex-col text-white w-full max-w-[700px] pt-6 sm:pt-8 lg:pt-12">
+    <section ref={clarityRef} className="bg-[#121010] flex">
+      <div className="flex flex-col w-full lg:flex-row items-center justify-end min-h-[400px] lg:min-h-[600px]">
+        <div className="flex flex-1 flex-col  text-white w-full h-full justify-center items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -80 }}
+            animate={
+              clarityRefInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }
+            }
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+          >
             <h1 className="text-xl md:text-3xl lg:text-4xl font-bold w-full lg:max-w-[525px] leading-tight text-center lg:text-left">
               Before You Build Anything,
               <br />
@@ -21,25 +34,121 @@ const Clarity = () => {
               In just one session, I’ll help you understand what to build, who
               to hire, and how to start — without wasting your time.
             </p>
+          </motion.div>
 
-            <div className="flex  justify-center lg:justify-start">
-              <Button
-                type="button"
-                title="Book Your 1-on-1 Clarity Session"
-                variant="xl:py-3 py-2 xl:px-6 px-4 flex mt-6 sm:mt-8 lg:mt-10 bg-[#1D9ED9] rounded-full py-2 sm:py-3 sm:px-4 w-full max-w-[307px] items-center justify-center text-md  lg:text-lg transition-colors font-medium hover:bg-[#1678a1] border"
+          <motion.div
+            initial={{ opacity: 0, y: 80 }}
+            animate={
+              clarityRefInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }
+            }
+            transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
+            className="flex  justify-center lg:justify-start relative"
+          >
+            <Button
+              type="button"
+              title="Book Your 1-on-1 Clarity Session"
+              variant="xl:py-3 py-2 xl:px-6 px-4 flex mt-6 sm:mt-8 lg:mt-10 bg-[#1D9ED9] rounded-full py-2 sm:py-3 sm:px-4 w-full max-w-[307px] items-center justify-center text-md  lg:text-lg transition-colors font-medium hover:bg-[#1678a1] border"
+            />
+          </motion.div>
+        </div>
+
+        {/* New Image Section with Animation */}
+        <div
+          style={{
+            backgroundImage: " url('/images/clarity_bg.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+          className="relative w-[40%] h-[617.16px] flex items-center justify-start "
+        >
+          {/* The three layered images with animation */}
+          <motion.div
+            className="relative h-[418.6px] w-[436.22px] left-[37.61px]"
+            initial="start"
+            animate={clarityRefInView ? "end" : "start"}
+            variants={{
+              start: {
+                opacity: 0,
+              },
+              end: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.2, // Stagger the animation of child images
+                  delayChildren: 0.3,
+                },
+              },
+            }}
+          >
+            {/* Image 3 (Background, rotated right) */}
+            <motion.div
+              className="absolute inset-0 flex items-center justify-center"
+              variants={{
+                start: { y: 40, x: 40, rotate: 10, opacity: 0 },
+                end: {
+                  y: 0,
+                  x: 0,
+                  rotate: 5,
+                  opacity: 1,
+                  transition: { duration: 0.6, ease: "easeInOut" },
+                },
+              }}
+            >
+              <Image
+                src="/images/clarity_layer_3.png"
+                alt="Third Clarity Session"
+                width={418.6}
+                height={436.22}
+                className="w-full h-full z-10"
               />
-            </div>
-           
-          </div>
+            </motion.div>
 
-         <Image
-  src="/images/Image 3.png"
-  alt="Clarity Session"
-  width={418}
-  height={436}
-  className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[418px] py-4 sm:py-6 lg:py-0
-    transition-all duration-500 hover-animation"
-/>
+            {/* Image 2 (Middle, rotated left) */}
+            <motion.div
+              className="absolute inset-0 flex items-center justify-center"
+              variants={{
+                start: { y: -40, x: -40, rotate: -10, opacity: 0 },
+                end: {
+                  y: 0,
+                  x: 0,
+                  rotate: -5,
+                  opacity: 1,
+                  transition: { duration: 0.6, ease: "easeInOut" },
+                },
+              }}
+            >
+              <Image
+                src="/images/clarity_layer_2.png"
+                alt="Second Clarity Session"
+                width={418.6}
+                height={436.22}
+                className="w-full h-full z-20"
+              />
+            </motion.div>
+
+            {/* Image 1 (Front and center) */}
+            <motion.div
+              className="absolute inset-0 flex items-center justify-center"
+              variants={{
+                start: { y: 40, x: 40, rotate: 0, opacity: 0 },
+                end: {
+                  y: 0,
+                  x: 0,
+                  rotate: 0,
+                  opacity: 1,
+                  transition: { duration: 0.6, ease: "easeInOut" },
+                },
+              }}
+            >
+              <Image
+                src="/images/clarity_layer_1.png"
+                alt="Main Clarity Session"
+                width={418}
+                height={436}
+                className="w-full h-full z-30"
+              />
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

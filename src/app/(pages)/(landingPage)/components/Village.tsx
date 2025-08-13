@@ -107,7 +107,7 @@ const Village = () => {
               villageInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }
             }
             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
-            className="my-[20px] flex flex-wrap items-center gap-1 sm:gap-3 w-[325px] sm:w-[500px] justify-center lg:justify-start "
+            className="my-[20px] flex flex-wrap items-center gap-1 sm:gap-3 w-[325px] sm:w-[500px] justify-center lg:justify-start"
           >
             {tagItems.map((item, index) => (
               <div
@@ -137,7 +137,7 @@ const Village = () => {
             <Button
               type="button"
               title="Read My Full Story"
-              variant="py-2 px-4 mt-[10px] bg-[#1D9ED9] text-white  text-sm sm:text-lg lg:text-xl border-x border-y rounded-full transition-colors "
+              variant="py-2 px-4 mt-[10px] bg-[#1D9ED9] text-white text-sm sm:text-lg lg:text-xl border-x border-y rounded-full transition-colors "
             />
           </motion.div>
         </div>

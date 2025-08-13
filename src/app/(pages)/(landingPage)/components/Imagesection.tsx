@@ -86,7 +86,7 @@ const Imagesection = () => {
 
               <div className="absolute inset-0 w-full h-full hidden sm:block">
                 <Image
-                  src="/images/Background 8.png"
+                  src="/images/Background_8.png"
                   alt="Background Image"
                   width={660}
                   height={409}
@@ -133,8 +133,8 @@ const Imagesection = () => {
           >
             <div className=" 2xl:w-[662px]  sm:h-[409px] transition-all duration-500 hover-animation">
               <Image
-                src={Images[3].src}
-                alt={Images[3].alt}
+                src={Images[3]?.src}
+                alt={Images[3]?.alt}
                 width={662}
                 height={409}
               />
