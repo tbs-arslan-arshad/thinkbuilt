@@ -56,7 +56,7 @@ const Founders = () => {
               delay: 0.1 * index,
             }}
             className="flex flex-col items-center justify-center rounded-full bg-[#FFFFFF1A] w-[130px] h-[130px] sm:w-[187px] sm:h-[187px] text-white  transition-all duration-500 hover-animation">
-            <h1 className="text-lg sm:text-3xl xl:text-[40px] text-white font-unbounded  font-normal leading-[32px] tracking-[-2px]">
+            <h1 className="text-3xl xl:text-[40px] text-white font-unbounded  font-normal leading-[32px] tracking-[-2px]">
               {stat.value}
             </h1>
             <span className="text-xs sm:text-base text-white/80 font-satoshi font-normal leading-6 mt-2">
@@ -72,7 +72,7 @@ const Founders = () => {
           FounderRefInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -80 }
         }
         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
-        className="text-white text-xl sm:text-[44px] mt-[50px] lg:mt-[193.67px]  h-[100] flex flex-col items-center justify-center text-center font-satoshi font-normal leading-[130%] capitalize">
+        className="text-white text-xl sm:text-[44px] mt-[50px] lg:mt-[193.67px] flex flex-col items-center justify-center text-center font-satoshi font-normal leading-[130%] capitalize">
         Why Non-Tech Founders Choose
         <span className="flex items-center justify-center ">
           <span className="text-[#1D9ED9]">&#123;</span>ThinkBuilt
@@ -80,7 +80,8 @@ const Founders = () => {
         </span>
       </motion.h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center justify-center mt-[50px]">
+      <div className="flex flex-col flex-wrap md:flex-row gap-3 items-center justify-center mt-[50px] w-full">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-flow-row-dense items-center justify-center mt-[50px] gap-2  px-4"> */}
         {featureCards.map((card) => (
           <motion.div
             initial={{ opacity: 0, y: 80 }}
@@ -89,33 +90,42 @@ const Founders = () => {
             }
             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
             key={card.id}
-            className="text-white flex flex-col items-center sm:w-[340px] h-[150px] xl:h-[205px] transition-all duration-500 hover-animation">
-            <Image
-              src={card.borderImage}
-              alt="Border"
-              width={60}
-              height={60}
-              priority={true}
-              unoptimized={true}
-            />
-            <Image
-              src={card.iconImage}
-              alt={card.iconAlt}
-              width={42}
-              height={42}
-              className="mt-[-50px] mb-[20px]"
-              priority={true} // Ensures immediate loading
-              unoptimized={true} // For development
-            />
-            <h1 className="text-white text-center font-satoshi text-[20px] font-bold leading-[26px] tracking-[-0.1px]">{card.title}</h1>
-            <span className="w-[314px] h-[40px] flex justify-center text-white text-center font-satoshi text-base font-normal leading-[26px]">
+            className="text-white flex-1 w-full flex flex-col items-center h-[220px] max-w-[473px] rounded-xl transition-all duration-500 hover-animation py-[20px] border border-[#FFFFFF0D] bg-[rgba(13,13,13,0.2)] md:bg-[rgba(13,13,13,0.1)] backdrop-blur-[5px]">
+            <div className="relative inline-block overflow-hidden">
+              {" "}
+              {/* Parent container */}
+              {/* Border image (acts as the container background) */}
+              <Image
+                src={card.borderImage}
+                alt="Border"
+                width={60}
+                height={60}
+                priority={true}
+                unoptimized={true}
+              />
+              {/* Icon image (centered inside the border) */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[42px] h-[42px]">
+                <Image
+                  src={card.iconImage}
+                  alt={card.iconAlt}
+                  width={42}
+                  height={42}
+                  priority={true}
+                  unoptimized={true}
+                />
+              </div>
+            </div>
+            <h1 className="text-white text-center font-satoshi pt-[25px] text-[20px] font-bold leading-[26px] tracking-[-0.1px]">
+              {card.title}
+            </h1>
+            <span className="w-[310px] flex justify-center text-white text-center font-satoshi text-base font-normal leading-[26px] pt-[15px]">
               {card.description}
             </span>
           </motion.div>
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-2 mb-[20px] ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-2 pt-[23px] ">
         {featureItems.map((item) => (
           <motion.div
             initial={{ opacity: 0, y: 80 }}
@@ -124,7 +134,7 @@ const Founders = () => {
             }
             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
             key={item.id}
-            className={`text-sm xl:text-base ${item.bgColor} flex gap-1 items-center justify-center rounded-full py-2  mb-[74px] px-2 lg:mt-[43px] transition-all duration-500 hover-animation text-black font-satoshi  font-normal leading-6`}>
+            className={`text-sm xl:text-base ${item.bgColor} flex gap-1 items-center justify-center rounded-full py-2 mb-[23px] lg:mb-[74px] px-2  transition-all duration-500 hover-animation text-black font-satoshi  font-normal leading-6`}>
             <Image
               src={item.icon}
               alt="Vector"

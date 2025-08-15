@@ -51,7 +51,7 @@ const Review = () => {
   return (
     <section
       ref={reviewsRef}
-      className="flex flex-col min-h-screen bg-[#0E0805] items-center justify-center px-[154px]"
+      className="flex flex-col  bg-[#0E0805] items-center justify-center px-[154px]"
     >
       <motion.div
         initial={{ opacity: 0, y: -80 }}
@@ -60,17 +60,17 @@ const Review = () => {
         }
         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
       >
-        <h1 className="text-white text-md sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center max-w-4xl mx-auto mb-6 sm:mb-8 lg:mb-12 mt-[20px]">
+        <h2 className="text-white text-md sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center max-w-4xl mx-auto mb-6 sm:mb-8 lg:mb-12 mt-[100.94px]">
           What Founders Say After Working With <br />
           <span className="flex items-center justify-center mt-2 sm:mt-3">
             <span className="text-[#1D9ED9] mr-1">{"{"}</span>
             ThinkBuilt
             <span className="text-[#1D9ED9] ml-1">{"}"}</span>
           </span>
-        </h1>
+        </h2>
       </motion.div>
 
-      <div className="relative flex flex-row justify-center items-center w-full h-[473px] border-2 border-gray-500 rounded-[25.71px]">
+      <div className="relative flex flex-row justify-center items-center w-full h-[473px] border-2 border-gray-500 rounded-[25.71px] mb-[100px]">
         {/* Review Image Section - First Column */}
         <div className="flex items-center justify-center">
           <Image

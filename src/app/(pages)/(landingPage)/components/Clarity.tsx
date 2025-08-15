@@ -23,12 +23,10 @@ const Clarity = () => {
               to hire, and how to start — without wasting your time.
             </p>
 
-          
-
-<div className="flex justify-center lg:justify-start">
-  <Link
-    href="/book-session" // Replace with your actual route
-    className=" border border-[#FFFFFF99]
+            <div className="flex justify-center lg:justify-start">
+              <Link
+                href="/book-session" // Replace with your actual route
+                className=" border border-[#FFFFFF99]
       flex items-center justify-center 
       w-full max-w-[307px] 
       mt-6 sm:mt-[30px] lg:mt-[40px] 
@@ -41,22 +39,20 @@ const Clarity = () => {
       rounded-full 
       transition-colors
       focus:outline-none focus:ring-2 focus:ring-[#1D9ED9] focus:ring-opacity-50
-    "
-  >
-    Book Your 1-on-1 Clarity Session
-  </Link>
-</div>
-           
+    ">
+                Book Your 1-on-1 Clarity Session
+              </Link>
+            </div>
           </div>
 
-         <Image
-  src="/images/Image 3.png"
-  alt="Clarity Session"
-  width={418}
-  height={436}
-  className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[418px] py-4 sm:py-6 lg:py-0
+          <Image
+            src="/images/Image 3.png"
+            alt="Clarity Session"
+            width={418}
+            height={436}
+            className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[418px] py-4 sm:py-6 lg:py-0
     transition-all duration-500 hover-animation"
-/>
+          />
         </div>
       </div>
     </section>
