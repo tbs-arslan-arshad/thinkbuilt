@@ -29,11 +29,17 @@ const reviews = [
     companyLogo: "/images/mark_.png",
     quote:
       "The team at ThinkBuilt delivered a solution that exceeded our expectations. Their expertise and commitment are second to none.",
-    image: "/images/review_1.jpg",
+    image: "/images/Basit_Ali.png",
   },
 ];
 
 const Review = () => {
+  const reviewsImageRef = useRef(null);
+  const reviewsImageRefInView = useInView(reviewsImageRef, {
+    once: true,
+    amount: 0.4,
+  });
+
   const reviewsRef = useRef(null);
   const reviewsRefInView = useInView(reviewsRef, { once: true, amount: 0.4 });
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
@@ -75,7 +81,9 @@ const Review = () => {
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           animate={
-            reviewsRefInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }
+            reviewsImageRefInView
+              ? { opacity: 1, x: 0 }
+              : { opacity: 0, x: -80 }
           }
           transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
           className="flex items-center justify-center"
@@ -83,7 +91,7 @@ const Review = () => {
           <Image
             src={reviews[currentReviewIndex].image}
             alt={reviews[currentReviewIndex].companyName}
-            className="h-[468px] w-[418px] object-cover rounded-r-xl rounded-l-[23px] border-r border-gray-300"
+            className="h-[468px] w-[418px] object-cover rounded-r-xl rounded-l-[23px] border-r border-gray-300 bg-white"
             width={418}
             height={468}
             // priority={false}
@@ -92,7 +100,10 @@ const Review = () => {
         </motion.div>
 
         {/* Review Cards Section - Second Column */}
-        <div className="relative w-full h-full [clip-path:inset(0_-9999px_0_0)]">
+        <div
+          ref={reviewsImageRef}
+          className="relative w-full h-full [clip-path:inset(0_-9999px_0_0)]"
+        >
           {reviews.map((review, index) => {
             const isActive = index === currentReviewIndex;
             const isBehindOne =
@@ -115,15 +126,23 @@ const Review = () => {
             return (
               <motion.div
                 key={review.id}
-                initial={{ opacity: 0, x: 80 }}
-                animate={{
-                  opacity: isActive ? 1 : 1.2,
-                  scale: isActive ? 1 : 1,
-                  rotate: isActive ? 0 : isBehindOne ? 5 : isBehindTwo ? 8 : 0,
-                  // y: isActive ? 0 : isBehindOne ? 8 : isBehindTwo ? 20 : 36,
-                  x: isActive ? 0 : isBehindOne ? 8 : isBehindTwo ? 8 : 80,
-                  zIndex: zIndex,
-                }}
+                initial={{ opacity: 0, x: 100 }}
+                animate={
+                  reviewsImageRefInView && {
+                    opacity: isActive ? 1 : 1.2,
+                    scale: isActive ? 1 : 1,
+                    rotate: isActive
+                      ? 0
+                      : isBehindOne
+                      ? 5
+                      : isBehindTwo
+                      ? 8
+                      : 0,
+                    // y: isActive ? 0 : isBehindOne ? 8 : isBehindTwo ? 20 : 36,
+                    x: isActive ? 0 : isBehindOne ? 8 : isBehindTwo ? 8 : 100,
+                    zIndex: zIndex,
+                  }
+                }
                 transition={{ duration: 0.6, ease: "easeInOut" }}
                 style={{
                   transformOrigin: "bottom center",

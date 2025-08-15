@@ -10,6 +10,7 @@ const Divsection = () => {
 
   return (
     <section
+      id="testimonials"
       ref={helpYouRef}
       className="flex flex-col bg-[#0E0805] items-center justify-center"
     >
@@ -35,7 +36,7 @@ const Divsection = () => {
         {cardData.map((card, index) => (
           <motion.div
             key={card.id}
-            className="hover-animation"
+            className="hover-animation "
             initial={{ opacity: 0, x: index % 2 === 0 ? -80 : 80 }}
             animate={helpYouInView ? { opacity: 1, x: 0 } : {}}
             transition={{

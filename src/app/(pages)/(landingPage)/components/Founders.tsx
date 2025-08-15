@@ -11,6 +11,7 @@ const Founders = () => {
   const FounderRefInView = useInView(foundersRef, { once: true, amount: 0.4 });
 
   const [displayStats, setDisplayStats] = useState(statsData);
+  const [allAnimationsDone, setAllAnimationsDone] = useState(false);
 
   useEffect(() => {
     if (FounderRefInView) {
@@ -32,17 +33,28 @@ const Founders = () => {
         return () => clearTimeout(stopCountTimeout);
       }, 1000);
 
-      return () => clearTimeout(countDelay);
+      // Total time for other animations (stats, heading, feature cards)
+      // The longest animation is 0.6s duration + 0.6s delay = 1.2s.
+      // We'll add a slight buffer.
+      const animationEndDelay = setTimeout(() => {
+        setAllAnimationsDone(true);
+      }, 1500);
+
+      return () => {
+        clearTimeout(countDelay);
+        clearTimeout(animationEndDelay);
+      };
     }
   }, [FounderRefInView]);
 
   return (
     <section
+      id="why-us"
       ref={foundersRef}
       className="  flex flex-col items-center justify-center min-h-screen"
     >
       <div className="grid md:grid-cols-4 grid-cols-2 gap-2 pt-2 ">
-        {displayStats.map((stat, index) => (
+        {displayStats.map((stat) => (
           <motion.div
             key={stat.id}
             initial={{ opacity: 0, scale: 0 }}
@@ -54,7 +66,7 @@ const Founders = () => {
             transition={{
               duration: 0.6,
               ease: "easeInOut",
-              delay: 0.1 * index,
+              // delay: 0.1 * index,
             }}
             className="flex flex-col items-center justify-center rounded-full bg-[rgba(255,255,255,0.10)] w-[130px] h-[130px] sm:w-[170px] sm:h-[170px] text-white mx-2 transition-all duration-500 hover-animation"
           >
@@ -107,16 +119,24 @@ const Founders = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-2 mb-[20px] ">
+      <div
+        className={`relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-2 mb-[20px]`}
+      >
         {featureItems.map((item) => (
           <motion.div
             initial={{ opacity: 0, y: 80 }}
             animate={
-              FounderRefInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }
+              FounderRefInView && allAnimationsDone
+                ? { opacity: 1, y: 0 }
+                : { opacity: 0, y: 80 }
             }
-            transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
+            transition={{
+              duration: 0.6,
+              ease: "easeInOut",
+              // delay: 0.1 * index,
+            }}
             key={item.id}
-            className={`text-black text-sm xl:text-lg 2xl:text-xl ${item.bgColor} flex gap-1 items-center justify-center rounded-full py-2 px-2 mt-[10px] lg:mt-[0px] transition-all duration-500 hover-animation`}
+            className={`text-black text-sm xl:text-lg 2xl:text-xl ${item.bgColor} flex gap-1 items-center justify-center rounded-full py-2 px-2 mt-[10px] lg:mt-[0px] transition-all duration-500 hover-animation z-20`}
           >
             <Image
               src={item.icon}

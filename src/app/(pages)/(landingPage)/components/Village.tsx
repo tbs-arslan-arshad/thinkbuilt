@@ -11,7 +11,7 @@ const Village = () => {
   const villageInView = useInView(villageRef, { once: true, amount: 0.4 });
 
   return (
-    <section className="flex bg-[#0E0805]  justify-center ">
+    <section id="our-story" className="flex bg-[#0E0805]  justify-center ">
       <div
         ref={villageRef}
         className="lg:flex  2xl:mx-[207.17] gap-[50px] lg:gap-[80px]  xl:gap-[130.31] sm:px-2 py-[60] "
@@ -26,13 +26,15 @@ const Village = () => {
                   villageInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }
                 }
                 transition={{ duration: 0.6, ease: "easeInOut" }}
+                className="relative h-[500px] w-[360px] rounded-[24px] overflow-visible"
               >
                 <Image
-                  src={profile.mainImage.src}
-                  alt={profile.mainImage.alt}
-                  width={profile.mainImage.width}
-                  height={profile.mainImage.height}
-                  className={profile.mainImage.className}
+                  src="/images/basit.png"
+                  alt="Basit Ali"
+                  fill
+                  className="object-cover object-top translate-y-[-80px]"
+                  sizes="(max-width: 640px) 350px, 417px"
+                  quality={85}
                 />
               </motion.div>
 

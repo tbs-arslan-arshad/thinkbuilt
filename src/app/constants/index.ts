@@ -1,26 +1,26 @@
 // NAVIGATION
 export const NAV_LINKS = [
-  { href: "/", key: "Home", label: "Home" },
-  { href: "/about", key: "About", label: "About" },
-  { href: "/our-story", key: "Our Story", label: "Our Story" },
-  { href: "/testimonials", key: "Testimonials", label: "Testimonials" },
-  { href: "/why-choose-us", key: "Why Choose Us", label: "Why Choose Us" },
+  { href: "#top", key: "Home", label: "Home" },
+  { href: "#about", key: "About", label: "About" },
+  { href: "#our-story", key: "Our Story", label: "Our Story" },
+  { href: "#testimonials", key: "Testimonials", label: "Testimonials" },
+  { href: "#why-us", key: "Why Choose Us", label: "Why Choose Us" },
 ];
 
 // CAMP SECTION
 export const PEOPLE_URL = [
-  "/images/grid.png",
-  "/images/grid5.png",
-  "/images/grid4.png",
-  "/images/grid3.png",
-  "/images/grid6.png",
-  "/images/grid1.png",
-  "/images/grid1.png",
-  "/images/grid3.png",
-  "/images/grid.png",
-  "/images/grid2.png",
-  "/images/grid4.png",
-  "/images/grid6.png",
+  "/images/remember_well_logo.png",
+  "/images/naples_art_logo.svg",
+  "/images/credit_automate_logo.png",
+  "/images/foodini_logo.svg",
+  "/images/soulchoirs_logo.svg",
+  "/images/blue_goat_logo.png",
+  "/images/tranding_toolbox_logo.svg",
+  "/images/remember_tag_logo.png",
+  "/images/quick_tip_log.png",
+  "/images/main_street_logo.png",
+  "/images/surge_logo.svg",
+  "/images/leadLyft_logo.png",
 ];
 
 export const Images = [
@@ -251,7 +251,7 @@ export const profiles = [
   {
     id: 1,
     mainImage: {
-      src: "/images/Basit_Ali.png",
+      src: "/images/basit.png",
       alt: "Basit",
       width: 417,
       height: 589,
@@ -264,7 +264,7 @@ export const profiles = [
       width: 360,
       height: 420,
       className:
-        "w-full h-full object-cover overflow-hidden -mt-[200px] sm:-mt-[185px]",
+        "w-full h-full object-cover overflow-hidden -mt-[200px] sm:-mt-[240px] relative z-0",
     },
     name: {
       text: "Basit Ali",
@@ -273,11 +273,11 @@ export const profiles = [
         color: "#1D9ED9",
       },
       className:
-        "text-white text-5xl sm:text-7xl font-bold text-center -mt-[75px] font-[Unbounded]",
+        "text-white text-5xl sm:text-7xl font-bold text-center -mt-[75px] font-[Unbounded] relative",
     },
     container: {
       className:
-        "bg-blue-300 w-[280px] h-[350px] sm:w-[360px] sm:h-[420px] rounded-t-full",
+        "bg-[#14465C] w-[280px] h-[350px] sm:w-[360px] sm:h-[420px] rounded-t-full",
     },
   },
   // Add more profiles as needed
@@ -288,6 +288,7 @@ export const tags = [
     id: 1,
     text: "Customer Support",
     bgColor: "bg-[#CBDEFD]",
+    colorVariable: "--tw-blue-400",
     rotation: "-rotate-28",
     position: "top-10 left-29",
     icon: "/images/SVG_8.png",
@@ -297,6 +298,7 @@ export const tags = [
     id: 2,
     text: "Passion",
     bgColor: "bg-[#B4F8BC]",
+    colorVariable: "--tw-orange-400",
     rotation: "rotate-24",
     position: "top-14 -right-5",
     icon: "/images/SVG_8.png",

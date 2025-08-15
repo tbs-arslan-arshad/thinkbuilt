@@ -22,13 +22,13 @@ const Imagesection = () => {
       setAnimatedTagId(randomTagId);
     };
 
-    const intervalId = setInterval(animateTag, 1000);
+    const intervalId = setInterval(animateTag, 1200);
 
     return () => clearInterval(intervalId);
   }, []);
 
   return (
-    <section ref={row1Ref} className="bg-[#0E0805]">
+    <section id="about" ref={row1Ref} className="bg-[#0E0805]">
       <div className="flex flex-col items-center gap-4 py-[50px]  justify-center mx-4">
         <div className="grid 2xl:grid-cols-[820px_441px] xl:grid-cols-[800px_441px] gap-4 items-center justify-center ">
           <motion.div
@@ -51,7 +51,7 @@ const Imagesection = () => {
             animate={row1InView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
           >
-            <div className="flex flex-col bg-[#AAE3FE] p-4 rounded-3xl  2xl:h-[409] transition-all duration-500 hover-animation">
+            <div className="flex flex-col bg-[#AAE3FE] p-4 rounded-3xl  2xl:h-[409] transition-all duration-500 hover-animation text-black">
               {FEATURES.map((stat, index) => (
                 <div key={index} className="">
                   <h1 className="text-6xl sm:text-8xl mt-[10px]">
@@ -97,30 +97,36 @@ const Imagesection = () => {
 
               {/* Tag Circle - centered over image */}
               <div className="relative z-10 w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] rounded-full border-2 border-white overflow-hidden hidden sm:block">
-                {tags.map((tag) => (
-                  <div
-                    key={tag.id}
-                    className={`flex gap-1 items-center ${
-                      tag.bgColor
-                    } rounded-full py-2 px-5 ${tag.rotation} ${
-                      tag.zIndex
-                    } absolute ${
-                      tag.position
-                    } transform -translate-x-1/2 hover:scale-105 transition-all duration-400
-            ${animatedTagId === tag.id ? "scale-110" : ""}`}
-                  >
-                    <Image
-                      src={tag.icon}
-                      alt={tag.text}
-                      width={24}
-                      height={24}
-                      className="w-6 h-6"
-                    />
-                    <span className="text-black text-base font-medium whitespace-nowrap">
-                      {tag.text}
-                    </span>
-                  </div>
-                ))}
+                {tags.map((tag) => {
+                  return (
+                    <div
+                      key={tag.id}
+                      className={`flex gap-1 items-center ${
+                        tag.bgColor
+                      } rounded-full py-2 px-5 ${tag.rotation} ${
+                        tag.zIndex
+                      } absolute ${
+                        tag.position
+                      } transform -translate-x-1/2 hover:scale-105 hover:shadow-lg shadow-red-50/60 transition-all duration-400
+            ${
+              animatedTagId === tag.id
+                ? "scale-110 shadow-lg shadow-cyan-700/50"
+                : "shadow-none"
+            } `}
+                    >
+                      <Image
+                        src={tag.icon}
+                        alt={tag.text}
+                        width={24}
+                        height={24}
+                        className="w-6 h-6"
+                      />
+                      <span className="text-black text-base font-medium whitespace-nowrap">
+                        {tag.text}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </motion.div>

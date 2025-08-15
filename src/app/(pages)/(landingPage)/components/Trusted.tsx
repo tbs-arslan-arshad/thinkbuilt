@@ -24,8 +24,8 @@ const Trusted = () => {
         src={src}
         alt="brand"
         width={129.28}
-        height={24.33}
-        className="h-[24.33px] w-[129.28px] object-contain"
+        height={36}
+        className="h-[36px] w-[129.28px] object-contain"
       />
     </div>
   );

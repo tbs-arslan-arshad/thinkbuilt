@@ -18,7 +18,7 @@ const Clarity = () => {
             animate={
               clarityRefInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }
             }
-            transition={{ duration: 0.6, ease: "easeInOut" }}
+            transition={{ duration: 0.9, ease: "easeInOut" }}
           >
             <h1 className="text-xl md:text-3xl lg:text-4xl font-bold w-full lg:max-w-[525px] leading-tight text-center lg:text-left">
               Before You Build Anything,
