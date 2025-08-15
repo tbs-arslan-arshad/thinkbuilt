@@ -224,24 +224,24 @@ export const featureItems = [
 export const featureCards = [
   {
     id: 1,
-    borderImage: "/images/Border.png",
-    iconImage: "/images/display 1.png",
+    
+    iconImage: "/icons/icon.svg",
     iconAlt: "Display",
     title: "Coding Therapist",
     description: 'A "Coding Therapist" approach — human, honest guidance',
   },
   {
     id: 2,
-    borderImage: "/images/Border.png",
-    iconImage: "/images/SVG.png",
+    
+    iconImage: "/icons/icon-1.svg",
     iconAlt: "svg",
     title: "Trusted by founders",
     description: "Trusted by founders behind global 7-figure platforms",
   },
   {
     id: 3,
-    borderImage: "/images/Border.png",
-    iconImage: "/images/SVG 1.png",
+    
+    iconImage: "/icons/icon-2.svg",
     iconAlt: "svg",
     title: "Product success,",
     description: "Real product success, not theory",

@@ -91,30 +91,17 @@ const Founders = () => {
             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
             key={card.id}
             className="text-white flex-1 w-full flex flex-col items-center h-[220px] max-w-[473px] rounded-xl transition-all duration-500 hover-animation py-[20px] border border-[#FFFFFF0D] bg-[rgba(13,13,13,0.2)] md:bg-[rgba(13,13,13,0.1)] backdrop-blur-[5px]">
-            <div className="relative inline-block overflow-hidden">
-              {" "}
-              {/* Parent container */}
-              {/* Border image (acts as the container background) */}
-              <Image
-                src={card.borderImage}
-                alt="Border"
-                width={60}
-                height={60}
-                priority={true}
-                unoptimized={true}
-              />
-              {/* Icon image (centered inside the border) */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[42px] h-[42px]">
+            
                 <Image
                   src={card.iconImage}
                   alt={card.iconAlt}
-                  width={42}
-                  height={42}
+                  width={60}
+                  height={60}
                   priority={true}
                   unoptimized={true}
                 />
-              </div>
-            </div>
+              
+            
             <h1 className="text-white text-center font-satoshi pt-[25px] text-[20px] font-bold leading-[26px] tracking-[-0.1px]">
               {card.title}
             </h1>
