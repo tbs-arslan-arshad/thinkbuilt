@@ -1,33 +1,39 @@
 import { NAV_LINKS } from "../../constants/index";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "../ui/Button";
 
 const Header = () => {
   return (
     <nav className=" py-[10px] bg-black fixed top-0 left-0 w-full z-60">
       <div className="flex justify-between relative items-center xl:px-[10%] px-[5%] mt-[10px]">
         <Link href="/">
-          <Image src="/images/Group.png" alt="logo" width={195.63} height={44} />
+          <Image
+            src="/images/Group.png"
+            alt="logo"
+            width={195.63}
+            height={44}
+          />
         </Link>
 
-        <ul className="hidden h-full gap-8 lg:flex">
+        <ul className="hidden h-full gap-8.5 lg:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.key} className="relative group">
               <Link
                 href={link.href}
-                className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:text-blue-400"
-              >
+                className="text-[#C9C9C9] flexCenter cursor-pointer font-satoshi text-[18px] font-medium leading-[140%] pb-1.5 transition-all hover:text-[#1D9ED9] ">
                 {link.label}
               </Link>
-              <span className="absolute  left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full mt-[30px]"></span>
+              <span className="absolute  left-0 w-0 h-0.5 bg-[#1D9ED9] transition-all duration-300 group-hover:w-full mt-[30px]"></span>
             </li>
           ))}
         </ul>
 
-        <div className="lg:flex text-[#0E0805] rounded-full text-lg bg-white hidden">
-          <Button type="button" title="Get Started" variant="py-2 px-6" />
+        <div className="lg:flex hidden font-medium text-base leading-[30px] font-satoshi text-[#00010A] bg-white text-center rounded-full">
+          <Link href="/your-target-path" className="py-2 px-6 block">
+            Get Started
+          </Link>
         </div>
+
         <Image
           src="/images/hamburger.png"
           alt="menu"

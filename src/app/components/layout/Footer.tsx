@@ -5,7 +5,7 @@ import { socialIcons } from "../../constants";
 const Footer = () => {
   return (
     <footer className="bg-[#0E0805] text-white min-h-[400px] py-8">
-      <div className="px-2">
+      <div className="px-2 font-Satoshi">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 ">
           <div className="flex flex-col items-center justify-start mt-6 sm:mt-12 md:mt-14">
             
@@ -31,7 +31,7 @@ const Footer = () => {
                     alt={icon.alt}
                     width={50}
                     height={50}
-                    className="w-[50px]  mt-6"
+                    className="w-[30px]  mt-8"
                   />
                 </a>
               ))}
@@ -57,15 +57,15 @@ const Footer = () => {
                 ))}
               </ul>
               {section.title === "Contact" && (
-                <div className="mt-6 w-full max-w-[260px]">
-                  <h1 className="text-center text-sm sm:text-base font-semibold">
+                <div className="mt-[58.25px] w-full max-w-[240px]">
+                  <h1 className="text-sm sm:text-base font-semibold text-center">
                     News Letter
                   </h1>
-                  <div className="flex gap-2 h-[27px] mt-6 justify-center">
+                  <div className="flex gap-2 h-[27px] mt-[27.44px]">
                     <input
                       type="email"
                       placeholder="Enter your Email Address"
-                      className="rounded-sm text-white w-[200px] px-2 text-md"
+                      className="rounded-sm text-white w-[200px] text-md"
                     />
                     <Image
                       src="/images/Mail icon.png"
@@ -75,7 +75,7 @@ const Footer = () => {
                       className="w-[20px] sm:w-[27px]"
                     />
                   </div>
-                  <div className="h-[1.193px]   border-t mt-4 "></div>
+                  <div className="h-[1.193px] border-t mt-[21.47px] "></div>
                 </div>
               )}
             </div>

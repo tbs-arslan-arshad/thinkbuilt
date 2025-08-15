@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 import DashboardWrapper from "../components/layout/DashboardWrapper";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+// Provide a default value that's always valid
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl!),
@@ -30,6 +31,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+    rel="stylesheet"
+  />
+  
+</head>
       <body cz-shortcut-listen="true">
         <DashboardWrapper>{children}</DashboardWrapper>
       </body>
