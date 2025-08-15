@@ -74,16 +74,16 @@ const Imagesection = () => {
             animate={row2InView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}>
             <div className="w-full xl:w-[600px] sm:h-[409px] relative flex justify-center items-center transition-all duration-500 hover-animation">
-              <div className=" xl:w-[662px]  transition-all duration-500 hover-animation sm:hidden">
+              {/* <div className=" xl:w-[662px]  transition-all duration-500 hover-animation sm:hidden">
                 <Image
                   src={Images[2].src}
                   alt={Images[2].alt}
                   width={662}
                   height={409}
                 />
-              </div>
+              </div> */}
 
-              <div className="absolute inset-0 w-full h-full hidden sm:block">
+              <div className="absolute   h-full hidden sm:block w-[600px] items-center justify-center text-center">
                 <Image
                   src="/images/Background 8.png"
                   alt="Background Image"
@@ -95,7 +95,7 @@ const Imagesection = () => {
               </div>
 
               {/* Tag Circle - centered over image */}
-              <div className="relative z-10 w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] rounded-full border-2 border-white overflow-hidden hidden sm:block">
+              <div className="relative z-10 w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] rounded-full border-1 border-white overflow-hidden hidden sm:block ">
                 {tags.map((tag) => (
                   <div
                     key={tag.id}
@@ -114,7 +114,7 @@ const Imagesection = () => {
                       height={24}
                       className="w-6 h-6"
                       priority={true} // Ensures immediate loading
-                unoptimized={true} // For development
+                      unoptimized={true} // For development
                     />
                     <span className="text-base whitespace-nowrap text-black font-satoshi  font-normal leading-[1.5]">
                       {tag.text}
@@ -138,7 +138,6 @@ const Imagesection = () => {
                 height={409}
                 priority={true} // Ensures immediate loading
                 unoptimized={true} // For development
-                 
               />
             </div>
           </motion.div>
