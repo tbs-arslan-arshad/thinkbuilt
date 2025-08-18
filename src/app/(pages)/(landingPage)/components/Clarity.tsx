@@ -45,13 +45,14 @@ const Clarity = () => {
             className="flex  justify-center lg:justify-start relative"
           >
             <Link
-  href="/book-session" // Replace with your actual link path
-  className="xl:py-3 xl:px-6 px-4 flex mt-6 sm:mt-8 lg:mt-10 bg-[#1D9ED9] rounded-full py-2 sm:py-3 sm:px-4 w-full max-w-[320px]  justify-center text-md lg:text-lg transition-colors font-medium border border-transparent"
->
-  Book Your 1-on-1 Clarity Session
-</Link>
+              href="/book-session" // Replace with your actual link path
+              className="xl:py-3 xl:px-6 px-4 flex mt-6 sm:mt-8 lg:mt-10 bg-[#1D9ED9] rounded-full py-2 sm:py-3 sm:px-4 w-full max-w-[320px]  justify-center text-md lg:text-lg transition-colors font-medium border border-transparent"
+            >
+              Book Your 1-on-1 Clarity Session
+            </Link>
           </motion.div>
         </div>
+
 
         {/* New Image Section with Animation */}
         <div
