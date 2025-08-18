@@ -14,7 +14,7 @@ const Village = () => {
     <section id="our-story" className="flex bg-[#0E0805]  justify-center ">
       <div
         ref={villageRef}
-        className="lg:flex  2xl:mx-[207.17] gap-[50px] lg:gap-[80px]  xl:gap-[130.31] sm:px-2 py-[60] "
+        className="lg:flex 2xl:mx-[207.17] gap-[50px] lg:gap-[80px]  xl:gap-[130.31] sm:px-2 py-[60] "
       >
         <div className="flex justify-center mt-[80px] ">
           {profiles.map((profile) => (
@@ -80,12 +80,15 @@ const Village = () => {
               villageInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }
             }
             transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="  text-white text-xl sm:text-3xl lg:text-4xl font-normal leading-[150%] text-center lg:text-left px-2 sm:px-0 mt-[30px]"
+            className="  text-white text-[44px] font-normal leading-[140%] capitalize text-center lg:text-left px-2 sm:px-0 mt-[30px]"
           >
-            From a Small Village to <br className="hidden sm:block" />
-            <span className="text-[#1D9ED9]">&#123;</span>Leadlyft & Remember
-            Well
-            <span className="text-[#1D9ED9]">&#125;</span>.
+            <span className="text-white/[0.46]">From a Small Village to</span>{" "}
+            <br className="hidden sm:block" />
+            <span className="font-medium">
+              <span className="text-[#1D9ED9]">&#123;</span>
+              Leadlyft & Remember Well
+              <span className="text-[#1D9ED9]">&#125;</span>.
+            </span>
           </motion.h1>
 
           <motion.p
@@ -94,13 +97,10 @@ const Village = () => {
               villageInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }
             }
             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
-            className="mt-[22.13] text-sm sm:text-lg lg:text-xl text-white font-normal  text-center lg:text-left "
+            className="mt-[22.13] text-lg font-normal leading-[150%]  text-center lg:text-left max-w-[446.582px]"
           >
-            I’m Basit — developer, tutor, and founder of
-            <br className="" />
-            ThinkBuilt Solutions. From Jhandeeryein, Pakistan
-            <br className="" />
-            to 7-figure platforms.
+            I’m Basit — developer, tutor, and founder of ThinkBuilt Solutions.
+            From Jhandeeryein, Pakistan to 7-figure platforms.
           </motion.p>
 
           <motion.div
@@ -109,7 +109,7 @@ const Village = () => {
               villageInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }
             }
             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
-            className="my-[20px] flex flex-wrap items-center gap-1 sm:gap-3 w-[325px] sm:w-[500px] justify-center lg:justify-start"
+            className="my-[20px] flex flex-wrap items-center gap-[10px] w-[325px] sm:w-[500px] justify-center lg:justify-start"
           >
             {tagItems.map((item, index) => (
               <div
@@ -123,7 +123,7 @@ const Village = () => {
                   height={20}
                   className="w-5 h-5"
                 />
-                <span className="text-xs sm:text-md xl:text-lg">
+                <span className="text-base font-normal leading-[24px]">
                   {item.text}
                 </span>
               </div>

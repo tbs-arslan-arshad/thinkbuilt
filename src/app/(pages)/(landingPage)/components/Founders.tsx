@@ -53,7 +53,7 @@ const Founders = () => {
       ref={foundersRef}
       className="  flex flex-col items-center justify-center min-h-screen"
     >
-      <div className="grid md:grid-cols-4 grid-cols-2 gap-2 pt-2 ">
+      <div className="grid md:grid-cols-4 grid-cols-2 gap-0 pt-2 ">
         {displayStats.map((stat) => (
           <motion.div
             key={stat.id}
@@ -68,10 +68,14 @@ const Founders = () => {
               ease: "easeInOut",
               // delay: 0.1 * index,
             }}
-            className="flex flex-col items-center justify-center rounded-full bg-[rgba(255,255,255,0.10)] w-[130px] h-[130px] sm:w-[170px] sm:h-[170px] text-white mx-2 transition-all duration-500 hover-animation"
+            className="flex flex-col items-center justify-center rounded-full bg-[rgba(255,255,255,0.10)] w-[130px] h-[130px] sm:w-[170px] sm:h-[170px] text-white transition-all duration-500 hover-animation gap-[7px]"
           >
-            <h1 className="text-lg sm:text-3xl xl:text-4xl">{stat.value}</h1>
-            <span className="text-xs sm:text-base ">{stat.label}</span>
+            <h1 className="text-[40px] font-normal leading-8 tracking-[-2x]">
+              {stat.value}
+            </h1>
+            <span className="text-base font-normal leading-6 text-white/80">
+              {stat.label}
+            </span>
           </motion.div>
         ))}
       </div>
@@ -82,17 +86,17 @@ const Founders = () => {
           FounderRefInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -80 }
         }
         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
-        className="text-white text-xl sm:text-4xl mt-[50px] lg:mt-[150px]  h-[100] flex flex-col items-center justify-center"
+        className="text-[44px] text-white/80 font-normal leading-[130%] capitalize mt-[50px] lg:mt-[150px]  h-[100] flex flex-col items-center justify-center"
       >
         Why Non-Tech Founders Choose
         <br />
-        <span className="flex items-center justify-center mt-[10px]">
+        <span className="flex items-center justify-center mt-[10px] text-white font-medium">
           <span className="text-[#1D9ED9]">&#123;</span>ThinkBuilt
           <span className="text-[#1D9ED9]">&#125;</span>
         </span>
       </motion.h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center justify-center mt-[20px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center justify-center mt-[50px]">
         {featureCards.map((card) => (
           <motion.div
             initial={{ opacity: 0, y: 80 }}
@@ -103,16 +107,24 @@ const Founders = () => {
             key={card.id}
             className="text-white flex flex-col items-center sm:w-[350px] h-[150px] xl:h-[285px] transition-all duration-500 hover-animation"
           >
-            <Image src={card.borderImage} alt="Border" width={60} height={60} />
+            <Image
+              src={card.borderImage}
+              alt="Border"
+              width={60}
+              height={60}
+              className="rounded-[20px]"
+            />
             <Image
               src={card.iconImage}
               alt={card.iconAlt}
               width={42}
               height={42}
-              className="mt-[-50px] mb-[20px]"
+              className="mt-[-50px] mb-[25px]"
             />
-            <h1>{card.title}</h1>
-            <span className="w-[314px] h-[40px] flex justify-center text-center">
+            <p className="text-xl font-bold leading-[26px] -leading-[0.1px]">
+              {card.title}
+            </p>
+            <span className="max-w-[314.826px] flex justify-center text-center text-base font-normal leading-[26px] opacity-[0.6] mt-[15px]">
               {card.description}
             </span>
           </motion.div>
@@ -122,7 +134,7 @@ const Founders = () => {
       <div
         className={`relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-2 mb-[20px]`}
       >
-        {featureItems.map((item) => (
+        {featureItems.map((item, index) => (
           <motion.div
             initial={{ opacity: 0, y: 80 }}
             animate={
@@ -133,17 +145,17 @@ const Founders = () => {
             transition={{
               duration: 0.6,
               ease: "easeInOut",
-              // delay: 0.1 * index,
+              delay: 0.1 * index,
             }}
             key={item.id}
-            className={`text-black text-sm xl:text-lg 2xl:text-xl ${item.bgColor} flex gap-1 items-center justify-center rounded-full py-2 px-2 mt-[10px] lg:mt-[0px] transition-all duration-500 hover-animation z-20`}
+            className={`text-black ${item.bgColor} flex gap-1 items-center justify-center rounded-full py-2 px-2 mt-[10px] lg:mt-[0px] transition-all duration-500 hover-animation z-20 text-base font-normal leading-6`}
           >
             <Image
               src={item.icon}
               alt="Vector"
-              width={25}
-              height={25}
-              className="xl:w-[25px] xl:h-[25px] w-[20px] h-[20px]"
+              width={20}
+              height={20}
+              className="w-[20px] h-[20px]"
             />
             {item.text}
           </motion.div>

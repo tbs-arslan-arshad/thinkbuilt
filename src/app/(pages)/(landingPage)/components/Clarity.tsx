@@ -12,25 +12,27 @@ const Clarity = () => {
   return (
     <section ref={clarityRef} className="bg-[#121010] flex">
       <div className="flex flex-col w-full lg:flex-row items-center justify-end min-h-[400px] lg:min-h-[600px]">
-        <div className="flex flex-1 flex-col  text-white w-full h-full justify-center items-center">
+        <div className="flex flex-1 flex-col  text-white w-full h-full justify-center items-center pl-[142px]">
           <motion.div
             initial={{ opacity: 0, x: -80 }}
             animate={
               clarityRefInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }
             }
             transition={{ duration: 0.9, ease: "easeInOut" }}
+            className="w-full"
           >
-            <h1 className="text-xl md:text-3xl lg:text-4xl font-bold w-full lg:max-w-[525px] leading-tight text-center lg:text-left">
-              Before You Build Anything,
+            <h1 className="text-white text-[44px] font-normal leading-[130%] capitalize w-full max-w-[ 525.456p] text-center lg:text-left">
+              <span className="text-white/[0.46]">
+                Before You Build Anything, Talk to Someone
+              </span>
               <br />
-              <span>
-                Talk to Someone
+              <span className="font-medium">
                 <span className="text-[#1D9ED9]"> {"{"}</span>
                 Who&apos;s Built It
                 <span className="text-[#1D9ED9]">{"}"}</span>.
               </span>
             </h1>
-            <p className="mt-4 text-sm sm:text-base lg:text-lg w-full lg:max-w-[586px] text-center lg:text-left">
+            <p className="mt-[21px] text-xl font-normal leading-[150%] w-full max-w-[586px] text-center lg:text-left">
               In just one session, I’ll help you understand what to build, who
               to hire, and how to start — without wasting your time.
             </p>
@@ -42,12 +44,12 @@ const Clarity = () => {
               clarityRefInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }
             }
             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
-            className="flex  justify-center lg:justify-start relative"
+            className="flex justify-start w-full mt-10"
           >
             <Button
               type="button"
               title="Book Your 1-on-1 Clarity Session"
-              variant="xl:py-3 py-2 xl:px-6 px-4 flex mt-6 sm:mt-8 lg:mt-10 bg-[#1D9ED9] rounded-full py-2 sm:py-3 sm:px-4 w-full max-w-[307px] items-center justify-center text-md  lg:text-lg transition-colors font-medium hover:bg-[#1678a1] border"
+              variant="xl:py-3 py-2 xl:px-6 px-4 flex bg-[#1D9ED9] rounded-full py-2 sm:py-3 sm:px-4 w-full max-w-[307px] items-center justify-center text-md  lg:text-lg transition-colors font-medium hover:bg-[#1678a1] border"
             />
           </motion.div>
         </div>

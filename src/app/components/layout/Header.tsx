@@ -10,9 +10,13 @@ const Header = () => {
     e.preventDefault();
     const targetId = href.replace("#", "");
     const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (!element) return;
+
+    const nav = document.querySelector("nav") as HTMLElement | null;
+    const navH = nav?.offsetHeight ?? 0;
+    const y = element.getBoundingClientRect().top + window.scrollY - navH;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
   };
 
   return (
@@ -21,6 +25,7 @@ const Header = () => {
         <Link href="/">
           <Image
             src="/images/Group.png"
+            priority
             alt="logo"
             width={195.63}
             height={44}

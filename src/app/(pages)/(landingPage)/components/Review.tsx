@@ -56,6 +56,7 @@ const Review = () => {
 
   return (
     <section
+      id="testimonials"
       ref={reviewsRef}
       className="flex flex-col min-h-screen bg-[#0E0805] items-center justify-center px-[154px]"
     >
@@ -66,9 +67,12 @@ const Review = () => {
         }
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
-        <h1 className="text-white text-md sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center max-w-4xl mx-auto mb-6 sm:mb-8 lg:mb-12 mt-[20px]">
-          What Founders Say After Working With <br />
-          <span className="flex items-center justify-center mt-2 sm:mt-3">
+        <h1 className="text-white text-[48px] font-normal leading-[140%] capitalize text-center max-w-4xl mx-auto mb-6 sm:mb-8 lg:mb-12 mt-[20px]">
+          <span className="text-white/46">
+            What Founders Say After Working With
+          </span>{" "}
+          <br />
+          <span className="flex items-center justify-center mt-2 sm:mt-3 font-medium">
             <span className="text-[#1D9ED9] mr-1">{"{"}</span>
             ThinkBuilt
             <span className="text-[#1D9ED9] ml-1">{"}"}</span>

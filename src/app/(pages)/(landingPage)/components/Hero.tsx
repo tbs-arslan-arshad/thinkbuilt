@@ -48,14 +48,14 @@ const Hero = () => {
         onAnimationComplete={() => setTextAnimDone(true)}
         className="w-full flex flex-col items-center"
       >
-        <span className="text-white text-lg font-medium italic md:text-2xl mt-[180] 2xl:mt-[220]">
-          <span className="text-[#1D9ED9]">&#123;</span> Think Built Solution{" "}
+        <span className="text-white text-lg font-normal leading-[150%] italic mt-[180] 2xl:mt-[220]">
+          <span className="text-[#1D9ED9]">&#123;</span> ThinkBuilt Solution{" "}
           <span className="text-[#1D9ED9]">&#125;</span>
         </span>
 
-        <h1 className="text-white text-3xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl mt-[25.82]  sm:px-4 md:px-8 lg:px-12 flex  justify-center">
+        <h1 className="text-white mt-[25.82] text-[82px] font-normal leading-[120%] capitalize sm:px-4 md:px-8 lg:px-12 flex  justify-center">
           Clarity Before&nbsp;
-          <span className="sm:inline-block">
+          <span className="sm:inline-block font-medium">
             <span className="text-[#1D9ED9]">&#123;</span>
             Code
             <span className="text-[#1D9ED9]">&#125;</span>.
@@ -65,12 +65,12 @@ const Hero = () => {
               alt="icons"
               width={400}
               height={9.412}
-              className="justify-self-end sm:mr-8 mt-2 sm:mt-4 2xl:w-[300] xl:w-[220] md:w-[190] sm:w-[150] w-[95] sm:block"
+              className="justify-self-end sm:mr-8 mt-[7.23px] xl:w-[254px] md:w-[190px] sm:w-[150px] w-[95px] sm:block"
             />
           </span>
         </h1>
 
-        <div className="text-white text-xs md:text-lg xl:text-xl text-center mt-[25] h-[60px] overflow-hidden">
+        <div className="text-white/[0.86] text-xl font-normal leading-[150%] text-center mt-[25] h-[60px] overflow-hidden">
           <p className="inline-block">
             {showFirstLine && (
               <span className="typewriter-first">
@@ -93,7 +93,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 80 }}
         animate={textAnimDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }}
         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.1 }}
-        className="text-white rounded-full mt-[30px] bg-[#1D9ED9] text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl font-Satoshi"
+        className="text-white/[0.86] rounded-full mt-[30px] bg-[#1D9ED9] text-lg font-medium leading-[30px]"
       >
         <Button
           type="button"

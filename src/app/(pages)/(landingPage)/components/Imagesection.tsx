@@ -29,6 +29,35 @@ const Imagesection = () => {
 
   return (
     <section id="about" ref={row1Ref} className="bg-[#0E0805]">
+      <motion.div
+        ref={row1Ref}
+        initial={{ opacity: 0, y: -80 }}
+        animate={row1InView ? { opacity: 1, y: 0 } : { opacity: 0, y: -80 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+        className="w-full flex flex-col items-center"
+      >
+        <h1 className="mt-[60px] text-center text-[44px] font-normal leading-[140%] capitalize ">
+          <span>You’ve Got the Vision.</span>
+          <br />
+          <span className="font-medium">
+            <span className="text-white/[0.46] font-normal">
+              We Help You Bring It To Life —{" "}
+            </span>
+            <span className="text-[#1D9ED9]">&#123;</span>
+            <span className="text-white">The Right Way</span>
+            <span className="text-[#1D9ED9]">&#125;</span>.
+          </span>
+        </h1>
+        <p className="mt-[20.75] text-xl font-normal leading-[150%] justify-center items-center px-3 text-center mb-[40px] sm:mb-[0px]">
+          Whether it&apos;s a SaaS, web app, or marketplace, we guide non-tech
+          founders
+          <br className="hidden sm:inline" />
+          <span className="sm:flex justify-center text-center  mb-[40px] 2xl:mb-[30px]">
+            from idea to execution.
+          </span>
+        </p>
+      </motion.div>
+
       <div className="flex flex-col items-center gap-4 py-[50px]  justify-center mx-4">
         <div className="grid 2xl:grid-cols-[820px_441px] xl:grid-cols-[800px_441px] gap-4 items-center justify-center ">
           <motion.div
@@ -54,11 +83,13 @@ const Imagesection = () => {
             <div className="flex flex-col bg-[#AAE3FE] p-4 rounded-3xl  2xl:h-[409] transition-all duration-500 hover-animation text-black">
               {FEATURES.map((stat, index) => (
                 <div key={index} className="">
-                  <h1 className="text-6xl sm:text-8xl mt-[10px]">
+                  <h1 className="text-[85.409px] font-normal leading-[102.491px] mt-[10px]">
                     {stat.title}
                   </h1>
-                  <span className="font-bold">{stat.heading}</span>
-                  <p className="text-md mt-[120px] sm:mt-[220px]">
+                  <span className="text-[17.794px] font-normal leading-[23.132px] tracing-[-0.356px] uppercase ">
+                    {stat.heading}
+                  </span>
+                  <p className="text-lg font-normal leading-[21.352px] mt-[120px] sm:mt-[220px] text-black/[0.8]">
                     {stat.description}
                   </p>
                 </div>
@@ -110,7 +141,7 @@ const Imagesection = () => {
                       } transform -translate-x-1/2 hover:scale-105 hover:shadow-lg shadow-red-50/60 transition-all duration-400
             ${
               animatedTagId === tag.id
-                ? "scale-110 shadow-lg shadow-cyan-700/50"
+                ? "scale-110 shadow-[0_0_15px_10px_rgba(34,211,238,1)]"
                 : "shadow-none"
             } `}
                     >

@@ -27,8 +27,12 @@ export const Card = ({ bgColor, icon, alt, title, description }: CardProps) => {
           loading="lazy"
         />
       </div>
-      <h2 className="text-black text-xl sm:text-2xl my-4">{title}</h2>
-      <p className="text-black text-sm sm:text-lg">{description}</p>
+      <h2 className="text-black text-[22px] font-bold leading-6 tracking-[0.4px] mt-4 mb-7">
+        {title}
+      </h2>
+      <p className="text-black/[0.77] text-lg font-normal leading-[27px]">
+        {description}
+      </p>
     </div>
   );
 };

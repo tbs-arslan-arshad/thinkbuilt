@@ -77,16 +77,17 @@ const Trusted = () => {
         transition={{ duration: 0.6, ease: "easeInOut" }}
         className="w-full flex flex-col items-center"
       >
-        <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-          Trusted by Founders Building
+        <h1 className="text-white text-[44px] font-normal leading-[130%] capitalize">
+          <span className="text-white/46">Trusted by Founders Building</span>
           <br />
-          <span className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl my-[21px] flex  justify-center">
-            <span className="text-[#1D9ED9]">&#123;</span>Real Products
+          <span className="font-medium my-[21px] flex  justify-center">
+            <span className="text-[#1D9ED9]">&#123;</span>
+            <span className="">Real Products</span>
             <span className="text-[#1D9ED9]">&#125;</span>
           </span>
         </h1>
         <div className=" mb-[20px] items-center justify-center">
-          <p className="text-white text-xs sm:text-sm md:text-md lg:text-xl  ">
+          <p className="text-white text-xl font-normal leading-[150%]  ">
             From solo founders to global brands, we&apos;ve helped turn
             <br />
             <span className="flex justify-center">
@@ -109,33 +110,6 @@ const Trusted = () => {
           <MarqueeRow items={row2} active={gridInView} speed={24} delay={0.1} />
         </div>
         <div className="border-t border-gray-700 w-full max-w-[75%] 2xl:max-w-[80%] mx-auto my-6"></div>
-      </motion.div>
-
-      <motion.div
-        ref={gridRef}
-        initial={{ opacity: 0, y: -80 }}
-        animate={gridInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -80 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
-        className="w-full flex flex-col items-center"
-      >
-        <h1 className="mt-[60px] text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-300">
-          You’ve Got the Vision.
-        </h1>
-        <br />
-        <span className="text-sm sm:text-2xl md:text-3xl lg:text-4xl text-gray-400">
-          We Help You Bring It To Life —{" "}
-          <span className="text-[#1D9ED9]">&#123;</span>
-          <span className="text-white">The Right Way</span>
-          <span className="text-[#1D9ED9]">&#125;</span>.
-        </span>
-        <p className="text-gray-200 mt-[20.75]  justify-center items-center text-xs md:text-md lg:text-lg px-3 text-center mb-[40px] sm:mb-[0px]">
-          Whether it&apos;s a SaaS, web app, or marketplace, we guide non-tech
-          founders
-          <br className="hidden sm:inline" />
-          <span className="sm:flex justify-center text-center  mb-[40px] 2xl:mb-[30px]">
-            from idea to execution.
-          </span>
-        </p>
       </motion.div>
     </section>
   );
