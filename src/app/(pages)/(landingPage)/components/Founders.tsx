@@ -51,7 +51,7 @@ const Founders = () => {
     <section
       id="why-us"
       ref={foundersRef}
-      className="  flex flex-col items-center justify-center min-h-screen"
+      className="flex flex-col items-center justify-center min-h-screen p-4"
     >
       <div className="grid md:grid-cols-4 grid-cols-2 gap-0 pt-2 ">
         {displayStats.map((stat) => (
@@ -70,10 +70,10 @@ const Founders = () => {
             }}
             className="flex flex-col items-center justify-center rounded-full bg-[rgba(255,255,255,0.10)] w-[130px] h-[130px] sm:w-[170px] sm:h-[170px] text-white transition-all duration-500 hover-animation gap-[7px]"
           >
-            <h1 className="text-[40px] font-normal leading-8 tracking-[-2x]">
+            <h1 className="text-2xl md:text-[40px] font-normal leading-8 tracking-[-2x]">
               {stat.value}
             </h1>
-            <span className="text-base font-normal leading-6 text-white/80">
+            <span className="text-xs md:text-base font-normal leading-6 text-white/80">
               {stat.label}
             </span>
           </motion.div>
@@ -86,7 +86,7 @@ const Founders = () => {
           FounderRefInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -80 }
         }
         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
-        className="text-[44px] text-white/80 font-normal leading-[130%] capitalize mt-[50px] lg:mt-[150px]  h-[100] flex flex-col items-center justify-center"
+        className="text-3xl md:text-[44px] text-white/80 font-normal leading-[130%] capitalize mt-[50px] lg:mt-[150px]  h-[100] flex flex-col items-center justify-center text-center"
       >
         Why Non-Tech Founders Choose
         <br />
@@ -96,7 +96,7 @@ const Founders = () => {
         </span>
       </motion.h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center justify-center mt-[50px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center justify-center mt-[50px] gap-y-11 lg:gap-y-0">
         {featureCards.map((card) => (
           <motion.div
             initial={{ opacity: 0, y: 80 }}
@@ -121,10 +121,10 @@ const Founders = () => {
               height={42}
               className="mt-[-50px] mb-[25px]"
             />
-            <p className="text-xl font-bold leading-[26px] -leading-[0.1px]">
+            <p className="text-base md:text-xl font-bold leading-[26px] -leading-[0.1px]">
               {card.title}
             </p>
-            <span className="max-w-[314.826px] flex justify-center text-center text-base font-normal leading-[26px] opacity-[0.6] mt-[15px]">
+            <span className="max-w-[314.826px] flex justify-center text-center text-sm md:text-base font-normal leading-[26px] opacity-[0.6] mt-[15px]">
               {card.description}
             </span>
           </motion.div>
@@ -132,7 +132,7 @@ const Founders = () => {
       </div>
 
       <div
-        className={`relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-2 mb-[20px]`}
+        className={`relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-2 mb-[20px] mt-6 lg:mt-0`}
       >
         {featureItems.map((item, index) => (
           <motion.div

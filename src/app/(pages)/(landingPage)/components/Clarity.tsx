@@ -3,25 +3,37 @@ import Image from "next/image";
 import Button from "../../../components/ui/Button";
 import { useRef } from "react";
 import { useInView, motion } from "motion/react";
+import { useMediaQuery } from "react-responsive";
 
 const Clarity = () => {
+  const isMediumUp = useMediaQuery({ minWidth: 1024 });
   const clarityRef = useRef(null);
 
   const clarityRefInView = useInView(clarityRef, { once: true, amount: 0.4 });
 
   return (
-    <section ref={clarityRef} className="bg-[#121010] flex">
+    <section ref={clarityRef} className="bg-[#121010] flex pt-8">
       <div className="flex flex-col w-full lg:flex-row items-center justify-end min-h-[400px] lg:min-h-[600px]">
-        <div className="flex flex-1 flex-col  text-white w-full h-full justify-center items-center pl-[142px]">
+        <div className="flex flex-1 flex-col text-white w-full h-full justify-center items-center lg:pl-[142px] px-4">
           <motion.div
-            initial={{ opacity: 0, x: -80 }}
+            initial={{
+              opacity: 0,
+              x: isMediumUp ? -80 : 0,
+              y: isMediumUp ? 0 : -80,
+            }}
             animate={
-              clarityRefInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }
+              clarityRefInView
+                ? { opacity: 1, x: 0, y: 0 }
+                : {
+                    opacity: 0,
+                    x: isMediumUp ? -80 : 0,
+                    y: isMediumUp ? 0 : -80,
+                  }
             }
             transition={{ duration: 0.9, ease: "easeInOut" }}
-            className="w-full"
+            className="w-full flex flex-col items-center lg:items-start"
           >
-            <h1 className="text-white text-[44px] font-normal leading-[130%] capitalize w-full max-w-[ 525.456p] text-center lg:text-left">
+            <h1 className="text-white text-3xl md:text-[44px] font-normal leading-[130%] capitalize w-full text-center lg:text-left max-w-[525.56px]">
               <span className="text-white/[0.46]">
                 Before You Build Anything, Talk to Someone
               </span>
@@ -32,7 +44,7 @@ const Clarity = () => {
                 <span className="text-[#1D9ED9]">{"}"}</span>.
               </span>
             </h1>
-            <p className="mt-[21px] text-xl font-normal leading-[150%] w-full max-w-[586px] text-center lg:text-left">
+            <p className="mt-[21px] text-base md:text-xl font-normal leading-[150%] w-full max-w-[586.279px] text-center lg:text-left ">
               In just one session, I’ll help you understand what to build, who
               to hire, and how to start — without wasting your time.
             </p>
@@ -44,7 +56,7 @@ const Clarity = () => {
               clarityRefInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }
             }
             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
-            className="flex justify-start w-full mt-10"
+            className="flex justify-center lg:justify-start w-full mt-10"
           >
             <Button
               type="button"
@@ -62,11 +74,11 @@ const Clarity = () => {
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
-          className="relative w-[40%] h-[617.16px] flex items-center justify-start "
+          className="relative w-full lg:w-[40%] h-[617.16px] flex items-center justify-center lg:justify-start mt-8 lg:mt-0 px-4"
         >
           {/* The three layered images with animation */}
           <motion.div
-            className="relative h-[418.6px] w-[436.22px] left-[37.61px]"
+            className="relative h-[318px] w-full md:h-[418.6px] md:w-[436.22px] md:left-[37.61px]"
             initial="start"
             animate={clarityRefInView ? "end" : "start"}
             variants={{
@@ -86,7 +98,12 @@ const Clarity = () => {
             <motion.div
               className="absolute inset-0 flex items-center justify-center"
               variants={{
-                start: { y: 40, x: 40, rotate: 10, opacity: 0 },
+                start: {
+                  y: 40,
+                  x: isMediumUp ? 40 : 0,
+                  rotate: isMediumUp ? 10 : 5,
+                  opacity: 0,
+                },
                 end: {
                   y: 0,
                   x: 0,
@@ -101,7 +118,7 @@ const Clarity = () => {
                 alt="Third Clarity Session"
                 width={418.6}
                 height={436.22}
-                className="w-full h-full z-10"
+                className="md:w-full w-[300px] md:h-full h-[300px] z-10"
               />
             </motion.div>
 
@@ -109,7 +126,12 @@ const Clarity = () => {
             <motion.div
               className="absolute inset-0 flex items-center justify-center"
               variants={{
-                start: { y: -40, x: -40, rotate: -10, opacity: 0 },
+                start: {
+                  y: -40,
+                  x: isMediumUp ? -40 : 0,
+                  rotate: isMediumUp ? -10 : -5,
+                  opacity: 0,
+                },
                 end: {
                   y: 0,
                   x: 0,
@@ -124,7 +146,7 @@ const Clarity = () => {
                 alt="Second Clarity Session"
                 width={418.6}
                 height={436.22}
-                className="w-full h-full z-20"
+                className="md:w-full w-[300px] md:h-full h-[300px] z-20"
               />
             </motion.div>
 
@@ -132,7 +154,7 @@ const Clarity = () => {
             <motion.div
               className="absolute inset-0 flex items-center justify-center"
               variants={{
-                start: { y: 40, x: 40, rotate: 0, opacity: 0 },
+                start: { y: 40, x: isMediumUp ? 40 : 0, rotate: 0, opacity: 0 },
                 end: {
                   y: 0,
                   x: 0,
@@ -147,7 +169,7 @@ const Clarity = () => {
                 alt="Main Clarity Session"
                 width={418}
                 height={436}
-                className="w-full h-full z-30"
+                className="md:w-full w-[300px] md:h-full h-[300px] z-30"
               />
             </motion.div>
           </motion.div>

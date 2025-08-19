@@ -27,7 +27,7 @@ export default function Home() {
       <Village />
       <Divsection />
       <div
-        className=" z-50 "
+        className="z-50"
         style={{
           backgroundImage: " url('/images/Bg.jpg')",
           backgroundSize: "cover",

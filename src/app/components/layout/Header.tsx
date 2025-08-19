@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <nav className=" py-[10px] bg-black fixed top-0 left-0 w-full z-60">
-      <div className="flex justify-between relative items-center xl:px-[10%] px-[5%] mt-[10px]">
+      <div className="flex justify-between relative items-center xl:px-[10%] px-4 mt-[10px]">
         <Link href="/">
           <Image
             src="/images/Group.png"
@@ -29,6 +29,7 @@ const Header = () => {
             alt="logo"
             width={195.63}
             height={44}
+            className="w-32 h-8 md:w-[195.63px] md:h-[44px]"
           />
         </Link>
 

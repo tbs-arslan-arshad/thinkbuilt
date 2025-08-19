@@ -39,7 +39,7 @@ const Hero = () => {
   return (
     <section
       id="top"
-      className="flex flex-col items-center min-h-screen relative mt-[60]"
+      className="flex flex-col items-center min-h-screen relative mt-[60] px-4"
     >
       <motion.div
         initial={{ opacity: 0, y: -80 }}
@@ -53,7 +53,7 @@ const Hero = () => {
           <span className="text-[#1D9ED9]">&#125;</span>
         </span>
 
-        <h1 className="text-white mt-[25.82] text-[82px] font-normal leading-[120%] capitalize sm:px-4 md:px-8 lg:px-12 flex  justify-center">
+        <h1 className="text-white mt-[25.82] text-4xl md:text-[82px] font-normal leading-[120%] capitalize sm:px-4 md:px-8 lg:px-12 flex justify-center flex-wrap lg:flex-nowrap">
           Clarity Before&nbsp;
           <span className="sm:inline-block font-medium">
             <span className="text-[#1D9ED9]">&#123;</span>
@@ -65,13 +65,20 @@ const Hero = () => {
               alt="icons"
               width={400}
               height={9.412}
-              className="justify-self-end sm:mr-8 mt-[7.23px] xl:w-[254px] md:w-[190px] sm:w-[150px] w-[95px] sm:block"
+              className="justify-self-end mr-4 sm:mr-8 mt-[7.23px] xl:w-[254px] md:w-[190px] sm:w-[150px] w-[95px] sm:block"
             />
           </span>
         </h1>
 
-        <div className="text-white/[0.86] text-xl font-normal leading-[150%] text-center mt-[25] h-[60px] overflow-hidden">
-          <p className="inline-block">
+        <div className="text-white/[0.86] text-base md:text-xl font-normal leading-[150%] text-center mt-[25] overflow-hidden px-4 md:px-0 w-full md:max-w-[ 575.932px]">
+          <p className="inline-block md:hidden">
+            <span className="md:typewriter-first break-all">
+              Helping non-tech founders turn ideas into digital platforms —
+              confidence and the right direction.
+            </span>
+          </p>
+
+          <p className="hidden md:inline-block">
             {showFirstLine && (
               <span className="typewriter-first">
                 Helping non-tech founders turn ideas into digital platforms —
@@ -79,7 +86,7 @@ const Hero = () => {
             )}
           </p>
           <br />
-          <p className="inline-block">
+          <p className="hidden md:inline-block">
             {showSecondLine && (
               <span className="typewriter-second">
                 confidence and the right direction.

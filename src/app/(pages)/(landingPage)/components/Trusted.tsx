@@ -69,7 +69,7 @@ const Trusted = () => {
   };
 
   return (
-    <section className="flex flex-col items-center  bg-[#0E0805] pt-[100px]">
+    <section className="flex flex-col items-center  bg-[#0E0805] pt-[100px] px-4">
       <motion.div
         ref={headRef}
         initial={{ opacity: 0, y: -80 }}
@@ -77,7 +77,7 @@ const Trusted = () => {
         transition={{ duration: 0.6, ease: "easeInOut" }}
         className="w-full flex flex-col items-center"
       >
-        <h1 className="text-white text-[44px] font-normal leading-[130%] capitalize">
+        <h1 className="text-white text-3xl md:text-[44px] font-normal leading-[130%] capitalize text-center">
           <span className="text-white/46">Trusted by Founders Building</span>
           <br />
           <span className="font-medium my-[21px] flex  justify-center">
@@ -86,8 +86,8 @@ const Trusted = () => {
             <span className="text-[#1D9ED9]">&#125;</span>
           </span>
         </h1>
-        <div className=" mb-[20px] items-center justify-center">
-          <p className="text-white text-xl font-normal leading-[150%]  ">
+        <div className=" mb-[20px] items-center justify-center text-center">
+          <p className="text-white text-base md:text-xl font-normal leading-[150%]  ">
             From solo founders to global brands, we&apos;ve helped turn
             <br />
             <span className="flex justify-center">
