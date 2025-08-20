@@ -52,9 +52,6 @@ const Imagesection = () => {
             animate={row1InView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
           >
-
-
-
             <div className="flex flex-col bg-[#AAE3FE] p-4 rounded-3xl  2xl:h-[409] transition-all duration-500 hover-animation ">
               {FEATURES.map((stat, index) => (
                 <div key={index} className="">
@@ -73,7 +70,6 @@ const Imagesection = () => {
             </div>
           </motion.div>
         </div>
-
         <div className="flex flex-col xl:flex-row gap-4 items-center justify-center">
           <motion.div
             ref={row2Ref}
@@ -89,7 +85,6 @@ const Imagesection = () => {
                   height={409}
                 />
               </div>
-
               <div className="absolute   h-full hidden sm:block w-[600px] items-center justify-center text-center">
                 <Image
                   src="/images/Background_8.png"
@@ -100,36 +95,7 @@ const Imagesection = () => {
                   priority
                 />
               </div>
-
               {/* Tag Circle - centered over image */}
-<<<<<<< HEAD
-              <div className="relative z-10 w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] rounded-full border-1 border-white overflow-hidden hidden sm:block ">
-                {tags.map((tag) => (
-                  <div
-                    key={tag.id}
-                    className={`flex gap-1 items-center ${
-                      tag.bgColor
-                    } rounded-full py-2 px-5 ${tag.rotation} ${
-                      tag.zIndex
-                    } absolute ${
-                      tag.position
-                    } transform -translate-x-1/2 hover:scale-105 shadow-red-50/60 transition-all duration-400
-            ${animatedTagId === tag.id ? "scale-110" : ""}`}>
-                    <Image
-                      src={tag.icon}
-                      alt={tag.text}
-                      width={24}
-                      height={24}
-                      className="w-6 h-6"
-                      priority={true} // Ensures immediate loading
-                      unoptimized={true} // For development
-                    />
-                    <span className="text-base whitespace-nowrap text-black font-satoshi  font-normal leading-[1.5]">
-                      {tag.text}
-                    </span>
-                  </div>
-                ))}
-=======
               <div className="relative z-10 w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] rounded-full border-2 border-white overflow-hidden hidden sm:block">
                 {tags.map((tag) => {
                   return (
@@ -161,11 +127,9 @@ const Imagesection = () => {
                     </div>
                   );
                 })}
->>>>>>> d04ae82c3ab920989b916f9a341a79fd91a696ec
               </div>
             </div>
           </motion.div>
-
           <motion.div
             ref={row2Ref}
             initial={{ opacity: 0, x: 80 }}
@@ -187,5 +151,4 @@ const Imagesection = () => {
     </section>
   );
 };
-
 export default Imagesection;
