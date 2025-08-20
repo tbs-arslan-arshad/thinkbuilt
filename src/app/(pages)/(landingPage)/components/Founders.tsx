@@ -96,7 +96,7 @@ const Founders = () => {
         </span>
       </motion.h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center justify-center mt-[50px] gap-y-11 lg:gap-y-0">
+      <div className="flex flex-col flex-wrap md:flex-row gap-3 items-center justify-center mt-[50px] w-full">
         {featureCards.map((card) => (
           <motion.div
             initial={{ opacity: 0, y: 80 }}
@@ -105,7 +105,7 @@ const Founders = () => {
             }
             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
             key={card.id}
-            className="text-white flex flex-col items-center sm:w-[350px] h-[150px] xl:h-[285px] transition-all duration-500 hover-animation"
+            className="text-white flex-1 w-full flex flex-col items-center h-[220px] max-w-[473px] rounded-[20px] transition-all duration-500 hover-animation py-[20px] border border-[#FFFFFF0D] bg-[rgba(13,13,13,0.2)] md:bg-[rgba(13,13,13,0.1)] backdrop-blur-[5px]"
           >
             <Image
               src={card.borderImage}
@@ -132,7 +132,7 @@ const Founders = () => {
       </div>
 
       <div
-        className={`relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-2 mb-[20px] mt-6 lg:mt-0`}
+        className={`relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-2 mb-[20px] mt-[23px]`}
       >
         {featureItems.map((item, index) => (
           <motion.div

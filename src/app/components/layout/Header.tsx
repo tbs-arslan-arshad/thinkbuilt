@@ -4,6 +4,7 @@ import { NAV_LINKS } from "../../constants/index";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../ui/Button";
+import { Menu } from "lucide-react";
 
 const Header = () => {
   const handleScroll = (e: any, href: any) => {
@@ -51,13 +52,7 @@ const Header = () => {
         <div className="lg:flex text-[#0E0805] rounded-full text-lg bg-white hidden">
           <Button type="button" title="Get Started" variant="py-2 px-6" />
         </div>
-        <Image
-          src="/images/hamburger.png"
-          alt="menu"
-          width={32}
-          height={32}
-          className="inline-block cursor-pointer lg:hidden bg-white"
-        />
+        <Menu size={32} color="white" strokeWidth={2} className="lg:hidden" />
       </div>
       <div className=" border-t border-white  xl:ml-[10%] xl:mr-[10%] ml-[5%] mr-[5%] mt-[20px]"></div>
     </nav>
