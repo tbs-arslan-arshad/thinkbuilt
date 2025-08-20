@@ -58,6 +58,7 @@ const Imagesection = () => {
             <div className="flex flex-col bg-[#AAE3FE] p-4 rounded-3xl  2xl:h-[409] transition-all duration-500 hover-animation ">
               {FEATURES.map((stat, index) => (
                 <div key={index} className="">
+                  
                   <h1 className="text-6xl sm:text-[85.409px] text-black font-unbounded font-normal leading-[102.491px]">
                     {stat.title}
                   </h1>
@@ -91,7 +92,7 @@ const Imagesection = () => {
 
               <div className="absolute   h-full hidden sm:block w-[600px] items-center justify-center text-center">
                 <Image
-                  src="/images/Background 8.png"
+                  src="/images/Background_8.png"
                   alt="Background Image"
                   width={660}
                   height={409}
@@ -101,6 +102,7 @@ const Imagesection = () => {
               </div>
 
               {/* Tag Circle - centered over image */}
+<<<<<<< HEAD
               <div className="relative z-10 w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] rounded-full border-1 border-white overflow-hidden hidden sm:block ">
                 {tags.map((tag) => (
                   <div
@@ -127,6 +129,39 @@ const Imagesection = () => {
                     </span>
                   </div>
                 ))}
+=======
+              <div className="relative z-10 w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] rounded-full border-2 border-white overflow-hidden hidden sm:block">
+                {tags.map((tag) => {
+                  return (
+                    <div
+                      key={tag.id}
+                      className={`flex gap-1 items-center ${
+                        tag.bgColor
+                      } rounded-full py-2 px-5 ${tag.rotation} ${
+                        tag.zIndex
+                      } absolute ${
+                        tag.position
+                      } transform -translate-x-1/2 hover:scale-105 hover:shadow-lg shadow-red-50/60 transition-all duration-400
+            ${
+              animatedTagId === tag.id
+                ? "scale-110 shadow-lg shadow-cyan-700/50"
+                : "shadow-none"
+            } `}
+                    >
+                      <Image
+                        src={tag.icon}
+                        alt={tag.text}
+                        width={24}
+                        height={24}
+                        className="w-6 h-6"
+                      />
+                      <span className="text-black text-base font-medium whitespace-nowrap">
+                        {tag.text}
+                      </span>
+                    </div>
+                  );
+                })}
+>>>>>>> d04ae82c3ab920989b916f9a341a79fd91a696ec
               </div>
             </div>
           </motion.div>
@@ -138,8 +173,8 @@ const Imagesection = () => {
             transition={{ duration: 0.6, ease: "easeInOut" }}>
             <div className=" 2xl:w-[662px]  sm:h-[409px] transition-all duration-500 hover-animation">
               <Image
-                src={Images[3].src}
-                alt={Images[3].alt}
+                src={Images[3]?.src}
+                alt={Images[3]?.alt}
                 width={662}
                 height={409}
                 priority={true} // Ensures immediate loading

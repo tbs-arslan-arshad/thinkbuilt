@@ -38,7 +38,11 @@ const Hero = () => {
   }, [showFirstLine, showSecondLine]);
 
   return (
-    <section className="flex flex-col items-center min-h-screen relative mt-[60]">
+    <section
+      id="top"
+      className="flex flex-col items-center min-h-screen relative mt-[60]"
+    >
+      
       <motion.div
         initial={{ opacity: 0, y: -80 }}
         animate={{ opacity: 1, y: 0 }}

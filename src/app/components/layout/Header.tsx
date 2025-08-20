@@ -1,8 +1,20 @@
+"use client";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NAV_LINKS } from "../../constants/index";
 import Image from "next/image";
 import Link from "next/link";
 
 const Header = () => {
+  const handleScroll = (e: any, href: any) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  
   return (
     <nav className=" py-[10px] bg-black fixed top-0 left-0 w-full z-60">
       <div className="flex justify-between relative items-center xl:px-[10%] px-[5%] mt-[10px]">

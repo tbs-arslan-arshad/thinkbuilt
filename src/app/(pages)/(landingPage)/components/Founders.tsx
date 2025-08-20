@@ -11,6 +11,7 @@ const Founders = () => {
   const FounderRefInView = useInView(foundersRef, { once: true, amount: 0.4 });
 
   const [displayStats, setDisplayStats] = useState(statsData);
+  const [allAnimationsDone, setAllAnimationsDone] = useState(false);
 
   useEffect(() => {
     if (FounderRefInView) {
@@ -32,12 +33,24 @@ const Founders = () => {
         return () => clearTimeout(stopCountTimeout);
       }, 1000);
 
-      return () => clearTimeout(countDelay);
+      // Total time for other animations (stats, heading, feature cards)
+      // The longest animation is 0.6s duration + 0.6s delay = 1.2s.
+      // We'll add a slight buffer.
+      const animationEndDelay = setTimeout(() => {
+        setAllAnimationsDone(true);
+      }, 1500);
+
+      return () => {
+        clearTimeout(countDelay);
+        clearTimeout(animationEndDelay);
+      };
     }
   }, [FounderRefInView]);
 
+  
   return (
     <section
+      id="why-us"
       ref={foundersRef}
       className="  flex flex-col items-center justify-center min-h-screen">
       <div className="grid md:grid-cols-4 grid-cols-2 mt-[150px] ">
@@ -53,7 +66,7 @@ const Founders = () => {
             transition={{
               duration: 0.6,
               ease: "easeInOut",
-              delay: 0.1 * index,
+              // delay: 0.1 * index,
             }}
             className="flex flex-col items-center justify-center rounded-full bg-[#FFFFFF1A] w-[130px] h-[130px] sm:w-[187px] sm:h-[187px] text-white  transition-all duration-500 hover-animation">
             <h1 className="text-3xl xl:text-[40px] text-white font-unbounded  font-normal leading-[32px] tracking-[-2px]">
@@ -117,9 +130,15 @@ const Founders = () => {
           <motion.div
             initial={{ opacity: 0, y: 80 }}
             animate={
-              FounderRefInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }
+              FounderRefInView && allAnimationsDone
+                ? { opacity: 1, y: 0 }
+                : { opacity: 0, y: 80 }
             }
-            transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
+            transition={{
+              duration: 0.6,
+              ease: "easeInOut",
+              // delay: 0.1 * index,
+            }}
             key={item.id}
             className={`text-sm xl:text-base ${item.bgColor} flex gap-1 items-center justify-center rounded-full py-2 mb-[23px] lg:mb-[74px] px-2  transition-all duration-500 hover-animation text-black font-satoshi  font-normal leading-6`}>
             <Image
