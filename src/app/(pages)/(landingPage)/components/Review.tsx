@@ -72,7 +72,7 @@ const Review = () => {
     <section
       id="testimonials"
       ref={reviewsRef}
-      className="relative flex flex-col bg-[#0E0805] items-center justify-center px-4 lg:px-[154px] py-16 lg:py-[120px]"
+      className="relative flex flex-col bg-[#0E0805] items-center justify-center px-4 md:px-8 lg:px-[154px] py-16 lg:py-[120px]"
     >
       <motion.div
         initial={{ opacity: 0, y: -80 }}
