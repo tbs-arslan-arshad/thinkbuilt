@@ -4,26 +4,34 @@ import { NAV_LINKS } from "../../constants/index";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Menu } from "lucide-react";
+
 const Header = () => {
-  const handleScroll = (e: any, href: any) => {
-    e.preventDefault();
-    const targetId = href.replace("#", "");
-    const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // const handleScroll = (e: any, href: any) => {
+  //   e.preventDefault();
+  //   const targetId = href.replace("#", "");
+  //   const element = document.getElementById(targetId);
+  //   if (!element) return;
+
+  //   const nav = document.querySelector("nav") as HTMLElement | null;
+  //   const navH = nav?.offsetHeight ?? 0;
+  //   const y = element.getBoundingClientRect().top + window.scrollY - navH;
+
+  //   window.scrollTo({ top: y, behavior: "smooth" });
+  // };
 
   
   return (
     <nav className=" py-[10px] bg-black fixed top-0 left-0 w-full z-60">
-      <div className="flex justify-between relative items-center xl:px-[10%] px-[5%] mt-[10px]">
+      <div className="flex justify-between relative items-center xl:px-[10%] px-4 mt-[10px]">
         <Link href="/">
           <Image
             src="/images/Group.png"
+            priority
             alt="logo"
             width={195.63}
             height={44}
+            className="w-32 h-8 md:w-[195.63px] md:h-[44px]"
           />
         </Link>
 
@@ -45,14 +53,7 @@ const Header = () => {
             Get Started
           </Link>
         </div>
-
-        <Image
-          src="/images/hamburger.png"
-          alt="menu"
-          width={32}
-          height={32}
-          className="inline-block cursor-pointer lg:hidden bg-white"
-        />
+        <Menu size={32} color="white" strokeWidth={2} className="lg:hidden" />
       </div>
       <div className=" border-t border-white  xl:ml-[10%] xl:mr-[10%] ml-[5%] mr-[5%] mt-[20px]"></div>
     </nav>

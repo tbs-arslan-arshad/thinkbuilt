@@ -10,7 +10,7 @@ export const NAV_LINKS = [
 // CAMP SECTION
 export const PEOPLE_URL = [
   "/images/remember_well_logo.png",
-  "/images/naples_art_logo.svg",
+  "/images/naples_art_logo.png",
   "/images/credit_automate_logo.png",
   "/images/foodini_logo.svg",
   "/images/soulchoirs_logo.svg",

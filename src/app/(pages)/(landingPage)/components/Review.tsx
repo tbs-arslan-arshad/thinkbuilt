@@ -2,6 +2,7 @@
 import { useInView, motion } from "motion/react";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const reviews = [
   {
@@ -34,11 +35,9 @@ const reviews = [
 ];
 
 const Review = () => {
+  const isMediumUp = useMediaQuery({ minWidth: 1024 });
   const reviewsImageRef = useRef(null);
-  const reviewsImageRefInView = useInView(reviewsImageRef, {
-    once: true,
-    amount: 0.4,
-  });
+  const reviewsImageRefInView = useInView(reviewsImageRef, {once: true, amount: 0.4,});
 
   const reviewsRef = useRef(null);
   const reviewsRefInView = useInView(reviewsRef, { once: true, amount: 0.4 });
@@ -56,9 +55,9 @@ const Review = () => {
 
   return (
     <section
+      id="testimonials"
       ref={reviewsRef}
-      className="flex flex-col min-h-screen bg-[#0E0805] items-center justify-center px-[154px]"
-    >
+      className="flex flex-col min-h-screen bg-[#0E0805] items-center justify-center px-4 md:px-[154px]">
       <motion.div
         initial={{ opacity: 0, y: -80 }}
         animate={
@@ -66,9 +65,12 @@ const Review = () => {
         }
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
-        <h1 className="text-white text-md sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center max-w-4xl mx-auto mb-6 sm:mb-8 lg:mb-12 mt-[20px]">
-          What Founders Say After Working With <br />
-          <span className="flex items-center justify-center mt-2 sm:mt-3">
+        <h1 className="text-white text-4xl md:text-[48px] font-normal leading-[140%] capitalize text-center max-w-4xl mx-auto mb-6 sm:mb-8 lg:mb-12 mt-[20px]">
+          <span className="text-white/46">
+            What Founders Say After Working With
+          </span>{" "}
+          <br />
+          <span className="flex items-center justify-center mt-2 sm:mt-3 font-medium">
             <span className="text-[#1D9ED9] mr-1">{"{"}</span>
             ThinkBuilt
             <span className="text-[#1D9ED9] ml-1">{"}"}</span>
@@ -76,14 +78,18 @@ const Review = () => {
         </h1>
       </motion.div>
 
-      <div className="relative flex flex-row justify-center items-center w-full h-[473px] border-2 border-gray-500 rounded-[25.71px]">
+      <div className="relative flex flex-row justify-center items-center w-full h-[373px] md:h-[473px] border-2 border-gray-500 rounded-[25.71px]">
         {/* Review Image Section - First Column */}
         <motion.div
-          initial={{ opacity: 0, x: -80 }}
+          initial={{
+            opacity: 0,
+            x: isMediumUp ? -80 : 0,
+            y: isMediumUp ? 0 : -80,
+          }}
           animate={
             reviewsImageRefInView
-              ? { opacity: 1, x: 0 }
-              : { opacity: 0, x: -80 }
+              ? { opacity: 1, x: 0, y: 0 }
+              : { opacity: 0, x: isMediumUp ? -80 : 0, y: isMediumUp ? 0 : -80 }
           }
           transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
           className="flex items-center justify-center"
@@ -91,7 +97,7 @@ const Review = () => {
           <Image
             src={reviews[currentReviewIndex].image}
             alt={reviews[currentReviewIndex].companyName}
-            className="h-[468px] w-[418px] object-cover rounded-r-xl rounded-l-[23px] border-r border-gray-300 bg-white"
+            className="h-[368px] w-[318px] md:h-[468px] md:w-[418px] object-cover rounded-r-xl rounded-l-[23px] border-r border-gray-300 bg-white"
             width={418}
             height={468}
             // priority={false}
@@ -106,10 +112,8 @@ const Review = () => {
         >
           {reviews.map((review, index) => {
             const isActive = index === currentReviewIndex;
-            const isBehindOne =
-              index === (currentReviewIndex + 1) % reviews.length;
-            const isBehindTwo =
-              index === (currentReviewIndex + 2) % reviews.length;
+            const isBehindOne = index === (currentReviewIndex + 1) % reviews.length;
+            const isBehindTwo = index === (currentReviewIndex + 2) % reviews.length;
 
             let zIndex = 0;
 
@@ -126,7 +130,11 @@ const Review = () => {
             return (
               <motion.div
                 key={review.id}
-                initial={{ opacity: 0, x: 100 }}
+                initial={{
+                  opacity: 0,
+                  x: isMediumUp ? 100 : 0,
+                  y: isMediumUp ? 0 : 100,
+                }}
                 animate={
                   reviewsImageRefInView && {
                     opacity: isActive ? 1 : 1.2,
@@ -139,7 +147,24 @@ const Review = () => {
                       ? 8
                       : 0,
                     // y: isActive ? 0 : isBehindOne ? 8 : isBehindTwo ? 20 : 36,
-                    x: isActive ? 0 : isBehindOne ? 8 : isBehindTwo ? 8 : 100,
+                    x: isMediumUp
+                      ? isActive
+                        ? 0
+                        : isBehindOne
+                        ? 8
+                        : isBehindTwo
+                        ? 8
+                        : 100
+                      : 0,
+                    y: !isMediumUp
+                      ? isActive
+                        ? 0
+                        : isBehindOne
+                        ? 8
+                        : isBehindTwo
+                        ? 8
+                        : 100
+                      : 0,
                     zIndex: zIndex,
                   }
                 }
@@ -150,7 +175,7 @@ const Review = () => {
                   backgroundSize: "cover", // Adjust as needed
                   backgroundPosition: "center", // Adjust as needed
                 }}
-                className={`absolute top-0 left-0 w-full h-full bg-[#1F1D1D] p-6 sm:p-8 xl:p-10 rounded-r-[25.21px] transform-gpu transition-all duration-500 origin-bottom-center border-r border-gray-400 ${
+                className={`absolute top-0 left-0 w-full h-full bg-[#1F1D1D] px-6 py-2 lg:p-10 rounded-r-[25.21px] transform-gpu transition-all duration-500 origin-bottom-center border-r border-gray-400 ${
                   !isActive && "hidden sm:block "
                 } ${
                   isBehindOne
@@ -163,7 +188,7 @@ const Review = () => {
                 }`}
               >
                 <div
-                  className={`flex items-center mb-4 sm:mb-6 gap-2 xl:mt-[20px] transition-all duration-500`}
+                  className={`flex flex-col lg:flex-row lg:items-center mb-4 sm:mb-6 gap-2 xl:mt-[20px] transition-all duration-500 items-start`}
                 >
                   <Image
                     src={review.companyLogo}
@@ -172,12 +197,12 @@ const Review = () => {
                     height={90}
                     className="w-[50px] h-[50px] sm:w-[80px] sm:h-[80px]"
                   />
-                  <h1 className="text-white text-3xl sm:text-5xl font-semibold">
+                  <h1 className="text-white text:xl md:text-2xl lg:text-5xl font-semibold">
                     {review.companyName}
                   </h1>
                 </div>
 
-                <p className="text-white text-sm sm:text-md md:text-lg lg:text-xl mb-4 sm:mb-6 text-wrap">
+                <p className="text-white text-[14px] lg:text-xl mb-4 sm:mb-6 text-wrap">
                   {review.quote}
                 </p>
                 <div>

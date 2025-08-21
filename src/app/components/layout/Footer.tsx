@@ -14,6 +14,7 @@ const Footer = () => {
               alt="ThinkBuilt Solutions Logo"
               width={199}
               height={45}
+              priority
               className="hover-animation"
             />
             <p className="w-full max-w-[277px] mt-4 text-center text-sm sm:text-base">

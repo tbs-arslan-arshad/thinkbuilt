@@ -1,6 +1,6 @@
 import Hero from "./components/Hero";
 import Trusted from "./components/Trusted";
-import Imagesection from "./components/Imagesection";
+import ImageSection from "./components/ImageSection";
 import Village from "./components/Village";
 import Divsection from "./components/Divsection";
 import Founders from "./components/Founders";
@@ -20,14 +20,14 @@ export default function Home() {
           sizes="100vw"
           className="object-cover"
         />
-        <Hero />
+        <Hero/>
       </div>
-      <Trusted />
-      <Imagesection />
-      <Village />
-      <Divsection />
+      <Trusted/>  
+     <ImageSection/>
+      <Village/>
+      <Divsection/>
       <div
-        className=" z-50 "
+        className="z-50"
         style={{
           backgroundImage: " url('/images/Bg.jpg')",
           backgroundSize: "cover",

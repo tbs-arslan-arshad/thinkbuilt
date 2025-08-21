@@ -47,14 +47,13 @@ const Founders = () => {
     }
   }, [FounderRefInView]);
 
-  
   return (
     <section
       id="why-us"
       ref={foundersRef}
       className="  flex flex-col items-center justify-center min-h-screen">
       <div className="grid md:grid-cols-4 grid-cols-2 mt-[150px] ">
-        {displayStats.map((stat, index) => (
+        {displayStats.map((stat) => (
           <motion.div
             key={stat.id}
             initial={{ opacity: 0, scale: 0 }}

@@ -40,6 +40,17 @@ body {
   animation: typing-second 2.5s steps(30, end);
 }
 
+.typewriter-para {
+          display: inline-block;
+          white-space: nowrap;
+          overflow: hidden;
+          animation: typing-para 5s steps(70, end);
+          
+        }
+
+
+
+        
 @keyframes typing-first {
   from {
     width: 0;
@@ -50,6 +61,15 @@ body {
 }
 
 @keyframes typing-second {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typing-para {
   from {
     width: 0;
   }

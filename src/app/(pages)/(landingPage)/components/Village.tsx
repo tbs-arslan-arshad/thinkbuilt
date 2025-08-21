@@ -5,27 +5,39 @@ import Link from "next/link";
 import { profiles } from "../../../constants";
 import { useRef } from "react";
 import { useInView, motion } from "motion/react";
+import { useMediaQuery } from "react-responsive";
 
 const Village = () => {
+  const isMediumUp = useMediaQuery({ minWidth: 1024 });
   const villageRef = useRef(null);
   const villageInView = useInView(villageRef, { once: true, amount: 0.4 });
-
   return (
-    <section id="our-story" className="flex bg-[#0E0805]  justify-center ">
+    <section id="our-story" className="flex bg-[#0E0805]  justify-center px-4">
       <div
         ref={villageRef}
-        className="lg:flex  2xl:mx-[207.17] gap-[50px] lg:gap-[80px]  xl:gap-[130.31] sm:px-2 py-[60] ">
+        className="lg:flex 2xl:mx-[207.17] gap-[50px] lg:gap-[80px] xl:gap-[130.31] md:px-2 py-[60] "
+      >
         <div className="flex justify-center mt-[80px] ">
           {profiles.map((profile) => (
             <div key={profile.id} className={profile.container.className}>
               {/* Main Image */}
               <motion.div
-                initial={{ opacity: 0, x: -80 }}
+                initial={{
+                  opacity: 0,
+                  x: isMediumUp ? -80 : 0,
+                  y: isMediumUp ? 0 : -80,
+                }}
                 animate={
-                  villageInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }
+                  villageInView
+                    ? { opacity: 1, x: 0, y: 0 }
+                    : {
+                        opacity: 0,
+                        x: isMediumUp ? -80 : 0,
+                        y: isMediumUp ? 0 : -80,
+                      }
                 }
                 transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="relative h-[500px] w-[360px] rounded-[24px] overflow-visible"
+                className="relative h-[410px] w-[275px] md:h-[500px] md:w-[360px] rounded-[24px] overflow-visible"
               >
                 <Image
                   src="/images/basit.png"
@@ -39,9 +51,19 @@ const Village = () => {
 
               {/* Overlay Image */}
               <motion.div
-                initial={{ opacity: 0, x: -80 }}
+                initial={{
+                  opacity: 0,
+                  x: isMediumUp ? -80 : 0,
+                  y: isMediumUp ? 0 : -80,
+                }}
                 animate={
-                  villageInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }
+                  villageInView
+                    ? { opacity: 1, x: 0, y: 0 }
+                    : {
+                        opacity: 0,
+                        x: isMediumUp ? -80 : 0,
+                        y: isMediumUp ? 0 : -80,
+                      }
                 }
                 transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}>
                 
@@ -58,9 +80,19 @@ const Village = () => {
 
               {/* Name with Highlighted Part */}
               <motion.h1
-                initial={{ opacity: 0, x: -80 }}
+                initial={{
+                  opacity: 0,
+                  x: isMediumUp ? -80 : 0,
+                  y: isMediumUp ? 0 : -80,
+                }}
                 animate={
-                  villageInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }
+                  villageInView
+                    ? { opacity: 1, x: 0, y: 0 }
+                    : {
+                        opacity: 0,
+                        x: isMediumUp ? -80 : 0,
+                        y: isMediumUp ? 0 : -80,
+                      }
                 }
                 transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
                 className={`${profile.name.className} font-Unbounded`}>
@@ -73,41 +105,61 @@ const Village = () => {
           ))}
         </div>
 
-        <div className="  sm:h-[500px] lg:h-[540px]  text-center lg:text-left justify-center items-center lg:items-start flex flex-col">
-          <motion.h3
-            initial={{ opacity: 0, x: 80 }}
+        <div className="sm:h-[500px] lg:h-[540px] text-center lg:text-left justify-center items-center lg:items-start flex flex-col">
+          <motion.h1
+            initial={{
+              opacity: 0,
+              x: isMediumUp ? 80 : 0,
+              y: isMediumUp ? 0 : 80,
+            }}
             animate={
-              villageInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }
+              villageInView
+                ? { opacity: 1, x: 0, y: 0 }
+                : { opacity: 0, x: isMediumUp ? 80 : 0, y: isMediumUp ? 0 : 80 }
             }
             transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="  text-white text-xl sm:text-3xl lg:text-[2.75rem] font-satoshi font-normal leading-[1.4] capitalize text-center lg:text-left px-2 sm:px-0 mt-[80px] lg:mt-[0px]">
-            From a Small Village to <br className="hidden sm:block" />
-            <span className="text-[#1D9ED9]">&#123;</span>Leadlyft & Remember
-            Well
-            <span className="text-[#1D9ED9]">&#125;</span>.
-          </motion.h3>
+            className="  text-white text-3xl md:text-[44px] font-normal leading-[140%] capitalize text-center lg:text-left px-2 sm:px-0 mt-[30px]"
+          >
+            <span className="text-white/[0.46]">From a Small Village to</span>{" "}
+            <br className="hidden sm:block" />
+            <span className="font-medium">
+              <span className="text-[#1D9ED9]">&#123;</span>
+              Leadlyft & Remember Well
+              <span className="text-[#1D9ED9]">&#125;</span>.
+            </span>
+          </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, x: 80 }}
+            initial={{
+              opacity: 0,
+              x: isMediumUp ? 80 : 0,
+              y: isMediumUp ? 0 : 80,
+            }}
             animate={
-              villageInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }
+              villageInView
+                ? { opacity: 1, x: 0, y: 0 }
+                : { opacity: 0, x: isMediumUp ? 80 : 0, y: isMediumUp ? 0 : 80 }
             }
             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
-            className="mt-[22.13] text-sm sm:text-lg lg:text-xl text-center lg:text-left text-white font-satoshi font-normal leading-[1.5]">
-            I’m Basit — developer, tutor, and founder of
-            <br className="" />
-            ThinkBuilt Solutions. From Jhandeeryein, Pakistan
-            <br className="" />
-            to 7-figure platforms.
+            className="mt-[22.13] text-base md:text-lg font-normal leading-[150%]  text-center lg:text-left max-w-[446.582px]"
+          >
+            I’m Basit — developer, tutor, and founder of ThinkBuilt Solutions.
+            From Jhandeeryein, Pakistan to 7-figure platforms.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, x: 80 }}
+            initial={{
+              opacity: 0,
+              x: isMediumUp ? 80 : 0,
+              y: isMediumUp ? 0 : 80,
+            }}
             animate={
-              villageInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }
+              villageInView
+                ? { opacity: 1, x: 0, y: 0 }
+                : { opacity: 0, x: isMediumUp ? 80 : 0, y: isMediumUp ? 0 : 80 }
             }
             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
-            className="my-[20px] flex flex-wrap items-center gap-1 sm:gap-3 w-[325px] sm:w-[500px] justify-center lg:justify-start"
+            className="my-[20px] flex flex-wrap items-center gap-[10px] w-full sm:w-[500px] justify-center lg:justify-start"
           >
             {tagItems.map((item, index) => (
               <div
@@ -122,7 +174,7 @@ const Village = () => {
                   priority={true} // Ensures immediate loading
                   unoptimized={true} // For development
                 />
-                <span className="text-xs sm:text-md xl:text-base text-white font-satoshi font-normal leading-6">
+                <span className="text-base font-normal leading-[24px]">
                   {item.text}
                 </span>
               </div>

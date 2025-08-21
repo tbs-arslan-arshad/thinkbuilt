@@ -8,7 +8,6 @@ interface CardProps {
   description: string;
 }
 
-
 export const Card = ({ bgColor, icon, alt, title, description,  }: CardProps) => {
   return (
     <div
@@ -24,14 +23,16 @@ export const Card = ({ bgColor, icon, alt, title, description,  }: CardProps) =>
           alt={alt}
           width={31}
           height={31}
-          className="sm:w-[31px] sm:h-[31px] w-[25px] h-[25px]"
-          
-          priority={true} // Ensures immediate loading
-                unoptimized={true} // For development
+          className="w-5 h-5 sm:w-[31px] sm:h-[31px]"
+          loading="lazy"
         />
       </div>
-      <h2 className="text-black text-xl sm:text-[22px] mt-[16.08px] font-satoshi font-bold leading-[24px] tracking-[0.4px]">{title}</h2>
-      <p className=" text-sm sm:text-lg mt-[29.86px] text-black font-satoshi font-normal leading-[27px]">{description}</p>
+      <h2 className="text-black text-lg md:text-[22px] font-bold leading-6 tracking-[0.4px] mt-4 mb-7">
+        {title}
+      </h2>
+      <p className="text-black/[0.77] text-base md:text-lg font-normal leading-[27px]">
+        {description}
+      </p>
     </div>
   );
 };
