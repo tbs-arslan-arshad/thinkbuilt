@@ -1,18 +1,18 @@
 "use client";
 import { useInView, motion } from "motion/react";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 const reviews = [
   {
     id: 1,
-    founderName: "Jacob R.",
+    founderName: "Coach AK Ikwuakor",
     companyName: "LeadLyft",
-    companyLogo: "/images/mark_.png",
+    companyLogo: "/images/leadLyft_logo.png",
     quote:
-      "Basit didn't just write code --- he thought like a co-founder. Leadlyft wouldn't be where it is without his.",
-    image: "/images/review_3.png",
+      "Basit and his team did an amazing job from start to finish. A true partner in helping build out the webapp. What I appreciated most about Basit was his communication, his deep understanding of our product; really taking the time to understand our industry. In the end, he created EXACTLEY what we wanted and some. Amazing experience and will work with him time and time again.",
+    image: "/images/coach_ak.jpeg",
   },
   {
     id: 2,
@@ -46,6 +46,18 @@ const Review = () => {
   const reviewsRefInView = useInView(reviewsRef, { once: true, amount: 0.4 });
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
 
+  const [containerHeight, setContainerHeight] = useState(0);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const activeCardNode = cardRefs.current[currentReviewIndex];
+    if (activeCardNode) {
+      setTimeout(() => {
+        setContainerHeight(activeCardNode?.scrollHeight);
+      }, 100);
+    }
+  }, [currentReviewIndex]);
+
   const handleNext = () => {
     setCurrentReviewIndex((prevIndex) => (prevIndex + 1) % reviews.length);
   };
@@ -60,7 +72,7 @@ const Review = () => {
     <section
       id="testimonials"
       ref={reviewsRef}
-      className="flex flex-col min-h-screen bg-[#0E0805] items-center justify-center px-4 md:px-[154px]"
+      className="relative flex flex-col bg-[#0E0805] items-center justify-center px-4 lg:px-[154px] py-16 lg:py-[120px]"
     >
       <motion.div
         initial={{ opacity: 0, y: -80 }}
@@ -82,37 +94,14 @@ const Review = () => {
         </h1>
       </motion.div>
 
-      <div className="relative flex flex-row justify-center items-center w-full h-[373px] md:h-[473px] border-2 border-gray-500 rounded-[25.71px]">
-        {/* Review Image Section - First Column */}
-        <motion.div
-          initial={{
-            opacity: 0,
-            x: isMediumUp ? -80 : 0,
-            y: isMediumUp ? 0 : -80,
-          }}
-          animate={
-            reviewsImageRefInView
-              ? { opacity: 1, x: 0, y: 0 }
-              : { opacity: 0, x: isMediumUp ? -80 : 0, y: isMediumUp ? 0 : -80 }
-          }
-          transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
-          className="flex items-center justify-center"
-        >
-          <Image
-            src={reviews[currentReviewIndex].image}
-            alt={reviews[currentReviewIndex].companyName}
-            className="h-[368px] w-[318px] md:h-[468px] md:w-[418px] object-cover rounded-r-xl rounded-l-[23px] border-r border-gray-300 bg-white"
-            width={418}
-            height={468}
-            // priority={false}
-            // quality={85}
-          />
-        </motion.div>
-
+      <div className="relative flex flex-row justify-center items-stretch w-full border-2 border-gray-500 rounded-[25.71px]">
         {/* Review Cards Section - Second Column */}
         <div
           ref={reviewsImageRef}
-          className="relative w-full h-full [clip-path:inset(0_-9999px_0_0)]"
+          style={{
+            height: containerHeight > 0 ? `${containerHeight}px` : "auto",
+          }}
+          className="relative w-full h-auto overflow-hidden lg:overflow-visible rounded-[23px] lg:[clip-path:inset(0_-9999px_0_0)] transition-all duration-500"
         >
           {reviews.map((review, index) => {
             const isActive = index === currentReviewIndex;
@@ -132,14 +121,16 @@ const Review = () => {
             } else {
               zIndex = 5;
             }
-
             return (
               <motion.div
                 key={review.id}
+                ref={(el) => {
+                  cardRefs.current[index] = el;
+                }}
                 initial={{
                   opacity: 0,
-                  x: isMediumUp ? 100 : 0,
-                  y: isMediumUp ? 0 : 100,
+                  x: isMediumUp ? 0 : 0,
+                  y: isMediumUp ? 0 : 0,
                 }}
                 animate={
                   reviewsImageRefInView && {
@@ -160,7 +151,7 @@ const Review = () => {
                         ? 8
                         : isBehindTwo
                         ? 8
-                        : 100
+                        : 0
                       : 0,
                     y: !isMediumUp
                       ? isActive
@@ -169,7 +160,7 @@ const Review = () => {
                         ? 8
                         : isBehindTwo
                         ? 8
-                        : 100
+                        : 0
                       : 0,
                     zIndex: zIndex,
                   }
@@ -177,77 +168,129 @@ const Review = () => {
                 transition={{ duration: 0.6, ease: "easeInOut" }}
                 style={{
                   transformOrigin: "bottom center",
-                  backgroundImage: "url('/images/review_card_bg.png')", // Add your background image
-                  backgroundSize: "cover", // Adjust as needed
-                  backgroundPosition: "center", // Adjust as needed
+                  backgroundImage: "url('/images/review_card_bg.png')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
                 }}
-                className={`absolute top-0 left-0 w-full h-full bg-[#1F1D1D] px-6 py-2 lg:p-10 rounded-r-[25.21px] transform-gpu transition-all duration-500 origin-bottom-center border-r border-gray-400 ${
+                className={`absolute top-0 left-0 right-0 w-full bg-[#1F1D1D] rounded-[25.27px] transform-gpu transition-all duration-500 origin-bottom-center border-r border-gray-400 ${
                   !isActive && "hidden sm:block "
                 } ${
                   isBehindOne
-                    ? "-top-[20px]! left-[-26px] border border-gray-400"
+                    ? "-top-[20px]! left-[-16px] border border-gray-400"
                     : ""
                 } ${
                   isBehindTwo
-                    ? "-top-[24px]! left-[-30px] border border-gray-400"
+                    ? "-top-[24px]! left-[-16px] border border-gray-400"
                     : ""
                 }`}
               >
-                <div
-                  className={`flex flex-col lg:flex-row lg:items-center mb-4 sm:mb-6 gap-2 xl:mt-[20px] transition-all duration-500 items-start`}
-                >
-                  <Image
-                    src={review.companyLogo}
-                    alt={`${review.companyName} Logo`}
-                    width={90}
-                    height={90}
-                    className="w-[50px] h-[50px] sm:w-[80px] sm:h-[80px]"
-                  />
-                  <h1 className="text-white text:xl md:text-2xl lg:text-5xl font-semibold">
-                    {review.companyName}
-                  </h1>
-                </div>
-
-                <p className="text-white text-[14px] lg:text-xl mb-4 sm:mb-6 text-wrap">
-                  {review.quote}
-                </p>
-                <div>
-                  <span className="text-white text-sm sm:text-base md:text-lg font-medium">
-                    {review.founderName},
-                  </span>
-                  <span className="text-white text-xs sm:text-sm md:text-base block xl:pb-[20px]">
-                    CEO of {review.companyName}
-                  </span>
-                </div>
-
-                {isActive && (
-                  <div className="flex mt-4 sm:mt-6 gap-3 sm:gap-4">
-                    <div
-                      className="rounded-full w-[40px] h-[40px] sm:w-[60px] sm:h-[60px] bg-blue-300 flex items-center justify-center border-2 border-white cursor-pointer"
-                      onClick={handlePrev}
-                    >
+                <div className="grid grid-cols-3 w-full gap-2 items-stretch">
+                  {/*Left Side*/}
+                  <motion.div
+                    ref={reviewsImageRef}
+                    initial={{
+                      opacity: 0,
+                      x: isMediumUp ? -80 : 0,
+                      y: isMediumUp ? 0 : -80,
+                    }}
+                    animate={
+                      reviewsImageRefInView
+                        ? { opacity: 1, x: 0, y: 0 }
+                        : {
+                            opacity: 0,
+                            x: isMediumUp ? -80 : 0,
+                            y: isMediumUp ? 0 : -80,
+                          }
+                    }
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    className="col-span-1 h-full border border-gray-400 rounded-l-[25px] rounded-r-2xl overflow-hidden"
+                  >
+                    <div className="relative h-full w-full overflow-hidden rounded-l-[25px]">
                       <Image
-                        src="/icons/Vector 3.svg"
-                        alt="Previous"
-                        width={25}
-                        height={25}
-                        className="w-[17px] h-[17px] sm:w-[25px] sm:h-[25px] transform rotate-180"
+                        src={review.image}
+                        alt={review.companyName}
+                        fill
+                        className="object-cover object-top"
                       />
                     </div>
-                    <div
-                      className="rounded-full w-[40px] h-[40px] sm:w-[60px] sm:h-[60px] bg-blue-300 flex items-center justify-center border-2 border-white cursor-pointer"
-                      onClick={handleNext}
-                    >
+                  </motion.div>
+
+                  {/*Right Side*/}
+                  <motion.div
+                    ref={reviewsImageRef}
+                    initial={{
+                      opacity: 0,
+                      x: isMediumUp ? 80 : 0,
+                      y: isMediumUp ? 0 : 80,
+                    }}
+                    animate={
+                      reviewsImageRefInView
+                        ? { opacity: 1, x: 0, y: 0 }
+                        : {
+                            opacity: 0,
+                            x: isMediumUp ? 80 : 0,
+                            y: isMediumUp ? 0 : 80,
+                          }
+                    }
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    className="col-span-2 flex flex-col justify-center p-2 md:p-11 gap-6"
+                  >
+                    <div className="flex flex-row items-center gap-2">
                       <Image
-                        src="/icons/Vector 3.svg"
-                        alt="Next"
-                        width={25}
+                        src={review.companyLogo}
+                        alt={`${review.companyName} Logo`}
+                        width={60}
                         height={25}
-                        className="w-[17px] h-[17px] sm:w-[25px] sm:h-[25px]"
+                        className="w-[60px] h-[25px]"
                       />
+                      <h1 className="text-white text-lg md:text-3xl  font-semibold">
+                        {review.companyName}
+                      </h1>
                     </div>
-                  </div>
-                )}
+
+                    <p className="text-white text-base lg:text-lg mb-4 sm:mb-6 text-wrap">
+                      {review.quote}
+                    </p>
+
+                    <div>
+                      <span className="text-white text-sm sm:text-base md:text-lg font-medium">
+                        {review.founderName},
+                      </span>
+                      <span className="text-white text-xs sm:text-sm md:text-base block xl:pb-[20px]">
+                        CEO of {review.companyName}
+                      </span>
+                    </div>
+
+                    {isActive && (
+                      <div className="flex mt-4 sm:mt-6 gap-3 sm:gap-4">
+                        <div
+                          className="rounded-full w-[40px] h-[40px] sm:w-[60px] sm:h-[60px] bg-blue-300 flex items-center justify-center border-2 border-white cursor-pointer"
+                          onClick={handlePrev}
+                        >
+                          <Image
+                            src="/icons/Vector 3.svg"
+                            alt="Previous"
+                            width={25}
+                            height={25}
+                            className="w-4 h-4 sm:w-5 sm:h-5 transform rotate-180"
+                          />
+                        </div>
+                        <div
+                          className="rounded-full w-[40px] h-[40px] sm:w-[60px] sm:h-[60px] bg-blue-300 flex items-center justify-center border-2 border-white cursor-pointer"
+                          onClick={handleNext}
+                        >
+                          <Image
+                            src="/icons/Vector 3.svg"
+                            alt="Next"
+                            width={25}
+                            height={25}
+                            className="w-[17px] h-[17px] sm:w-[25px] sm:h-[25px]"
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </motion.div>
+                </div>
               </motion.div>
             );
           })}
