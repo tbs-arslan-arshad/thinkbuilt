@@ -94,7 +94,7 @@ const Review = () => {
         </h1>
       </motion.div>
 
-      <div className="relative flex flex-row justify-center items-stretch w-full border-2 border-gray-500 rounded-[25.71px]">
+      <div className="relative flex flex-row justify-center items-stretch w-full">
         {/* Review Cards Section - Second Column */}
         <div
           ref={reviewsImageRef}
@@ -184,7 +184,7 @@ const Review = () => {
                     : ""
                 }`}
               >
-                <div className="grid grid-cols-3 w-full gap-2 items-stretch">
+                <div className="grid grid-cols-3 w-full gap-2 items-stretch border-y-2 border-gray-500 rounded-[25.71px]">
                   {/*Left Side*/}
                   <motion.div
                     ref={reviewsImageRef}
@@ -233,18 +233,18 @@ const Review = () => {
                           }
                     }
                     transition={{ duration: 0.6, ease: "easeInOut" }}
-                    className="col-span-2 flex flex-col justify-center p-2 md:p-11 gap-6"
+                    className="col-span-2 flex flex-col justify-center p-4 md:p-11 gap-6"
                   >
                     <div className="flex flex-row items-center gap-2">
                       <Image
                         src={review.companyLogo}
-                        alt={`${review.companyName} Logo`}
-                        width={60}
-                        height={25}
-                        className="w-[60px] h-[25px]"
+                        alt={review.companyName}
+                        width={129.28}
+                        height={36}
+                        className="h-9 w-32 md:h-[50px] md:w-[200px] object-contain"
                       />
                       <h1 className="text-white text-lg md:text-3xl  font-semibold">
-                        {review.companyName}
+                        {review.companyName !== "LeadLyft"}
                       </h1>
                     </div>
 
