@@ -248,7 +248,7 @@ const Review = () => {
                       </h1>
                     </div>
 
-                    <p className="text-white text-base lg:text-lg mb-4 sm:mb-6 text-wrap">
+                    <p className="text-white text-sm md:text-base lg:text-lg mb-4 sm:mb-6 text-wrap">
                       {review.quote}
                     </p>
 
