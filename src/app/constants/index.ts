@@ -9,20 +9,77 @@ export const NAV_LINKS = [
 
 // CAMP SECTION
 export const PEOPLE_URL = [
-  "/images/naples_art_logo.png",
-  "/images/foodini_logo.svg",
-  "/images/blue_goat_logo.png",
-  "/images/maries_logo.png",
-  "/images/leadLyft_logo.png",
-  "/images/quick_tip_log.png",
-  "/images/credit_automate_logo.png",
-
-  "/images/soulchoirs_logo.svg",
-  "/images/main_street_logo.png",
-  "/images/remember_well_logo.png",
-  "/images/remember_tag_logo.png",
-  "/images/surge_logo.svg",
-  "/images/tranding_toolbox_logo.svg",
+  {
+    img: "/images/naples_art_logo.png",
+    height: 30,
+    width: 120,
+  },
+  {
+    img: "/images/foodini_logo.svg",
+    height: 30,
+    width: 120,
+  },
+  {
+    img: "/images/blue_goat_logo.png",
+    height: 30,
+    width: 120,
+    fitHeight: true,
+  },
+  {
+    img: "/images/maries_logo.png",
+    height: 30,
+    width: 120,
+    fitHeight: true,
+  },
+  {
+    img: "/images/leadLyft_logo.png",
+    height: 30,
+    width: 120,
+  },
+  {
+    img: "/images/quick_tip_log.png",
+    height: 30,
+    width: 120,
+    fitHeight: true,
+  },
+  {
+    img: "/images/credit_automate_logo.png",
+    height: 30,
+    width: 120,
+    fitHeight: true,
+  },
+  {
+    img: "/images/soulchoirs_logo.svg",
+    height: 30,
+    width: 120,
+  },
+  {
+    img: "/images/main_street_logo.png",
+    height: 30,
+    width: 120,
+  },
+  {
+    img: "/images/remember_well_logo.png",
+    height: 30,
+    width: 120,
+    fitHeight: true,
+  },
+  {
+    img: "/images/remember_tag_logo.png",
+    height: 30,
+    width: 120,
+  },
+  {
+    img: "/images/surge_logo.svg",
+    height: 30,
+    width: 120,
+  },
+  {
+    img: "/images/tranding_toolbox_logo.svg",
+    height: 30,
+    width: 120,
+    fitHeight: true,
+  },
 ];
 
 export const Images = [

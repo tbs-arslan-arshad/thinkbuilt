@@ -18,17 +18,42 @@ const Trusted = () => {
   const row1 = PEOPLE_URL.slice(0, half);
   const row2 = PEOPLE_URL.slice(half);
 
-  const LogoCard = ({ src }: any) => (
-    <div className="bg-[#1E1E1E] rounded-[20px] h-[58px] w-[186px] flex items-center justify-center shrink-0 transition-all duration-500">
-      <Image
-        src={src}
-        alt="brand"
-        width={129.28}
-        height={36}
-        className="h-[36px] w-[129.28px] object-contain"
-      />
-    </div>
-  );
+  type LogoItem = {
+    img: string;
+    width: number; // keep numbers here
+    height: number;
+    fitHeight?: boolean;
+  };
+
+  const LogoCard = ({ item }: { item: LogoItem }) => {
+    const PAD_X = 16;
+    const PAD_Y = 14;
+
+    const cardW = item.width + PAD_X * 2;
+    const cardH = item.height + PAD_Y * 2;
+
+    return (
+      <div
+        className="bg-[#1E1E1E] rounded-[20px] flex items-center justify-center shrink-0 transition-all duration-500 py-2 px-4"
+        style={{ width: cardW, height: cardH }}
+      >
+        <Image
+          src={item.img}
+          alt="brand"
+          width={item.width * 2}
+          height={item.height * 2}
+          sizes={`${item.width}px`}
+          style={
+            item.fitHeight
+              ? { height: "100%", width: "auto", maxWidth: "100%" }
+              : { height: item.height, width: item.width }
+          }
+          className="object-contain"
+          priority={false}
+        />
+      </div>
+    );
+  };
 
   const MarqueeRow = ({ items, active, speed = 18, delay = 0 }: any) => {
     const [loop, setLoop] = useState(false);
@@ -53,13 +78,13 @@ const Trusted = () => {
             }
           >
             <div className="flex gap-2.5">
-              {items.map((src: any, i: any) => (
-                <LogoCard key={`item1-${i}`} src={src} />
+              {items.map((item: any, i: any) => (
+                <LogoCard key={`item1-${i}`} item={item} />
               ))}
             </div>
             <div className="flex gap-2.5">
-              {items.map((src: any, i: any) => (
-                <LogoCard key={`item2-${i}`} src={src} />
+              {items.map((item: any, i: any) => (
+                <LogoCard key={`item2-${i}`} item={item} />
               ))}
             </div>
           </motion.div>
