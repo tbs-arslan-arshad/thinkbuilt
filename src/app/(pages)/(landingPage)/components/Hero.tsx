@@ -88,7 +88,7 @@ const Hero = () => {
         <div className="text-white/[0.86] text-base md:text-xl font-normal leading-[150%] text-center mt-[25] overflow-hidden px-4 md:px-0  md:max-w-[ 575.932px]">
            <p className="inline-block sm:hidden">
              {showParaLine && (
-            <span className="typewriter-para flex-wrap">
+            <span className="typewriter-para max-w-[360px] w-full flex-row">
               Helping non-tech founders turn ideas into digital platforms —
               confidence and the right direction.
             </span> 
