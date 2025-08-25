@@ -1,5 +1,5 @@
 "use client";
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { NAV_LINKS } from "../../constants/index";
 import Image from "next/image";
 import Link from "next/link";
