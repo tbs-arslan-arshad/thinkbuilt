@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <div className="relative min-h-screen">
         <Image
-          src="/images/Section.jpg"
+          src="/images/hero_bottom_bg.png"
           alt="hero-background"
           fill
           priority

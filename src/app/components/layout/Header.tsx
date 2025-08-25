@@ -20,6 +20,10 @@ const Header = () => {
   //   window.scrollTo({ top: y, behavior: "smooth" });
   // };
 
+  const Navbar =()=>{
+    console.log("hello world")
+  }
+
   
   return (
     <nav className=" py-[10px] bg-black fixed top-0 left-0 w-full z-60">
@@ -53,7 +57,7 @@ const Header = () => {
             Get Started
           </Link>
         </div>
-        <Menu size={32} color="white" strokeWidth={2} className="lg:hidden" />
+        <Menu size={32} color="white" strokeWidth={2} className="lg:hidden" onClick={Navbar}/>
       </div>
       <div className=" border-t border-white  xl:ml-[10%] xl:mr-[10%] ml-[5%] mr-[5%] mt-[20px]"></div>
     </nav>
