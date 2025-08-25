@@ -144,7 +144,7 @@ const Hero = () => {
             alt="hero-background"
             height={300}
             width={1000}
-            className="w-full h-auto"
+            className="w-full h-auto" 
           />
         </motion.div>
 
