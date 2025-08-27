@@ -139,7 +139,7 @@ const Review = () => {
                     rotate: isActive
                       ? 0
                       : isBehindOne
-                      ? 5
+                      ? 5.5
                       : isBehindTwo
                       ? 8
                       : 0,
@@ -176,11 +176,11 @@ const Review = () => {
                   !isActive && "hidden sm:block "
                 } ${
                   isBehindOne
-                    ? "-top-[20px]! left-[-16px] border border-gray-400"
+                    ? "-top-[32px]! left-[-28px] border border-gray-400"
                     : ""
                 } ${
                   isBehindTwo
-                    ? "-top-[24px]! left-[-16px] border border-gray-400"
+                    ? "-top-[32px]! left-[-28px] border border-gray-400"
                     : ""
                 }`}
               >
@@ -233,7 +233,7 @@ const Review = () => {
                           }
                     }
                     transition={{ duration: 0.6, ease: "easeInOut" }}
-                    className="col-span-2 flex flex-col justify-center p-4 md:p-11 gap-6"
+                    className="col-span-2 flex flex-col justify-center p-4 md:p-11 gap-6 h-[500px]"
                   >
                     <div className="flex flex-row items-center gap-2">
                       <Image
