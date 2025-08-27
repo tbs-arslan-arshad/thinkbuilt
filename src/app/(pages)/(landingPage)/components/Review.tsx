@@ -41,6 +41,9 @@ const Review = () => {
     once: true,
     amount: 0.4,
   });
+  const [clipOpen, setClipOpen] = useState(false);
+  const CLIP_TRANSITION_MS = 600;
+  const clipTimerRef = useRef<number | null>(null);
 
   const reviewsRef = useRef(null);
   const reviewsRefInView = useInView(reviewsRef, { once: true, amount: 0.4 });
@@ -58,13 +61,29 @@ const Review = () => {
     }
   }, [currentReviewIndex]);
 
+  const openClipWindow = () => {
+    setClipOpen(true);
+    if (clipTimerRef.current) window.clearTimeout(clipTimerRef.current);
+    clipTimerRef.current = window.setTimeout(() => {
+      setClipOpen(false);
+    }, CLIP_TRANSITION_MS);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (clipTimerRef.current) window.clearTimeout(clipTimerRef.current);
+    };
+  }, []);
+
   const handleNext = () => {
-    setCurrentReviewIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+    openClipWindow();
+    setCurrentReviewIndex((prev) => (prev + 1) % reviews.length);
   };
 
   const handlePrev = () => {
-    setCurrentReviewIndex((prevIndex) =>
-      prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
+    openClipWindow();
+    setCurrentReviewIndex((prev) =>
+      prev === 0 ? reviews.length - 1 : prev - 1
     );
   };
 
@@ -101,7 +120,12 @@ const Review = () => {
           style={{
             height: containerHeight > 0 ? `${containerHeight}px` : "auto",
           }}
-          className="relative w-full h-auto overflow-hidden lg:overflow-visible rounded-[23px] lg:[clip-path:inset(0_-9999px_0_0)] transition-all duration-500"
+          className={`relative w-full h-auto overflow-hidden lg:overflow-visible rounded-[23px] transition-all duration-500
+            ${
+              clipOpen
+                ? "lg:[clip-path:inset(-9999px_-9999px_-9999px_-9999px)]"
+                : "lg:[clip-path:inset(0_-9999px_0_0)]"
+            }`}
         >
           {reviews.map((review, index) => {
             const isActive = index === currentReviewIndex;
