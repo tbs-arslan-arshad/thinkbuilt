@@ -62,6 +62,7 @@ const Clarity = () => {
               type="button"
               title="Book Your 1-on-1 Clarity Session"
               variant="xl:py-3 py-2 xl:px-6 px-4 flex bg-[#1D9ED9] rounded-full py-2 sm:py-3 sm:px-4 w-full max-w-[307px] items-center justify-center text-md  lg:text-lg transition-colors font-medium hover:bg-[#1678a1] border"
+              onClick={() => window.open("https://calendly.com/basit-thinkbuiltsol/technical-partner", "_blank")}
             />
           </motion.div>
         </div>

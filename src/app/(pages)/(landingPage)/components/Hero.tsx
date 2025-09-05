@@ -106,6 +106,7 @@ const Hero = () => {
           type="button"
           title="Book Your Clarity Session"
           variant="py-2 px-3"
+          onClick={() => window.open("https://calendly.com/basit-thinkbuiltsol/technical-partner", "_blank")}
         />
       </motion.div>
 

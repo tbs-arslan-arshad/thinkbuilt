@@ -50,7 +50,7 @@ const Header = () => {
         </ul>
 
         <div className="lg:flex text-[#0E0805] rounded-full text-lg bg-white hidden">
-          <Button type="button" title="Get Started" variant="py-2 px-6" />
+          <Button type="button" title="Get Started" variant="py-2 px-6" onClick={() => window.open("https://calendly.com/basit-thinkbuiltsol/technical-partner", "_blank")} />
         </div>
         <Menu size={32} color="white" strokeWidth={2} className="lg:hidden" />
       </div>
