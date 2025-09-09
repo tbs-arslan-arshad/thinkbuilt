@@ -3,7 +3,12 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: ["maries-app-bucket.ams3.cdn.digitaloceanspaces.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "maries-app-bucket.ams3.cdn.digitaloceanspaces.com",
+      },
+    ],
   },
 };
 
