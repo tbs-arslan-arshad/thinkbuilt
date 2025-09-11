@@ -129,6 +129,8 @@ const Hero = () => {
             height={300}
             width={1000}
             className="w-full h-auto"
+            priority={true} // Ensures immediate loading
+                  unoptimized={true} // For development
           />
         </motion.div>
 
@@ -149,6 +151,8 @@ const Hero = () => {
             height={300}
             width={1000}
             className="w-full h-auto opacity-80"
+            priority={true} // Ensures immediate loading
+                  unoptimized={true} // For development
           />
         </motion.div>
       </div>
