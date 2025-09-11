@@ -1,12 +1,13 @@
 import Hero from "./components/Hero";
 import Trusted from "./components/Trusted";
-import Imagesection from "./components/Imagesection";
+import ImageSection from "./components/ImageSection"
 import Village from "./components/Village";
 import Divsection from "./components/Divsection";
 import Founders from "./components/Founders";
 import Review from "./components/Review";
 import Clarity from "./components/Clarity";
 import Image from "next/image";
+
 
 export default function Home() {
   return (
@@ -20,12 +21,12 @@ export default function Home() {
           sizes="100vw"
           className="object-cover"
         />
-        <Hero />
+        <Hero/>
       </div>
-      <Trusted />
-      <Imagesection />
-      <Village />
-      <Divsection />
+      <Trusted/>  
+     <ImageSection/>
+      <Village/>
+      <Divsection/>
       <div
         className="z-50"
         style={{
@@ -39,6 +40,7 @@ export default function Home() {
       </div>
       <Review />
       <Clarity />
+
     </>
   );
 }

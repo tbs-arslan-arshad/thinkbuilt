@@ -7,7 +7,7 @@ import { tags } from "../../../constants/index";
 import { useInView, motion } from "motion/react";
 import { useMediaQuery } from "react-responsive";
 
-const Imagesection = () => {
+const ImageSection = () => {
   const isMediumUp = useMediaQuery({ minWidth: 1024 });
   const [animatedTagId, setAnimatedTagId] = useState(0);
 
@@ -186,6 +186,8 @@ const Imagesection = () => {
                         width={24}
                         height={24}
                         className="w-6 h-6"
+                         priority={true} // Ensures immediate loading
+                  unoptimized={true} // For development
                       />
                       <span className="text-black text-base font-medium whitespace-nowrap">
                         {tag.text}
@@ -217,6 +219,8 @@ const Imagesection = () => {
                 alt={Images[3]?.alt}
                 width={662}
                 height={409}
+                 priority={true} // Ensures immediate loading
+                  unoptimized={true} // For development
               />
             </div>
           </motion.div>
@@ -226,4 +230,4 @@ const Imagesection = () => {
   );
 };
 
-export default Imagesection;
+export default ImageSection;

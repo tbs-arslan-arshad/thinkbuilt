@@ -47,6 +47,8 @@ const Village = () => {
                   className="object-cover object-top translate-y-[-80px]"
                   sizes="(max-width: 640px) 350px, 417px"
                   quality={85}
+                   priority={true} // Ensures immediate loading
+                  unoptimized={true} // For development
                 />
               </motion.div>
 
@@ -74,6 +76,8 @@ const Village = () => {
                   width={profile.overlayImage.width}
                   height={profile.overlayImage.height}
                   className={profile.overlayImage.className}
+                   priority={true} // Ensures immediate loading
+                  unoptimized={true} // For development
                 />
               </motion.div>
 
@@ -172,6 +176,8 @@ const Village = () => {
                   width={20}
                   height={20}
                   className="w-5 h-5"
+                   priority={true} // Ensures immediate loading
+                  unoptimized={true} // For development
                 />
                 <span className="text-base font-normal leading-[24px]">
                   {item.text}

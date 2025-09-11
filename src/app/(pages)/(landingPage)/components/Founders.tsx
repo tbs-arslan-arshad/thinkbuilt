@@ -113,6 +113,8 @@ const Founders = () => {
               width={60}
               height={60}
               className="rounded-[20px]"
+               priority={true} // Ensures immediate loading
+                  unoptimized={true} // For development
             />
             <Image
               src={card.iconImage}
@@ -120,6 +122,8 @@ const Founders = () => {
               width={42}
               height={42}
               className="mt-[-50px] mb-[25px]"
+               priority={true} // Ensures immediate loading
+                  unoptimized={true} // For development
             />
             <p className="text-base md:text-xl font-bold leading-[26px] -leading-[0.1px]">
               {card.title}
@@ -156,6 +160,8 @@ const Founders = () => {
               width={20}
               height={20}
               className="w-[20px] h-[20px]"
+               priority={true} // Ensures immediate loading
+                  unoptimized={true} // For development
             />
             {item.text}
           </motion.div>

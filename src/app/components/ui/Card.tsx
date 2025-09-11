@@ -24,7 +24,9 @@ export const Card = ({ bgColor, icon, alt, title, description }: CardProps) => {
           width={31}
           height={31}
           className="w-5 h-5 sm:w-[31px] sm:h-[31px]"
-          loading="lazy"
+          
+           priority={true} // Ensures immediate loading
+                  unoptimized={true} // For development
         />
       </div>
       <h2 className="text-black text-lg md:text-[22px] font-bold leading-6 tracking-[0.4px] mt-4 mb-7">
